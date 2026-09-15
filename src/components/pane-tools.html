@@ -1,0 +1,255 @@
+<section class="tab-pane" id="pane-tools">
+          <div class="section-title-wrap" style="margin-top:0;">
+            <div class="section-title"><i class="fa-solid fa-calculator"></i> BỘ 4 CÔNG CỤ TÍNH TOÁN & TRA CỨU TỰ ĐỘNG</div>
+          </div>
+
+          <div class="tools-grid">
+            
+            <!-- CALC 1: R-POINT -->
+            <div class="tool-card">
+              <div class="tool-header">
+                <div class="tool-icon red-gradient"><i class="fa-solid fa-bullseye"></i></div>
+                <div class="tool-title">
+                  <h3>1. Tính Điểm R-Point & ĐK Thi</h3>
+                  <p>Chuẩn TB 01/2026 (Thang 120 điểm)</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Tỷ lệ nghỉ học (% số buổi):</label>
+                <input type="number" id="calc-rp-absence" value="5" min="0" max="100" oninput="calculateRPoint()">
+              </div>
+              <div class="form-group">
+                <label>Tỷ lệ chưa hoàn thành BTVN (%):</label>
+                <input type="number" id="calc-rp-homework" value="10" min="0" max="100" oninput="calculateRPoint()">
+              </div>
+              <div class="form-group">
+                <label>Số bài E-learning bị chậm hạn:</label>
+                <select id="calc-rp-elearning" onchange="calculateRPoint()">
+                  <option value="0">Không chậm bài nào (Đầy đủ 20đ)</option>
+                  <option value="1">Chậm 1 bài (Trừ 5đ -> còn 15đ)</option>
+                  <option value="2">Chậm 2 bài (Trừ 10đ -> còn 10đ)</option>
+                  <option value="3">Chậm ≥ 3 bài (0đ - CẤM THI)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Vi phạm nội quy học đường:</label>
+                <select id="calc-rp-violations" onchange="calculateRPoint()">
+                  <option value="0">Không vi phạm (Đầy đủ 40đ)</option>
+                  <option value="1">Vi phạm 1 lần (Trừ 10đ -> còn 30đ)</option>
+                  <option value="2">Vi phạm 2 lần (Trừ 20đ -> còn 20đ)</option>
+                  <option value="3">Vi phạm ≥ 3 lần (0đ)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Điểm thưởng học tập tích cực (0 - 10đ):</label>
+                <input type="number" id="calc-rp-bonus-study" value="5" min="0" max="10" oninput="calculateRPoint()">
+              </div>
+              <div class="form-group">
+                <label>Điểm thưởng cán bộ lớp (0 - 10đ):</label>
+                <input type="number" id="calc-rp-bonus-cadre" value="0" min="0" max="10" oninput="calculateRPoint()">
+              </div>
+
+              <div class="calc-result-box">
+                <div class="result-header">
+                  <span>KẾT QUẢ ĐÁNH GIÁ:</span>
+                  <span class="result-badge pass" id="rp-status-badge">ĐỦ ĐIỀU KIỆN DỰ THI</span>
+                </div>
+                <div class="result-details">
+                  <div class="res-item">
+                    <span class="lbl">Tổng điểm R-Point:</span>
+                    <span class="val text-blue" id="res-rp-total">100 / 120 đ</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Điểm rèn luyện / thưởng:</span>
+                    <span class="val" id="res-rp-breakdown">95đ + 5đ</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Điều kiện Chuyên cần:</span>
+                    <span class="val text-green" id="res-rp-cond-cc">Đạt (95%)</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Điều kiện BTVN:</span>
+                    <span class="val text-green" id="res-rp-cond-btvn">Đạt (90%)</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Điều kiện E-learning:</span>
+                    <span class="val text-green" id="res-rp-cond-elearn">Đạt (0 bài)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CALC 2: PTIT GRADE -->
+            <div class="tool-card">
+              <div class="tool-header">
+                <div class="tool-icon blue-gradient"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="tool-title">
+                  <h3>2. Tính Điểm Học Phần PTIT</h3>
+                  <p>Cơ cấu 20% Quá trình - 20% Giữa kỳ - 60% Cuối kỳ</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Điểm Chuyên cần (Hệ 10đ):</label>
+                <input type="number" id="calc-ptit-attendance" value="10" min="0" max="10" step="0.5" oninput="calculateCourseGrade()">
+              </div>
+              <div class="form-group">
+                <label>Điểm TB Kiểm tra đầu giờ (Hệ 10đ):</label>
+                <input type="number" id="calc-ptit-quiz" value="8.0" min="0" max="10" step="0.5" oninput="calculateCourseGrade()">
+              </div>
+              <div class="form-group">
+                <label>Điểm Kiểm tra Giữa môn (Thang 100đ):</label>
+                <input type="number" id="calc-ptit-midterm" value="75" min="0" max="100" oninput="calculateCourseGrade()">
+              </div>
+              <div class="form-group">
+                <label>Điểm Thi Kết thúc môn (Thang 100đ):</label>
+                <input type="number" id="calc-ptit-final" value="80" min="0" max="100" oninput="calculateCourseGrade()">
+              </div>
+
+              <div class="calc-result-box">
+                <div class="result-header">
+                  <span>KẾT QUẢ HỌC PHẦN:</span>
+                  <span class="result-badge pass" id="grade-status-badge">ĐẠT HỌC PHẦN (PASS)</span>
+                </div>
+                <div class="result-details">
+                  <div class="res-item">
+                    <span class="lbl">Điểm Tổng Kết (Thang 100):</span>
+                    <span class="val text-blue" id="res-grade-100">81.0 / 100 đ</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Điểm Quy Đổi Hệ 10:</span>
+                    <span class="val" id="res-grade-10">8.1 / 10.0</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Xếp loại học lực:</span>
+                    <span class="val text-green" id="res-grade-letter">Loại Giỏi (B+)</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Ghi chú:</span>
+                    <span class="val" id="res-grade-note">Chuẩn đạt môn là từ 50/100 điểm trở lên.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CALC 3: RANK GV-TG -->
+            <div class="tool-card">
+              <div class="tool-header">
+                <div class="tool-icon gold-gradient"><i class="fa-solid fa-award"></i></div>
+                <div class="tool-title">
+                  <h3>3. Đánh Giá Rank GV - Trợ Giảng</h3>
+                  <p>Khung 8 cấp bậc Rank & Thu nhập</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Kinh nghiệm giảng dạy tại Rikkei Edu:</label>
+                <select id="calc-rank-exp" onchange="evaluateTeacherRank()">
+                  <option value="0.2">Dưới 6 tháng (TTS Trợ Giảng)</option>
+                  <option value="0.6">Từ 6 tháng đến dưới 1 năm</option>
+                  <option value="1">Từ 1 năm đến dưới 2 năm</option>
+                  <option value="2">Từ 2 năm đến dưới 3 năm</option>
+                  <option value="3">Từ 3 năm đến dưới 4 năm</option>
+                  <option value="4">Từ 4 năm đến dưới 5 năm</option>
+                  <option value="5">Từ 5 năm trở lên</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Năng lực Chuyên môn (Tối đa 20đ):</label>
+                <input type="number" id="calc-rank-skill" value="18" min="0" max="20" oninput="evaluateTeacherRank()">
+              </div>
+              <div class="form-group">
+                <label>Kỹ năng Sư phạm (Tối đa 20đ):</label>
+                <input type="number" id="calc-rank-pedagogy" value="18" min="0" max="20" oninput="evaluateTeacherRank()">
+              </div>
+              <div class="form-group">
+                <label>Kết quả Lớp học & Tỷ lệ Đỗ (Tối đa 25đ):</label>
+                <input type="number" id="calc-rank-results" value="22" min="0" max="25" oninput="evaluateTeacherRank()">
+              </div>
+              <div class="form-group">
+                <label>Đóng góp Học liệu & Tài nguyên (Tối đa 20đ):</label>
+                <input type="number" id="calc-rank-resource" value="16" min="0" max="20" oninput="evaluateTeacherRank()">
+              </div>
+              <div class="form-group">
+                <label>Đào tạo nội bộ & Phát triển (Tối đa 15đ):</label>
+                <input type="number" id="calc-rank-dev" value="12" min="0" max="15" oninput="evaluateTeacherRank()">
+              </div>
+
+              <div class="calc-result-box">
+                <div class="result-header">
+                  <span>CẤP BẬC ĐẠT ĐƯỢC:</span>
+                  <span class="result-badge gold" id="rank-badge-name">RANK 5 - GV PM MÔN</span>
+                </div>
+                <div class="result-details">
+                  <div class="res-item">
+                    <span class="lbl">Tổng điểm đánh giá:</span>
+                    <span class="val text-blue" id="res-rank-total-score">86.0 / 100 đ</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Mức lương cứng định mức:</span>
+                    <span class="val text-green" id="res-rank-salary">20.000.000 VNĐ</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Phụ cấp trách nhiệm:</span>
+                    <span class="val" id="res-rank-allowance">4.000.000 VNĐ</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Thưởng hiệu quả / lớp:</span>
+                    <span class="val" id="res-rank-bonus">2.000.000 VNĐ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CALC 4: LATE FEE -->
+            <div class="tool-card">
+              <div class="tool-header">
+                <div class="tool-icon purple-gradient"><i class="fa-solid fa-clock"></i></div>
+                <div class="tool-title">
+                  <h3>4. Tính Phạt Đi Muộn & Làm Bù</h3>
+                  <p>Khung chế tài 20k/5p & Làm bù x2</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Khung ca làm việc:</label>
+                <select id="calc-late-shift" onchange="calculateLateFee()">
+                  <option value="800">08h00 – 17h30 (Khối BO / Văn phòng)</option>
+                  <option value="700">07h00 – 16h00 (Khối Đào tạo)</option>
+                  <option value="830">08h30 – 18h00 (Mùa Hè - Thu)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Giờ bạn có mặt (Chấm công):</label>
+                <input type="time" id="calc-late-time" value="08:12" oninput="calculateLateFee()">
+              </div>
+
+              <div class="calc-result-box">
+                <div class="result-header">
+                  <span>TRẠNG THÁI:</span>
+                  <span class="result-badge warn" id="late-status-badge">⚠️ ĐI MUỘN DƯỚI 15 PHÚT</span>
+                </div>
+                <div class="result-details">
+                  <div class="res-item">
+                    <span class="lbl">Số phút muộn:</span>
+                    <span class="val text-red" id="res-late-minutes">12 phút (3 block 5p)</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Phương án 1 (Làm bù x2):</span>
+                    <span class="val text-green" id="res-late-compensate">Làm bù 24 phút cuối ngày</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Phương án 2 (Nộp phạt):</span>
+                    <span class="val text-red" id="res-late-fine">60.000 VNĐ (3 block x 20k)</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="lbl">Quy tắc áp dụng:</span>
+                    <span class="val" id="res-late-rule">Đi muộn &lt; 15p được chọn làm bù x2 hoặc nộp phạt 20k/5p.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>

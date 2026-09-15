@@ -1,0 +1,644 @@
+/**
+ * RIKKEI EDUCATION PORTAL INTERACTIVE CONTROLLER
+ * Comprehensive, standalone client-side logic (zero external dependencies)
+ */
+
+// Embedded Raw Documents Catalog (Works 100% offline & local file:// without CORS issues)
+const rawDocsData = {
+  "onboarding-pdf": {
+    "id": "onboarding-pdf",
+    "title": "Onboarding Rikkei Education 2026.pdf",
+    "name": "Sổ tay Onboarding & Hội nhập 2026",
+    "type": "PDF",
+    "size": "30.2 MB",
+    "pages": "41 trang",
+    "orig_file": "Onboarding Rikkei Education 2026.pdf",
+    "rel_path": "docs/Onboarding Rikkei Education 2026.pdf",
+    "desc": "Tài liệu đào tạo hội nhập toàn diện dành cho nhân sự mới, giới thiệu hệ sinh thái, cơ chế, chính sách và văn hóa doanh nghiệp."
+  },
+  "khao-thi-md": {
+    "id": "khao-thi-md",
+    "title": "QUY TRÌNH KHẢO THÍ PTIT ĐANG THỰC THI.md",
+    "name": "Quy trình Khảo thí PTIT (13 Điều & 11 Phụ lục)",
+    "type": "MD",
+    "size": "55.6 KB",
+    "pages": "938 dòng",
+    "orig_file": "QUY TRÌNH KHẢO THÍ PTIT ĐANG THỰC THI.md",
+    "rel_path": "docs/QUY TRÌNH KHẢO THÍ PTIT ĐANG THỰC THI.md",
+    "desc": "Văn bản quy định quản lý hoạt động khảo thí chương trình liên kết PTIT & Rikkeisoft cùng 11 phụ lục nghiệp vụ.",
+    "raw_text": "# QUY TRÌNH KHẢO THÍ PTIT ĐANG THỰC THI\n\n# QUY ĐỊNH KHẢO THÍ\n\n*\\(Áp dụng đối với Cán bộ nhân viên tham gia công tác khảo thí và sinh viên thuộc Chương trình đào tạo liên kết giữa Học viện Công nghệ Bưu chính Viễn thông và doanh nghiệp Rikkeisoft\\)*\n\nQuy định này nhằm thống nhất quy trình tổ chức kiểm tra, thi và các hoạt động liên quan đến công tác khảo thí nhằm đảm bảo việc đánh giá kết quả học tập của sinh viên được thực hiện **khách quan, công bằng và minh bạch**\\.\n\n\n\n# QUY ĐỊNH : Về quản lý hoạt động khảo thí\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n### Điều 1\\. Mục đích\n\nQuy định này nhằm:\n\n- Thống nhất việc tổ chức kiểm tra, thi và các hoạt động liên quan đến công tác khảo thí;\n\n- Đảm bảo việc đánh giá kết quả học tập của sinh viên được thực hiện khách quan, công bằng và minh bạch;\n\n- Kiểm soát rủi ro, hạn chế sai sót và nâng cao chất lượng triển khai khảo thí\\.\n\n### Điều 2\\. Phạm vi điều chỉnh\n\nQuy định này áp dụng đối với các học phần do doanh nghiệp giảng dạy thuộc chương trình đào tạo liên kết giữa Học viên Công nghệ Bưu chính Viễn thông và Rikkeisoft\\.\n\n### Điều 3\\. Đối tượng áp dụng\n\n- Phòng/Đơn vị phụ trách đào tạo;\n\n- Trưởng bộ môn, giảng viên, trợ giảng;\n\n- Cán bộ tham gia công tác khảo thí;\n\n- Các cá nhân, đơn vị liên quan\\.\n\n### Điều 4\\. Nguyên tắc thực hiện khảo thí\n\n1. Đảm bảo tính khách quan, công bằng, minh bạch trong đánh giá;\n\n2. Tuân thủ nội dung học phần và chuẩn đầu ra;\n\n3. Đảm bảo bảo mật đề thi, bài thi và dữ liệu điểm;\n\n4. Phân công rõ trách nhiệm trong từng khâu khảo thí;\n\n5. Các hoạt động khảo thí phải được ghi nhận, báo cáo và lưu trữ;\n\n6. Ứng dụng hệ thống công nghệ trong quản lý và giám sát khảo thí\\.\n\n### Điều 5\\. Nội dung công tác khảo thí\n\n1. Lập kế hoạch tổ chức kiểm tra, thi;\n\n2. Ra đề, kiểm tra và phê duyệt đề;\n\n3. Tổ chức kiểm tra, thi;\n\n4. Chấm bài, nhập điểm và công bố kết quả;\n\n5. Phúc khảo;\n\n6. Tổ chức kiểm tra/thi bổ sung, thi lại;\n\n7. Quản lý dữ liệu khảo thí và báo cáo\\.\n\n### Điều 6\\. Tổ chức kiểm tra và thi\n\n1. Việc tổ chức kiểm tra, thi được thực hiện theo kế hoạch do Bộ phận Quản lý Đào tạo ban hành\\.\n\n2. Các khâu tổ chức phải đảm bảo:\n\n    - Đúng kế hoạch;\n\n    - Đúng đối tượng;\n\n    - Đúng quy trình\\.\n\n3. Các hoạt động coi thi, giám sát phải:\n\n    - Thực hiện đầy đủ theo phân công;\n\n    - Có báo cáo và biên bản sau mỗi ca thi;\n\n    - Được lưu trữ để phục vụ kiểm tra, đối soát\\.\n\n### Điều 7\\. Trách nhiệm của các bên\n\n#### Bộ phận Quản lý Đào tạo\n\n- Tổ chức và điều phối hoạt động khảo thí;\n\n- Lập kế hoạch, phân công nhiệm vụ;\n\n- Kiểm tra, giám sát và xử lý phát sinh;\n\n- Tổng hợp và công bố kết quả\\.\n\n#### Trưởng bộ môn\n\n- Phân công ra đề;\n\n- Duyệt đề;\n\n- Đảm bảo chất lượng nội dung đánh giá\\.\n\n#### Giảng viên\n\n- Ra đề, chấm bài theo phân công;\n\n- Đảm bảo nội dung phù hợp học phần;\n\n- Chịu trách nhiệm về kết quả đánh giá\\.\n\n#### Cán bộ coi thi\n\n- Tổ chức phòng thi;\n\n- Phổ biến nội quy;\n\n- Giám sát sinh viên;\n\n- Thu bài, kiểm đếm;\n\n- Lập biên bản và báo cáo\\.\n\n#### Cán bộ giám sát\n\n- Điều phối và giám sát kỳ thi;\n\n- Phát hiện, xử lý vi phạm;\n\n- Tổng hợp báo cáo\\.\n\n#### Cán bộ chấm thi\n\n- Chấm đúng đáp án, thang điểm;\n\n- Đảm bảo khách quan;\n\n- Nhập điểm đúng hạn\\.\n\n### Điều 8\\. Chấm thi và công bố kết quả\n\n1. Bài thi được chấm theo phân công\\.\n\n2. Điểm phải chính xác và đúng thời hạn\\.\n\n3. Kết quả thi được công bố sau khi hoàn tất quy trình kiểm duyệt và phê duyệt, bao gồm các bước:\n\n- Bước 1: Giảng viên phụ trách giảng dạy thực hiện kiểm duyệt kết quả chấm thi\\.\n\n- Bước 2: Giám đốc Đào tạo xem xét, phê duyệt kết quả sau khi đã được Giảng viên phụ trách kiểm duyệt\\. \n\n- Bước 3: Bộ phận Quản lý Đào tạo thực hiện công bố kết quả thi đến sinh viên sau khi nhận được phê duyệt của Giám đốc Đào tạo\\.\n\n### Điều 9\\. Phúc khảo\n\n1. Sinh viên có quyền đề nghị phúc khảo\\.\n\n2. Việc phúc khảo thực hiện theo quy trình riêng\\.\n\n3. Kết quả được cập nhật và thông báo chính thức\\.\n\n### Điều 10\\. Kiểm tra/thi bổ sung, thi lại\n\n1. Sinh viên được tham gia khi:\n\n    - Vắng thi có lý do chính đáng \\(được phê duyệt\\);\n\n    - Điểm chưa đạt;\n\n    - Trường hợp đặc biệt: Sinh viên gặp sự cố kỹ thuật, lỗi thiết bị hoặc các vấn đề khách quan phát sinh trong quá trình tham gia kiểm tra theo lịch chính thức\\.\n\n2. Việc tổ chức thi:\n\n    - Theo kế hoạch của Bộ phận Quản lý Đào tạo;\n\n    - Đảm bảo tương đương kỳ thi chính\\.\n\n### Điều 11\\. Khen thưởng\n\n1. Cá nhân, đơn vị thực hiện tốt được xem xét khen thưởng\\.\n\n2. Căn cứ vào:\n\n    - Mức độ hoàn thành nhiệm vụ;\n\n    - Chất lượng triển khai;\n\n    - Đóng góp cải tiến\\.\n\n### Điều 12\\. Xử lý vi phạm\n\n- Nhắc nhở, phê bình;\n\n- Xử phạt nội bộ;\n\n- Hạn chế phân công;\n\n- Kỷ luật theo quy định\\.\n\n### Điều 13\\. Điều khoản thi hành\n\n1. Quy định này có hiệu lực kể từ ngày ký;\n\n2. Các quy trình chi tiết, hướng dẫn nghiệp vụ và biểu mẫu phục vụ công tác khảo thí được ban hành dưới dạng phụ lục hoặc tài liệu riêng kèm theo Quy định này;\n\n3. Các phụ lục, quy trình, biểu mẫu có thể được điều chỉnh, cập nhật bởi Bộ phận Quản lý Đào tạo để phù hợp với thực tế triển khai mà không cần ban hành lại Quy định này, với điều kiện không trái với các nguyên tắc và nội dung chung của Quy định\\.\n\n# PHỤ LỤC 1 : Đánh giá học phần\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n*\\(Áp dụng với các học phần Công nghệ thông tin và Quản trị kinh doanh số thuộc Chương trình đào tạo liên kết giữa Học viện Công nghệ Bưu chính Viễn thông và doanh nghiệp Rikkeisoft\\)*\n\n## Cơ cấu và cách tính điểm học phần\n\nĐiểm học phần được đánh giá theo thang điểm 100\\. Sinh viên được xác định là đạt học phần khi điểm học phần đạt từ 50 điểm trở lên\\.\n\nĐiểm học phần được cấu thành từ các thành phần sau:\n\n||**Thành phần điểm**|**Hình thức đánh giá**|**Tỷ lệ**|**Ghi chú**|\n|---|---|---|---|---|\n|1|**Điểm quá trình**|**20%**|||\n|||Điểm chuyên cần|10%|Nghỉ 1% trừ 01 điểm|\n|||Trung bình điểm kiểm tra đầu giờ các buổi học|10%||\n|2|**Điểm kiểm tra giữa môn**<br>|**20%**|||\n|||Điểm trắc nghiệm|30%||\n|||Điểm tự luận|70%||\n|3|**Điểm thi kết thúc học phần**|**60%**|||\n||Thi đa phương thức: Trắc nghiệm, Vấn đáp, Sản phẩm/thực hành||||\n|||Trắc nghiệm|10%||\n|||Phỏng vấn|20%||\n|||Sản phẩm/thực hành|70%||\n\n## Thành phần điểm trong đánh giá học phần\n\n**2\\.1 Điểm quá trình**\n\n- Điểm chuyên cần \\(10% tổng điểm học phần\\)\n\n    - Cứ nghỉ 1% tổng số buổi học \\(so với tổng số buổi của học phần\\) bị trừ 01 điểm vào điểm chuyên cần\\.\n\n- Kiểm tra đầu giờ \\(10% tổng điểm học phần\\)\n\n    - Thực hiện vào đầu buổi học\\.\n\n    - Điểm kiểm tra đầu giờ là điểm trung bình cộng các lần kiểm tra đầu giờ trong 1 môn học\\.\n\n**2\\.2 Điểm kiểm tra giữa môn****/Kiểm tra Hackathon**\n\n- Điểm thi kiểm tra giữa môn được đánh giá theo thang điểm 100;\n\n- Kiểm tra giữa môn chiếm 20% tổng điểm học phần;\n\n- Cấu trúc đề kiểm tra giữa môn:\n\n    - Trắc nghiệm: 30% số điểm của phần giữa môn \n\n    - Tự luận: 70% số điểm của phần giữa môn \n\n- Thời gian kiểm tra giữa môn tối đa 120 phút\\.\n\n**2\\.3 Điểm thi kết thúc học phần**\n\n- Điểm thi kết thúc học phần được đánh giá theo thang điểm 100;\n\n- Kiểm thi kết thúc học phần chiếm 60% tổng điểm học phần;\n\n- Tùy theo nội dung đào tạo của từng học phần, kỳ thi kết thúc học phần có thể áp dụng một hoặc kết hợp nhiều hình thức sau: Trắc nghiệm, Vấn đáp, Sản phẩm/thực hành;\n\n- Thời gian thi được quy định phù hợp với từng hình thức thi và được công bố trong kế hoạch tổ chức thi của bộ phận Quản lý đào tạo;\n\n- Sinh viên phải có mặt đúng giờ, tuân thủ quy định thi và thực hiện đầy đủ các yêu cầu xác thực thông tin khi tham gia thi\\.\n\n## Điều kiện dự thi kết thúc học phần\n\n**3\\.1 Định nghĩa điểm R\\-point**\n\nĐiểm R\\-point là điểm đánh giá ý thức khi sinh viên tham gia vào quá trình học tập và rèn luyện của sinh viên\\.\n\n**3\\.2 Một số quy định chung của điểm R\\-point**\n\n- Điểm R\\-point được đánh giá theo từng học phần trong khung chương trình đào tạo;\n\n- Điểm R\\-point sẽ đánh giá điều kiện bắt buộc để sinh viên được tham gia thi kết thúc học phần hoặc thực hiện dự án cuối học phần\\.\n\n- Để được tham gia thi kết thúc học phần hoặc thực hiện dự án cuối học phần sinh viên cần: \n\n\\+ Đạt từ 80/120 điểm R\\-point;\n\n\\+ Đạt tỷ lệ chuyên cần từ 80% trở lên;\n\n\\+ Đạt tỷ lệ hoàn thành bài tập từ 80% trở lên;\n\n\\+ Chuẩn bị E\\-learning không chậm quá 03 bài\\.\n\n3. **Bảng tiêu chí đánh giá điểm R\\-point**\n\n|**STT**|**Tiêu chí**|**Điểm tối đa**|**Quy định áp dụng**|**Phụ trách đánh giá**|\n|---|---|---|---|---|\n|**1**|**Điểm rèn luyện**|**100**|||\n|1\\.1|Điểm chuyên cần|**20**|Tỷ lệ nghỉ học 1% trừ 02 điểm|**Hệ thống**|\n|1\\.2|Điểm bài tập|20|Tỷ lệ không hoàn thành bài tập 1% trừ 02 điểm|**Hệ thống**|\n|1\\.3|Điểm chuẩn bị bài|20|Chậm 01 bài trừ 05 điểm;<br>Chậm 02 bài trừ 10 điểm;<br>Chậm 03 bài còn 0 điểm\\.|**Hệ thống**|\n|1\\.4|Điểm tuân thủ nội quy|40|Vi phạm lần 1 trừ 10 điểm;<br>Vi phạm lần 2 trừ 20 điểm;<br>Vi phạm lần 3 còn 0 điểm\\.|**Giảng viên**|\n|**2**|**Điểm thưởng**|**20**|||\n|2\\.1|Điểm thưởng học tập|10|Giảng viên xem xét cộng điểm thưởng cho sinh viên có tinh thần học tập tích cực, tham gia xây dựng bài trong quá trình học\\.|**Giảng viên**|\n|2\\.2|Điểm thưởng cán bộ lớp|10|Giảng viên đánh giá mức độ hoàn thành nhiệm vụ của cán bộ lớp, tinh thần làm việc nhóm và đóng góp vào hoạt động chung của lớp\\.|**Giảng viên**|\n\n\n**3\\.3 Tổ chức thực hiện**\n\n- Bộ phận Quản lý đào tạo và các đơn vị liên quan có trách nhiệm phối hợp triển khai, giám sát và thực hiện đánh giá điểm R\\-point theo đúng quy định tại Phụ lục này\\.\n\n- Sinh viên có trách nhiệm theo dõi kết quả điểm R\\-point, các chỉ số học tập của cá nhân trên hệ thống LMS và phản hồi kịp thời \\(nếu có\\) theo đúng quy trình\\.\n\n\n\n# PHỤ LỤC 2 : Công tác ra đề thi\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n*\\(Áp dụng với các học phần Công nghệ thông tin, Quản trị kinh doanh số, Kỹ năng mềm thuộc Chương trình đào tạo liên kết giữa Học viện Công nghệ Bưu chính Viễn thông và doanh nghiệp Rikkeisoft\\)*\n\n## Công tác ra đề thi \n\nNhân sự phụ trách sản xuất tài nguyên học tập là đầu mối chịu trách nhiệm quản lý kho đề thi, phân công ra đề, bảo mật, phân phối và gán đề thi vào các ca thi theo kế hoạch tổ chức thi\\.\n\n**1\\.1\\. Phân công cán bộ ra đề thi \\(Trước ngày thi tối thiểu 15 ngày**** làm việc****\\)**\n\n- Nhân sự phụ trách học phần gửi đề xuất và yêu cầu phân công cán bộ ra đề \\.\n\n- Nhân sự phụ trách sản xuất tài nguyên học tập nhận thông tin trong kho đề thi, căn cứ chuyên môn của giảng viên, trợ giảng nội dung học phần và kế hoạch thi để phân công cán bộ ra đề phù hợp\\.\n\n- Danh sách cán bộ ra đề được cập nhật và thông báo cho các cá nhân, liên quan\\.\n\n**1\\.2\\. Soạn thảo và rà soát đề thi \\(Trước ngày thi tối thiểu 07 ngày**** làm việc****\\)**\n\n- Cán bộ được phân công thực hiện xây dựng đề thi, đáp án, thang điểm và hướng dẫn chấm \\(nếu có\\) theo chuẩn đầu ra và nội dung học phần;\n\n- Sau khi hoàn thiện, đề thi được bàn giao cho Nhân sự phụ trách học phần kiểm tra nội dung, hình thức, cấu trúc và tính đầy đủ của đề thi và thực hiện kiểm duyệt đề trước khi bàn giao đề thi;\n\n- Trường hợp phát hiện sai sót hoặc nội dung chưa phù hợp, cán bộ ra đề có trách nhiệm chỉnh sửa và hoàn thiện theo góp ý của Nhân sự phụ trách sản xuất tài nguyên học tập\\.\n\n**1\\.3\\. Bàn giao đề thi chính thức \\(Trước ngày thi tối thiểu 03 ngày**** làm việc****\\)**\n\n- Sau khi hoàn thành rà soát, cán bộ ra đề ấn hoàn thành đề thi chính thức, đáp án và các tài liệu liên quan trên hệ thống;\n\n- Nhân sự phụ trách sản xuất tài nguyên học tập chịu trách nhiệm phân công đề thi vào ca thi;\n\n**1\\.4\\. Bàn giao đề thi cho kỳ thi \\(Trước giờ thi 01 giờ\\)**\n\n- Cán bộ coi thi kiểm tra tính chính xác của đề thi trước khi sử dụng;\n\n- Cán bộ coi thi thực hiện tải đề thi lên hệ thống RAIA và gán đúng ca thi, tuyệt đối không tải đề thi lên QLĐT;\n\n- Hoàn tất việc kiểm tra đề thi trên hệ thống trước khi sinh viên bắt đầu làm bài\\.\n\n## Quy định bảo mật đề thi\n\n- Đề thi, đáp án, ngân hàng câu hỏi và các tài liệu liên quan thuộc danh mục tài liệu mật của kỳ thi\\.\n\n- Nhân sự phụ trách sản xuất tài nguyên học tập là đầu mối chịu trách nhiệm quản lý Kho đề thi, tổ chức phân công ra đề, lưu trữ, phân phối đề thi và bảo đảm an toàn, bảo mật trong toàn bộ quá trình sử dụng\\.\n\n- Cán bộ ra đề, cán bộ rà soát chuyên môn, nhân sự phụ trách sản xuất tài nguyên học tập, nhân sự phụ trách học phần và các cá nhân được phân quyền có trách nhiệm bảo mật tuyệt đối nội dung đề thi trong suốt quá trình xây dựng, lưu trữ, phân phối và tổ chức thi\\.\n\n- Kho đề thi chỉ được phân quyền truy cập cho các cá nhân có nhiệm vụ; mọi hoạt động truy cập, chỉnh sửa hoặc sử dụng đề thi phải được thực hiện trên hệ thống được đơn vị cho phép\\.\n\n- Không gửi đề thi, đáp án hoặc ngân hàng câu hỏi qua email cá nhân, ứng dụng nhắn tin hoặc các nền tảng lưu trữ không được đơn vị phê duyệt\\.\n\n- Việc phân phối đề thi cho từng kỳ thi chỉ được thực hiện thông qua nhân sự phụ trách sản xuất tài nguyên học tập hoặc cá nhân được ủy quyền theo đúng kế hoạch tổ chức thi\\.\n\n- Trường hợp phát hiện hoặc nghi ngờ lộ lọt thông tin đề thi, cá nhân liên quan phải báo cáo ngay cho Bộ phận Quản lý Đào tạo và Giám đốc Đào tạo để tổ chức xác minh, xử lý\\.\n\n- Cá nhân vi phạm quy định về bảo mật đề thi sẽ bị xem xét xử lý theo quy định của đơn vị; tùy theo mức độ vi phạm có thể bị đình chỉ tham gia công tác khảo thí và chịu các hình thức xử lý khác theo quy định hiện hành\\.\n\n\n\n# PHỤ LỤC 3 : Quy trình tổ chức kiểm tra giữa học phần\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n*\\(Áp dụng với các học phần Công nghệ thông tin, Quản trị kinh doanh số thuộc Chương trình đào tạo liên kết giữa Học viện Công nghệ Bưu chính Viễn thông và doanh nghiệp Rikkeisoft\\)*\n\nQuy trình tổ chức kiểm tra giữa học phần\n\n## Công tác chuẩn bị tổ chức kiểm tra giữa học phần\n\n***Lưu ý: Các bước trên sẽ có thông báo nhắc nhở tự động từ Base Assistant\\.***\n\n## Tổ chức kiểm tra giữa học phần\n\n- **Nhiệm vụ của Cán bộ coi kiểm tra**\n\n    Cán bộ coi kiểm tra có trách nhiệm thực hiện đầy đủ các nhiệm vụ sau:\n\n    - Có mặt tại khu vực tổ chức kiểm tra tối thiểu **15 phút trước thời gian bắt đầu ca kiểm tra** để chuẩn bị công tác tổ chức\\.;\n\n    - Tiếp nhận, kiểm tra danh sách sinh viên và hướng dẫn sinh viên vào phòng kiểm tra theo đúng [**danh sách kiểm tra giữa môn**](https://rikkeieducation.sg.larksuite.com/wiki/I7AKwXxYwix5tTk72SAlbxELgbd?from=from_copylink)**;**\n\n    - Phổ biến [**nội quy phòng thi**](https://rikkeieducation.sg.larksuite.com/wiki/CSPUwBy7Zianr2k5QQtl6LmMgLd) và hướng dẫn sinh viên bật app RAIA trước khi truy cập làm bài;\n\n    - Tổ chức thu bài sau khi kết thúc thời gian làm bài; kiểm đếm, đối chiếu số lượng bài làm với số lượng sinh viên dự kiểm tra, bảo đảm đầy đủ và chính xác trước khi cho sinh viên rời phòng\\.;\n\n    - Tuyệt đối không sử dụng điện thoại trong phòng kiểm tra;\n\n    - Thực hiện báo cáo tình hình ca kiểm tra theo quy định và cập nhật đầy đủ thông tin theo yêu cầu của Tổ chức khảo thí\\.\n\n- **Nhiệm vụ của Cán bộ giám sát****:**\n\n    Cán bộ giám sát có trách nhiệm thực hiện đầy đủ các nhiệm vụ sau:\n\n    - Có mặt tại khu vực tổ chức kiểm tra tối thiểu **15 phút trước thời gian bắt đầu ca kiểm tra** để phối hợp triển khai công tác tổ chức;\n\n    - Điều phối hoạt động của ca kiểm tra theo đúng kế hoạch đã được phê duyệt, bảo đảm kỳ kiểm tra diễn ra đúng quy trình khảo thí và đúng thời gian;\n\n    - Giám sát sinh viên trên hệ thống RAIA, bắt và xử lý vi phạm *\\(nếu có\\), *phối hợp với cán bộ coi kiểm tra xử lý các trường hợp phát sinh, lập biên bản theo quy định;\n\n    - Giám sát sinh viên trong thời gian tạm thời rời khỏi phòng kiểm tra \\(nếu được phép\\), bảo đảm việc di chuyển và quay trở lại phòng kiểm tra thực hiện đúng quy định;\n\n    - Tiếp nhận, tổng hợp các biên bản và hồ sơ liên quan của Hội đồng kiểm tra; chuyển về Bộ phận Đào tạo theo đúng quy trình, đồng thời cập nhật đầy đủ lên [**danh sách kiểm tra giữa môn**](https://rikkeieducation.sg.larksuite.com/wiki/I7AKwXxYwix5tTk72SAlbxELgbd?from=from_copylink)** **theo quy định\\.\n\n    - Thực hiện báo cáo tình hình ca kiểm tra theo quy định và cập nhật đầy đủ thông tin theo yêu cầu của Tổ chức khảo thí\\.\n\n## Chấm bài và công bố kết quả giữa học phần\n\n#### **3\\.1\\. Bàn giao bài kiểm tra**\n\n- Sau khi kết thúc công tác kiểm tra, bài làm của sinh viên được kiểm đếm, đối chiếu và  và bàn giao cho giảng viên chấm bài theo phân công của Bộ phận Đào tạo, bảo đảm đầy đủ, chính xác và đúng quy trình\\. \n\n#### **3\\.2\\. Chấm bài và cập nhật kết quả**\n\n- Giảng viên được phân công chấm bài có trách nhiệm thực hiện việc chấm bài theo đúng đáp án, thang điểm và quy định đánh giá của học phần, bảo đảm tính khách quan, công bằng và chính xác\\. \n\n- Kết quả kiểm tra phải được cập nhật đầy đủ lên Hệ thống Quản lý Đào tạo  **trong thời hạn tối đa 05 ngày làm việc kể từ ngày tổ chức kiểm tra**, trừ trường hợp có quy định khác của Bộ phận Quản lý Đào tạo\\. \n\n#### **3\\.3\\. Công bố kết quả kiểm tra**\n\n- Sau khi hoàn thành việc chấm bài và cập nhật điểm lên Hệ thống Quản lý Đào tạo, kết quả kiểm tra được tổng hợp theo quy định\\. \n\n- Giảng viên phụ trách học phần có trách nhiệm thông báo kết quả kiểm tra cho sinh viên theo quy định; đồng thời giải đáp các thắc mắc liên quan đến kết quả kiểm tra theo quy định hiện hành\\. \n\n- Bộ phận Đào tạo chịu trách nhiệm quản lý, lưu trữ kết quả kiểm tra và hồ sơ liên quan theo quy định về công tác khảo thí\\.\n\n\n\n# PHỤ LỤC 4 : Quy trình tổ chức thi kết thúc học phần\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n*\\(Áp dụng với các học phần Công nghệ thông tin, Quản trị kinh doanh số, Kỹ năng mềm thuộc Chương trình đào tạo liên kết giữa Học viện Công nghệ Bưu chính Viễn thông và doanh nghiệp Rikkeisoft\\)*\n\nQuy trình tổ chức thi kết thúc học phần\n\n## Công tác chuẩn bị kỳ thi kết thúc học phần\n\n***Lưu ý: Các bước trên sẽ có thông báo nhắc nhở tự động từ Base Assistant\\.***\n\n## Tổ chức thi kết thúc học phần\n\n- **Nhiệm vụ của Cán bộ coi thi**\n\n    Cán bộ coi thi có trách nhiệm thực hiện đầy đủ các nhiệm vụ sau:\n\n    - Có mặt tại khu vực tổ chức thi tối thiểu **15 phút trước thời gian bắt đầu ca thi** để chuẩn bị công tác tổ chức\\.;\n\n    - Tiếp nhận, kiểm tra danh sách sinh viên và hướng dẫn sinh viên vào phòng thi theo đúng [**danh sách dự t**](https://rikkeieducation.sg.larksuite.com/wiki/Tnh3w7YAeiMmbDk94WYlR4ljggb?from=from_copylink)[**hi**](https://rikkeieducation.sg.larksuite.com/wiki/Tnh3w7YAeiMmbDk94WYlR4ljggb?from=from_copylink)**;**\n\n    - Phổ biến [**nội quy phòng thi**](https://rikkeieducation.sg.larksuite.com/wiki/CSPUwBy7Zianr2k5QQtl6LmMgLd) và hướng dẫn sinh viên bật app RAIA trước khi truy cập làm bài;\n\n    - Tổ chức thu bài sau khi kết thúc thời gian làm bài; kiểm đếm, đối chiếu số lượng bài làm với số lượng sinh viên dự thi, bảo đảm đầy đủ và chính xác trước khi cho sinh viên rời phòng\\.;\n\n    - Tuyệt đối không sử dụng điện thoại trong phòng thi;\n\n    - Thực hiện báo cáo tình hình ca thi theo quy định và cập nhật đầy đủ thông tin theo yêu cầu của Tổ chức khảo thí\\.\n\n- **Nhiệm vụ của Cán bộ giám sát:**\n\n    Cán bộ giám sát có trách nhiệm thực hiện đầy đủ các nhiệm vụ sau:\n\n    - Có mặt tại khu vực tổ chức ca thi tối thiểu **15 phút trước thời gian bắt đầu ca kiểm tra** để phối hợp triển khai công tác tổ chức;\n\n    - Điều phối hoạt động của ca thi theo đúng kế hoạch đã được phê duyệt, bảo đảm kỳ thi diễn ra đúng quy trình khảo thí và đúng thời gian;\n\n    - Giám sát sinh viên trên hệ thống RAIA, bắt và xử lý vi phạm *\\(nếu có\\), *phối hợp với cán bộ coi thi xử lý các trường hợp phát sinh, lập biên bản theo quy định;\n\n    - Giám sát sinh viên trong thời gian tạm thời rời khỏi phòng thi \\(nếu được phép\\), bảo đảm việc di chuyển và quay trở lại phòng thi thực hiện đúng quy định;\n\n    - Tiếp nhận, tổng hợp các biên bản và hồ sơ liên quan của Hội đồng thi; chuyển về Bộ phận Quản lý Đào tạo theo đúng quy trình, đồng thời cập nhật đầy đủ lên [**danh sách dự t**](https://rikkeieducation.sg.larksuite.com/wiki/Tnh3w7YAeiMmbDk94WYlR4ljggb?from=from_copylink)[**hi**](https://rikkeieducation.sg.larksuite.com/wiki/Tnh3w7YAeiMmbDk94WYlR4ljggb?from=from_copylink)** **theo quy định\\. \n\n    - Thực hiện báo cáo tình hình ca kiểm tra theo quy định và cập nhật đầy đủ thông tin theo yêu cầu của Tổ chức khảo thí\\.\n\n## Chấm thi và công bố kết quả thi kết thúc học phần\n\n#### **3\\.1\\. Bàn giao bài thi**\n\n- Sau khi kết thúc buổi thi, bài thi của sinh viên được kiểm đếm, đối chiếu và bàn giao cho giảng viên chấm thi theo phân công của Bộ phận Quản lý Đào tạo, bảo đảm đầy đủ, chính xác và đúng quy trình quản lý bài thi\\. \n\n#### **3\\.2\\. Chấm thi và cập nhật kết quả**\n\n- Giảng viên được phân công chấm thi có trách nhiệm thực hiện việc chấm thi theo đúng đáp án, thang điểm và quy định đánh giá của học phần, bảo đảm tính khách quan, công bằng và chính xác\\. \n\n- Sau khi hoàn thành việc chấm thi, giảng viên có trách nhiệm cập nhật điểm lên Hệ thống Quản lý Đào tạo \\(QLĐT\\), đồng thời cập nhật **\"Trạng thái chấm bài\"** trên Base **Lịch thi PTIT** theo đúng tiến độ quy định, cụ thể: \n\n    - **Đối với hình thức thi dự án:** Điểm thi phải được cập nhật lên Hệ thống Quản lý Đào tạo \\(QLĐT\\) trong thời hạn tối đa **01 \\(một\\) ngày làm việc** kể từ ngày tổ chức thi\\. \n\n    - **Đối với hình thức thi có phần thi tự luận:** Điểm thi phải được hoàn thiện và cập nhật lên Hệ thống Quản lý Đào tạo \\(QLĐT\\) trong thời hạn tối đa **05 \\(năm\\) ngày làm việc** kể từ ngày tổ chức thi\\. \n\n- Kết quả chấm thi phải được cập nhật đầy đủ, bao gồm điểm số và nhận xét đánh giá theo đúng tiêu chí chấm theo đề thi đã được duyệt\\. Đối với các trường hợp bị trừ điểm hoặc xử lý đặc biệt ngoài thang điểm thông thường, giảng viên chấm thi phải ghi rõ căn cứ và lý do xử lý, bao gồm các trường hợp sau đây và các trường hợp phát sinh tương tự:\n\n    - Nghi ngờ sinh viên có hành vi gian lận trong quá trình làm bài thi; \n\n    - Phát hiện sinh viên sử dụng tài liệu, công cụ hoặc phần mềm tra cứu trái quy định;\n\n    - Sinh viên không ghi mã đề theo quy định;\n\n    - Sinh viên không cấp quyền truy cập hoặc không mở quyền đối với đường dẫn \\(link\\) bài làm phục vụ công tác chấm thi;\n\n    - Các trường hợp khác theo quy định của Phòng Đào tạo\\.\n\n#### **3\\.3\\. Kiểm duyệt kết quả thi**\n\n- Sau khi điểm thi được cập nhật lên Hệ thống Quản lý Đào tạo, giảng viên phụ trách học phần có trách nhiệm rà soát, kiểm duyệt kết quả của học phần tối đa **07 ngày làm việc** kể từ ngày tổ chức thi, nhằm bảo đảm tính đầy đủ và chính xác của dữ liệu\\. Trường hợp phát hiện sai sót hoặc có nội dung cần điều chỉnh, giảng viên phải kịp thời báo cáo Bộ phận Quản lý Đào tạo để xem xét và xử lý theo quy định\\. \n\n- Giám đốc Đào tạo thực hiện kiểm duyệt lần cuối đối với kết quả học phần trước khi Bộ phận Quản lý Đào tạo chính thức công bố điểm tới sinh viên\\. \n\n- Sau khi kết quả học phần đã được Giám đốc Đào tạo phê duyệt và Bộ phận Quản lý Đào tạo đã chính thức công bố điểm tới sinh viên, mọi đề nghị điều chỉnh điểm, phản ánh về sai sót hoặc các vấn đề phát sinh liên quan đến kết quả học phần phải được báo cáo trực tiếp tới Giám đốc Đào tạo và các bộ phận, cá nhân liên quan để xem xét và xử lý theo quy định\\. Bộ phận Quản lý Đào tạo và các cá nhân liên quan không được tự ý điều chỉnh kết quả học phần khi chưa có ý kiến phê duyệt của Giám đốc Đào tạo\\.\n\n#### **3\\.4\\. Công bố kết quả thi**\n\n- Sau khi hoàn thành các bước kiểm duyệt, Bộ phận Quản lý Đào tạo thực hiện công bố kết quả thi tới sinh viên thông qua Hệ thống Quản lý Đào tạo hoặc các kênh thông tin chính thức của chương trình đào tạo theo quy định\\. \n\n- Kết quả thi chỉ được công bố sau khi đã hoàn tất đầy đủ quy trình chấm thi, rà soát và phê duyệt theo quy định của công tác khảo thí\\.\n\n\n\n\n\n# PHỤ LỤC 5 : Quy trình phúc khảo\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n*\\(Áp dụng với các học phần Công nghệ thông tin, Quản trị kinh doanh số, Kỹ năng mềm và Ngoại ngữ thuộc Chương trình đào tạo liên kết giữa Học viện Công nghệ Bưu chính Viễn thông và doanh nghiệp Rikkeisoft\\)*\n\n#### **1\\. Quyền phúc khảo**\n\n- Sinh viên có quyền đề nghị phúc khảo đối với kết quả kiểm tra giữa học phần hoặc kết quả thi kết thúc học phần khi có căn cứ hoặc thắc mắc về kết quả đã được công bố\\. \n\n- Mỗi sinh viên **chỉ được gửi 01 yêu cầu phúc khảo đối với mỗi học phần** trong mỗi đợt công bố kết quả\\. \n\n#### **2\\. Trình tự, thủ tục đề nghị phúc khảo**\n\nSinh viên có nhu cầu phúc khảo thực hiện đầy đủ các bước sau:\n\n- Hoàn thiện \"Đơn phúc khảo bài thi\" theo mẫu: [\\[PTIT\\] \\- Đơn phúc khảo điểm\\.doc](https://rikkeieducation.sg.larksuite.com/wiki/Qiz1w1rRWijO11kQ7UTl5za9gib?from=from_copylink)\n\n- Điền đầy đủ thông tin tại [Biểu mẫu xin phúc khảo điểm](https://rikkeieducation.sg.larksuite.com/share/base/form/shrlgjFiGPG33HBpR2cPXlhj7zg) theo hướng dẫn của Bộ phận Quản lý Đào tạo\\. \n\n- Nộp bản cứng Đơn phúc khảo cho Bộ phận Quản lý Đào tạo thông qua cán bộ phụ trách khảo thí được phân công\\. \n\n- Bộ phận Quản lý Đào tạo tiếp nhận, kiểm tra tính hợp lệ của hồ sơ, phân công giảng viên thực hiện chấm phúc khảo và xử lý hồ sơ theo quy định\\. \n\n- Kết quả giải quyết phúc khảo được Bộ phận Quản lý Đào tạo trả lời cho sinh viên **trong thời hạn tối đa 05 \\(năm\\) ngày làm việc kể từ ngày tiếp nhận đầy đủ hồ sơ hợp lệ**, thông qua thông báo tự động trên hệ thống **LarkSuite**\\. \n\n#### **3\\. Trách nhiệm của cán bộ chấm phúc khảo**\n\nCán bộ được phân công chấm phúc khảo có trách nhiệm thực hiện các nội dung sau:\n\n- Tiếp nhận bài thi theo phân công của Bộ phận Quản lý Đào tạo và thực hiện chấm phúc khảo theo đúng đáp án, thang điểm và quy định đánh giá hiện hành, bảo đảm tính khách quan, công bằng và minh bạch\\. \n\n- Sau khi hoàn thành việc chấm phúc khảo, cập nhật kết quả chính thức lên Hệ thống Quản lý Đào tạo theo quy định\\. \n\n- Đồng thời cập nhật **Kết quả giải quyết** và **Trạng thái điểm** trên base [**Phúc khảo điểm thi**](https://rikkeieducation.sg.larksuite.com/wiki/HV0IwKjdDiEHXQkVdgzlCDTBg6g?table=tblXOQwXIR4REAY1&view=vewb9RUnFP&from=navigation)** **theo cú pháp thống nhất: **\"Điểm có thay đổi/Điểm không thay đổi\\. Lý do: …\" \\.**Nội dung ghi rõ kết quả xử lý và căn cứ điều chỉnh \\(nếu có\\)\\.\n\n- Chịu trách nhiệm về tính chính xác của kết quả phúc khảo và các thông tin được cập nhật trên hệ thống\\. \n\n#### **4\\. Thông báo kết quả phúc khảo**\n\n- Sau khi cán bộ chấm phúc khảo hoàn thành việc cập nhật **Kết quả giải quyết** trên **Base **[**Phúc khảo điểm thi**](https://rikkeieducation.sg.larksuite.com/wiki/HV0IwKjdDiEHXQkVdgzlCDTBg6g?table=tblXOQwXIR4REAY1&view=vewb9RUnFP&from=navigation), hệ thống **Base Assistant** sẽ tự động gửi thông báo kết quả đến sinh viên\\. \n\n- Kết quả phúc khảo sau khi được cập nhật và xác nhận là **kết quả cuối cùng**, được sử dụng làm căn cứ chính thức để quản lý điểm học phần và thực hiện các nghiệp vụ đào tạo liên quan\\.\n\n****\n\n\n\n# PHỤ LỤC 6 : Quy trình kiểm tra/ thi bổ sung, thi lại\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n*\\(Áp dụng với các học phần Công nghệ thông tin, Quản trị kinh doanh số, Kỹ năng mềm và Ngoại ngữ thuộc Chương trình đào tạo liên kết giữa Học viện Công nghệ Bưu chính Viễn thông và doanh nghiệp Rikkeisoft\\)*\n\n# **Kiểm tra bổ sung**\n\n### **1\\.1\\. Đối tượng được xem xét tham gia kiểm tra bổ sung**\n\nSinh viên được xem xét tham gia kiểm tra bổ sung trong các trường hợp sau:\n\n- Sinh viên không tham gia kiểm tra theo đúng lịch đã công bố được xem xét tổ chức kiểm tra bổ sung khi có đầy đủ đơn xin phép, lý do chính đáng và được phê duyệt theo quy định trên Hệ thống Quản lý Đào tạo\\.\n\n- Sinh viên gặp sự cố kỹ thuật, lỗi thiết bị hoặc các vấn đề khách quan phát sinh trong quá trình tham gia kiểm tra theo lịch chính thức, có biên bản xử lý sự việc lập bởi cán bộ giám sát thi\\. \n\n- Sinh viên thực hiện đăng ký tham gia kiểm tra bổ sung theo đúng hướng dẫn và thời hạn quy định của Bộ phận Quản lý Đào tạo\\. \n\n### **1\\.2\\. Tổ chức kiểm tra bổ sung**\n\n- Bộ phận Quản lý Đào tạo căn cứ nhu cầu đăng ký của sinh viên để lập kế hoạch tổ chức kiểm tra bổ sung;\n\n- Thời gian tổ chức kiểm tra bổ sung dự kiến sau **01 tuần** kể từ ngày thi chính thức;\n\n- Bộ phận Quản lý Đào tạo có trách nhiệm thông báo lịch kiểm tra bổ sung và danh sách sinh viên đủ điều kiện tham gia kiểm tra bổ sung trước thời điểm tổ chức tối thiểu **02 \\(hai\\) ngày**\\. \n\n- Căn cứ kế hoạch tổ chức, Bộ phận Quản lý Đào tạo thực hiện phân công cán bộ coi thi/ kiểm tra, cán bộ chấm thi/ kiểm tra, tạo ca thi/ kiểm tra và triển khai các công việc liên quan theo đúng quy trình khảo thí hiện hành\\. \n\n- Hình thức kiểm tra bổ sung được thực hiện tương đương với hình thức kiểm tra chính thức của học phần, trừ trường hợp có quyết định khác của Bộ phận Quản lý Đào tạo,\n\n# **Thi bổ sung/Thi lại**\n\n## **2\\.1\\. Đối tượng được đăng ký thi bổ sung/thi lại**\n\nSinh viên được xem xét đăng ký thi bổ sung hoặc thi lại trong các trường hợp sau:\n\n- Sinh viên đủ điều kiện tham gia thực hiện dự án, bảo vệ dự án hoặc tham gia thi kết thúc học phần nhưng kết quả học phần đạt **dưới 50/100 điểm**\\. \n\n- Sinh viên vắng mặt trong ngày tổ chức thi chính thức và được xem xét theo quy định\\. \n\n- Sinh viên gặp sự cố kỹ thuật, lỗi thiết bị trong ngày thi chính thức có xác nhận của cán bộ coi thi, cán bộ giám sát hoặc bộ phận phụ trách khảo thí\\. \n\nSinh viên có trách nhiệm thực hiện đăng ký thi bổ sung/thi lại theo đúng hướng dẫn của Bộ phận Quản lý Đào tạo và hoàn thành đầy đủ các nghĩa vụ liên quan \\(nếu có\\) theo quy định hiện hành\\.\n\n## **2\\.2\\. Các trường hợp không được ghi nhận đăng ký thi bổ sung/thi lại**\n\nBộ phận Quản lý Đào tạo không tiếp nhận hoặc không ghi nhận đăng ký thi bổ sung/thi lại đối với các trường hợp sau:\n\n- Sinh viên đăng ký sau thời hạn thông báo của Bộ phận Quản lý Đào tạo\\. \n\n- Sinh viên vi phạm quy chế thi trong ngày thi chính thức và bị xử lý theo quy định\\. \n\n- Sinh viên không đáp ứng đầy đủ các điều kiện tham gia thi bổ sung/thi lại theo quy định\\. \n\n# **Quy định về lệ phí thi lại**\n\n## **3\\.1\\. Các trường hợp áp dụng lệ phí thi lại**\n\nSinh viên phải thực hiện nghĩa vụ đóng lệ phí thi lại trong các trường hợp sau:\n\n- Sinh viên đủ điều kiện tham gia thi nhưng không tham dự kỳ thi kết thúc học phần theo lịch đã công bố sẽ được xem là không tham gia thi\\. Trường hợp có nhu cầu thi lại, sinh viên phải thực hiện đăng ký thi lại và đóng lệ phí theo quy định hiện hành\\.\n\n- Sinh viên có kết quả học phần **dưới 50/100 điểm** và đăng ký tham gia thi lại để cải thiện kết quả học tập\\. \n\n- Sinh viên vắng mặt không có lý do chính đáng hoặc không được phê duyệt trong ngày thi chính thức và đăng ký thi bổ sung/thi lại theo quy định\\. \n\n- Mức lệ phí thi lại áp dụng: **300\\.000 đồng/lần/học phần**\\. \n\nSinh viên có trách nhiệm chủ động thực hiện đăng ký thi lại đúng đối tượng, đúng thời gian quy định và hoàn thành đầy đủ nghĩa vụ lệ phí theo thông báo của Bộ phận Quản lý Đào tạo\\.\n\nBộ phận Quản lý Đào tạo không tiếp nhận, không ghi nhận kết quả đăng ký hoặc không giải quyết hoàn trả lệ phí đối với các trường hợp sinh viên vi phạm quy định về đăng ký thi lại, bao gồm các trường hợp sau đây:\n\n- Sinh viên thực hiện đăng ký thi lại sau thời hạn đăng ký được Bộ phận Quản lý Đào tạo thông báo;\n\n- Sinh viên tự ý đăng ký thi lại khi không thuộc đối tượng, không đáp ứng điều kiện hoặc chưa được Bộ phận Quản lý Đào tạo xác nhận đủ điều kiện tham gia;\n\n- Sinh viên đăng ký thi lại đối với các trường hợp bị xử lý do vi phạm quy chế thi trong kỳ thi chính thức;\n\n- Sinh viên cung cấp thông tin không chính xác hoặc không thực hiện đầy đủ các thủ tục theo hướng dẫn của Bộ phận Quản lý Đào tạo\\.\n\n## **3\\.2\\. Các trường hợp không áp dụng lệ phí thi lại**\n\nSinh viên được miễn lệ phí thi lại trong các trường hợp sau:\n\n- Sinh viên gặp sự cố kỹ thuật, lỗi thiết bị trong quá trình tham gia thi chính thức và có biên bản xác nhận sự việc theo quy định\\. \n\n- Sinh viên đã gửi **Đơn xin hoãn thi** đến Bộ phận Quản lý Đào tạo tối thiểu **03 \\(ba\\) ngày trước ngày thi**, nêu rõ lý do chính đáng và được Bộ phận Quản lý Đào tạo phê duyệt\\. Đối với các trường hợp bất khả kháng xảy ra trong vòng 0\\-3 ngày trước ngày thi, sinh viên cần chủ động liên hệ ngay với Phòng Quản lý Đào tạo để được hướng dẫn làm thủ tục**\\.**\n\n## **Tổ chức thi bổ sung/thi lại**\n\n- Bộ phận Quản lý Đào tạo căn cứ nhu cầu đăng ký của sinh viên để lập kế hoạch tổ chức kiểm tra hoặc thi bổ sung, thi lại;\n\n- Thời gian tổ chức kiểm tra hoặc thi bổ sung, thi lại dự kiến sau **02 tuần** kể từ ngày thi chính thức;\n\n- Kỳ thi bổ sung/thi lại được tổ chức định kỳ, dự kiến vào **thứ Bảy hằng tuần** hoặc theo kế hoạch sắp xếp của Bộ phận Quản lý Đào tạo\\. \n\n- Bộ phận Quản lý Đào tạo có trách nhiệm tổng hợp danh sách sinh viên đăng ký thi bổ sung/thi lại, kiểm tra điều kiện tham gia và thông báo lịch thi đến sinh viên trước thời điểm tổ chức tối thiểu **02 \\(hai\\) ngày**\\. \n\n- Hình thức thi bổ sung/thi lại được áp dụng tương đương với hình thức thi chính thức của học phần, bảo đảm phù hợp với yêu cầu đánh giá của môn học\\. \n\n# PHỤ LỤC 7 : Quy trình khảo thí ngoại ngữ chương trình đào tạo Riki, Jaxtina phụ trách\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n*\\(Áp dụng cho các học phần Ngoại ngữ Khoá K24 và K25 chương trình đào tạo liên kết Học viện Công nghệ Bưu chính Viễn thông và doanh nghiệp Rikkeisoft\\)*\n\n## Đánh giá học phần\n\n**1\\.1 Chương trình đào tạo Tiếng Nhật Riki phụ trách**\n\n**a\\) Cơ cấu và cách tính điểm học phần**\n\n- Cấu trúc điểm học phần \\(thang 100 điểm\\)\n\n- Điểm học phần **từ 70/100 điểm trở lên** được tính là **qua môn**\\.\n\n- Điểm học phần **dưới 70/100 điểm** được tính là **trượt môn** và được **đăng ký thi lại 01 lần/ học phần** \\(do Bộ phận Quản lý Đào tạo tổ chức\\)\\.\n\n**b\\) Điều kiện dự thi kết thúc học phần**\n\n**Trường hợp 1:** \n\n\\- Tỷ lệ chuyên cần học Offline đạt trên 90%; \n\n\\- Sinh viên có điểm Trung bình các bài kiểm tra \\(BCC, minitest, thi giữa kỳ\\) từ 70 điểm trở lên\\. \n\n\\- Không yêu cầu xét thêm tỷ lệ xem video và hoàn thành bài tập \\(BTVN\\) \n\n**Trường hợp 2: **\n\n\\- Tỷ lệ chuyên cần học Offline đạt trên 90%; \n\n\\- Sinh viên không đạt điểm Trung bình các bài kiểm tra 70 điểm nhưng tỷ lệ xem video và hoàn thành bài tập \\(BTVN\\) đạt trên 90%\n\n\n\n**1\\.2 Chương trình đào tạo Tiếng Anh Jaxtina phụ trách**\n\n**a\\) Điều kiện tính qua môn học phần Tiếng Anh**\n\n- Điều 1: Đạt kết quả thi cuối kỳ theo tiêu chuẩn đầu ra theo cấp độ\n\n- Điều 2: Tham gia 100% các bài kiểm tra và thi kết thúc học phần\n\n- Các cấp độ tương đương như sau: \n\n- Các trường hợp sinh viên  vi phạm quy định hai điều trên nằm trong danh sách học lại\\.\n\n**b\\) Điều kiện dự thi kết thúc học phần**\n\n- Các cấp độ tương đương như sau: \n\n- Các trường hợp sinh viên vi phạm các chỉ số trên nằm trong danh sách mất tư cách tham gia thi kết thúc học phần môn Tiếng Anh\\.\n\n## Quy trình thi / Kiểm tra : [\\[PTIT\\] QUY TRÌNH KHẢO THÍ NGOẠI NGỮ KHOÁ K24, K25](https://m4beo6fqhrl.sg.larksuite.com/docx/SMh4dXURIotKI3x1aTHlK17ugia?from=from_copylink)\n\n\n\n# PHỤ LỤC 8 : Khảo thí các học phần kỹ năng mềm\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n*\\(Áp dụng cho các học phần Kỹ năng mềm Khoá K24 và K25 chương trình đào tạo liên kết Học viện Công nghệ Bưu chính Viễn thông và doanh nghiệp Rikkeisoft\\)*\n\n## Cơ cấu và cách tính điểm học phần\n\nĐiểm học phần Kỹ năng mềm được đánh giá theo thang điểm 100\\. Sinh viên được công nhận **đạt học phần** khi điểm học phần đạt từ **50 điểm trở lên**\\. \n\nĐiểm học phần được xác định dựa trên kết quả **thi kết thúc học phần**, chiếm **100% tổng điểm học phần**\\.\n\n## Thành phần điểm trong đánh giá học phần\n\nĐiểm thi kết thúc học phần Kỹ năng mềm được đánh giá theo thang điểm 100, chiếm 100% tổng điểm học phần\\.\n\n- Tùy theo nội dung đào tạo của từng học phần, kỳ thi kết thúc học phần Kỹ năng mềm có thể áp dụng một hoặc kết hợp nhiều hình thức sau: Trắc nghiệm, Vấn đáp, Sản phẩm/thực hành, Xử lý tình huống;\n\n- Thời gian thi được quy định phù hợp với từng hình thức thi và được công bố trong kế hoạch tổ chức thi của bộ phận Quản lý đào tạo; \n\n- Sinh viên phải có mặt đúng giờ, tuân thủ quy định thi và thực hiện đầy đủ các yêu cầu xác thực thông tin khi tham gia thi\\.\n\n## \n\n# PHỤ LỤC 9 : Khen thưởng và xử lý vi phạm\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n## Khen thưởng\n\n- Các cá nhân và đơn vị thực hiện tốt công tác khảo thí sẽ được xem xét khen thưởng theo quy định của đơn vị đào tạo\\.\n\n- Việc khen thưởng được thực hiện theo từng học kỳ, căn cứ vào kết quả triển khai công tác khảo thí kết thúc học phần và mức độ hoàn thành nhiệm vụ của các cá nhân, đơn vị liên quan\\.\n\n- Giám đốc Đào tạo đề xuất danh sách khen thưởng trình Ban lãnh đạo xem xét, quyết định\\.\n\n### Khen thưởng xét theo học kỳ\n\nCăn cứ vào mức độ đóng góp trong công tác khảo thí, các cá nhân và đơn vị có thể được xem xét khen thưởng theo các mức sau:\n\n### Khen thưởng đột xuất\n\nCá nhân có thành tích nổi bật trong công tác khảo thí như phát hiện và xử lý vi phạm quy chế thi, đề xuất cải tiến quy trình khảo thí hoặc hỗ trợ xử lý sự cố trong kỳ thi có thể được xem xét **khen thưởng đột xuất** theo quyết định của Ban lãnh đạo\\.\n\n### Hình thức khen thưởng\n\n- Biểu dương trong các cuộc họp chuyên môn hoặc tổng kết học kỳ;\n\n- Thưởng bằng tiền hoặc hiện vật theo quy định tài chính của đơn vị\\.\n\n### Quy tình xét duyệt\n\n## Xử lý vi phạm \n\n### Đối với sinh viên\n\n#### a\\) Lập biên bản vi phạm đối với những thí sinh:\n\n- Có hành vi quay cóp bài, trao đổi, bàn bạc sử dụng tài liệu giấy, công cụ số \\(AI, ChatGPT, …\\) để làm bài;\n\n- Nhờ người khác thi hoặc làm bài hộ;\n\n- Có hành vi gây rối, mất trật tự, có thái độ chống đối CBCT;\n\n- Thí sinh bị lập biên bản phải nộp bài thi, đề thi, giấy nháp cho CBCT và ra khỏi phòng thi ngay sau khi có quyết định\\.\n\n#### b\\) Hủy bỏ kết quả thi đối với những thí sinh: \n\n- Để người khác thi thay hoặc làm bài thay cho người khác dưới mọi hình thức; sửa chữa, thêm bớt vào bài làm sau khi đã nộp bài; dùng bài của người khác để nộp, lấy thông tin liên quan tới đề thi dưới mọi hình thức\\. Bộ phận Quản lý Đào tạo quyết định hủy bỏ kết quả thi\\.\n\n- Thí sinh bị lập biên bản và hủy kết quả thi tại phòng thi sẽ bị điểm 0 \\(không\\) bài thi đó và không được đăng ký thi lại \\(đối với các học phần có tổ chức thi lại\\)\\.\n\n- Đối với sinh viên vi phạm quy định và bị hủy kết quả bài thi, cán bộ giám sát có trách nhiệm cập nhật điểm bài thi đó về 0đ trên hệ thống QLĐT theo quy định\\.\n\n\n\n### Đối với cán bộ tham gia công tác khảo thí\n\nCán bộ, giảng viên tham gia các khâu của công tác khảo thí \\(ra đề, coi thi, chấm thi, tổng hợp điểm\\) phải thực hiện đúng quy định\\. Trường hợp vi phạm sẽ bị xem xét xử lý tùy theo mức độ:\n\n#### a\\) Vi phạm trong công tác ra đề thi, tạo ca thi\n\n- Ra đề thi không đúng nội dung học phần hoặc chuẩn đầu ra;\n\n- Không nộp đề thi đúng thời hạn theo yêu cầu;\n\n- Làm lộ đề thi hoặc vi phạm quy định bảo mật đề thi;\n\n- Tạo sai, không tạo ca thi trên hệ thống đúng thời hạn thông báo, assgin không đúng đề kiểm tra/ đề thi được bàn giao\\.\n\nTùy theo mức độ vi phạm, cá nhân có thể bị **nhắc nhở, phê bình hoặc không được phân công tham gia công tác ra đề thi trong các kỳ tiếp theo**\\.\n\n#### b\\) Vi phạm trong công tác coi thi\n\n- Không có mặt đúng giờ theo phân công coi thi;\n\n- Không thực hiện đầy đủ nhiệm vụ coi thi;\n\n- Thiếu trách nhiệm trong giám sát phòng thi;\n\n- Không lập biên bản khi phát hiện vi phạm quy chế thi;\n\n- Có hành vi bao che hoặc tiếp tay cho vi phạm trong phòng thi\\.\n\nTùy theo mức độ vi phạm, cán bộ coi thi có thể bị **nhắc nhở, phê bình, không phân công coi thi trong các kỳ thi tiếp theo hoặc xử lý theo quy định của đơn vị**\\.\n\n#### c\\) Vi phạm trong công tác chấm thi\n\n- Chấm thi không đúng đáp án hoặc thang điểm;\n\n- Chấm thi thiếu khách quan, thiếu công bằng;\n\n- Chậm trễ trong việc hoàn thành chấm thi;\n\n- Làm mất hoặc làm hỏng bài thi\\.\n\nTùy theo mức độ vi phạm, giảng viên có thể bị **nhắc nhở, yêu cầu chấm lại bài thi, hoặc không được phân công chấm thi trong các kỳ thi tiếp theo**\\.\n\n#### d\\) Vi phạm trong công tác quản lý điểm\n\n- Nhập sai điểm hoặc chỉnh sửa điểm không đúng quy định;\n\n- Công bố điểm khi chưa được phê duyệt;\n\n- Làm lộ thông tin điểm thi chưa công bố\\.\n\nCác trường hợp vi phạm sẽ bị **xem xét xử lý theo quy định của đơn vị đào tạo**\\.\n\n# PHỤ LỤC 10 : **QUY ĐỊNH HỌP ĐÁNH GIÁ TÌNH HÌNH KHẢO THÍ ĐỊNH KỲ**\n\n*\\(Ban hành kèm theo Quyết định số \\.\\.\\./QĐ\\-RE ngày  tháng  năm 2026\\)*\n\n### **Mục đích**\n\nCuộc họp đánh giá tình hình khảo thí định kỳ được tổ chức nhằm:\n\n- Rà soát, đánh giá tình hình triển khai công tác khảo thí trong kỳ/tháng, bao gồm các hoạt động liên quan đến xây dựng đề thi, tổ chức kiểm tra, thi, công tác coi thi, chấm thi, nhập điểm, phúc khảo và công bố kết quả\\. \n\n- Đánh giá mức độ tuân thủ các quy trình, quy định khảo thí hiện hành; kịp thời phát hiện, phân tích và xử lý các vấn đề phát sinh trong quá trình triển khai\\. \n\n- Cập nhật, phổ biến các thay đổi về quy trình, quy định hoặc hướng dẫn nghiệp vụ khảo thí nhằm đảm bảo các đơn vị, cá nhân liên quan thực hiện thống nhất\\. \n\n- Thống nhất phương án triển khai, kế hoạch cải tiến và các biện pháp phòng ngừa nhằm nâng cao chất lượng, tính minh bạch và hiệu quả của công tác khảo thí trong các kỳ tiếp theo\\.\n\n### **Thời gian tổ chức**\n\n- Bộ phận Quản lý Đào tạo tổ chức họp đánh giá tình hình khảo thí định kỳ **01 \\(một\\) lần/tháng, dự kiến tuần thứ 2 hàng tháng, thời lượng dự kiến 30 phút/ 01 phiên**\\.\n\n- Thời gian cụ thể do Bộ phận Quản lý Đào tạo chủ trì sắp xếp và thông báo đến các cá nhân, đơn vị liên quan\n\n- Trường hợp cần thiết, Bộ phận Quản lý Đào tạo có thể tổ chức các cuộc họp đột xuất để xử lý các nội dung phát sinh ngoài kế hoạch\\.\n\n### **Nội dung họp định kỳ**\n\n**3\\.1\\. Phổ biến, đào tạo và cập nhật quy trình khảo thí**\n\n- Tổ chức training cho giảng viên mới, trợ giảng mới và cán bộ Bộ phận Quản lý Đào tạo mới về quy trình khảo thí hiện hành\\. \n\n- Phổ biến các quy định mới, cập nhật quy trình hoặc hướng dẫn xử lý các tình huống phát sinh trong quá trình tổ chức khảo thí của tháng vừa qua\\. \n\n- Thống nhất cách triển khai nhằm bảo đảm việc thực hiện khảo thí đồng bộ giữa các bộ phận\\. \n\n**3\\.2\\. Rà soát và xử lý các vấn đề tồn đọng**\n\n- Tổng hợp các vấn đề, lỗi hoặc sự cố phát sinh trong công tác ra đề, tổ chức thi, coi thi, chấm thi, nhập điểm và công bố kết quả\\. \n\n- Thống nhất phương án xử lý và thời hạn hoàn thành đối với từng nội dung còn tồn đọng\\. \n\n### **Họp xử lý sự cố khảo thí khẩn cấp**\n\n- Trường hợp phát sinh các sự cố khảo thí nghiêm trọng như: lộ đề thi, lỗi hệ thống ảnh hưởng đến kỳ thi, sai sót nghiêm trọng trong công tác tổ chức thi, vi phạm quy chế có ảnh hưởng lớn hoặc các tình huống khác có nguy cơ ảnh hưởng đến tính công bằng và chất lượng kỳ thi, Bộ phận Quản lý Đào tạo** phải tổ chức họp ngay**, không chờ đến cuộc họp định kỳ\\. \n\n- Thành phần tham dự gồm các cá nhân, phòng ban có liên quan trực tiếp đến vụ việc\\. \n\n- Cuộc họp có trách nhiệm: \n\n    - Đánh giá mức độ ảnh hưởng của sự cố; \n\n    - Thống nhất phương án xử lý ngay trong thời gian sớm nhất; \n\n    - Phân công trách nhiệm thực hiện; \n\n    - Đề xuất biện pháp phòng ngừa nhằm tránh tái diễn trong các kỳ khảo thí tiếp theo\\.\n\n    \n\n# PHỤ LỤC 11 : **QUY ĐỊNH KHẢO THÍ DÀNH CHO SINH VIÊN**\n\n### [PHỤ LỤC : Quy định khảo thí dành cho Sinh viên Rikkei Education](https://rikkeieducation.sg.larksuite.com/docx/Ex3OdJ5baooJlKxm9qNludIkgkc?from=from_copylink)\n\n"
+  },
+  "lark-pdf": {
+    "id": "lark-pdf",
+    "title": "Cẩm nang sử dụng Lark .pdf",
+    "name": "Cẩm nang sử dụng Lark Suite",
+    "type": "PDF",
+    "size": "3.5 MB",
+    "pages": "13 trang",
+    "orig_file": "Cẩm nang sử dụng Lark .pdf",
+    "rel_path": "docs/Cẩm nang sử dụng Lark .pdf",
+    "desc": "Hướng dẫn thực hành thao tác trên ứng dụng Lark: Nhắn tin, Calendar, Chấm công, Bổ sung công, Nghỉ phép, Email & Meeting."
+  },
+  "phong-thi-pdf": {
+    "id": "phong-thi-pdf",
+    "title": "NỘI QUY PHÒNG THI.pdf",
+    "name": "Nội quy phòng thi & Chế tài kỷ luật",
+    "type": "PDF",
+    "size": "157 KB",
+    "pages": "2 trang",
+    "orig_file": "NỘI QUY PHÒNG THI.pdf",
+    "rel_path": "docs/NỘI QUY PHÒNG THI.pdf",
+    "desc": "Quy định 9 điều nội quy phòng thi và 5 điều khoản chế tài xử lý vi phạm kỷ luật đối với thí sinh."
+  },
+  "tbbs-pdf": {
+    "id": "tbbs-pdf",
+    "title": "TBBS VV Cập nhật phụ lục 1_TB01.2026.pdf",
+    "name": "Thông báo 01/2026/TBBS-RE (Điểm R-Point)",
+    "type": "PDF",
+    "size": "278 KB",
+    "pages": "4 trang",
+    "orig_file": "TBBS VV Cập nhật phụ lục 1_TB01.2026.pdf",
+    "rel_path": "docs/TBBS VV Cập nhật phụ lục 1_TB01.2026.pdf",
+    "desc": "Thông báo bổ sung cập nhật Phụ lục 1 về thang điểm 120 điểm R-Point và 4 chuẩn điều kiện dự thi cuối học phần."
+  },
+  "sinh-vien-jpg": {
+    "id": "sinh-vien-jpg",
+    "title": "Nội quy sinh viên.jpg",
+    "name": "Nội quy sinh viên Rikkei Education",
+    "type": "JPG",
+    "size": "283 KB",
+    "pages": "Ảnh gốc ban hành",
+    "orig_file": "Nội quy sinh viên.jpg",
+    "rel_path": "docs/Nội quy sinh viên.jpg",
+    "desc": "Bản ảnh ban hành chính thức về 4 khối quy tắc: Trang phục, Tác phong, Ý thức, An toàn và Kỷ luật dành cho sinh viên."
+  },
+  "rank-xlsx": {
+    "id": "rank-xlsx",
+    "title": "[RE] Tiêu chí xếp loại Rank GV_TG.xlsx",
+    "name": "Bảng tiêu chí xếp loại Rank GV - TG",
+    "type": "XLSX",
+    "size": "17.2 KB",
+    "pages": "3 Sheets",
+    "orig_file": "[RE] Tiêu chí xếp loại Rank GV_TG.xlsx",
+    "rel_path": "docs/[RE] Tiêu chí xếp loại Rank GV_TG.xlsx",
+    "desc": "Bảng tính Excel chính thức chứa ma trận 8 cấp bậc Rank (Rank 1 - 8), bảng trọng số 5 nhóm năng lực và kết quả lớp học."
+  }
+};
+
+let currentRawDocId = null;
+
+// Tab Map Definition
+const tabTitleMap = {
+  'dashboard': 'Tổng Quan Dashboard',
+  'tools': 'Bộ Công Cụ Tính Toán',
+  'raw-docs': 'Tài Liệu Gốc Ban Hành',
+  'rpoint': 'Quy Định Điểm R-Point & ĐK Thi',
+  'khao-thi': 'Quy Trình Khảo Thí PTIT',
+  'rank-gvtg': 'Khung Rank GV - TG',
+  'onboarding': 'Onboarding & Cơ Chế Nhân Sự',
+  'lark-guide': 'Cẩm Nang Lark Suite',
+  'phong-thi': 'Nội Quy Phòng Thi',
+  'sinh-vien': 'Nội Quy Sinh Viên'
+};
+
+/**
+ * Switch Tab Function
+ * Accessible both via nav click and inline onclick="switchTab('...')"
+ */
+function switchTab(tabId) {
+  if (!tabId) return;
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+  const pageTitle = document.getElementById('current-page-title');
+
+  // Update Nav Active Class
+  navItems.forEach(item => {
+    const itemTab = item.getAttribute('data-tab');
+    if (itemTab === tabId) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+
+  // Update Panes Visibility
+  tabPanes.forEach(pane => {
+    if (pane.id === `pane-${tabId}`) {
+      pane.classList.add('active');
+    } else {
+      pane.classList.remove('active');
+    }
+  });
+
+  // Update Title in Topbar
+  if (pageTitle && tabTitleMap[tabId]) {
+    pageTitle.textContent = tabTitleMap[tabId];
+  }
+
+  // Auto-close sidebar on mobile
+  const sidebar = document.getElementById('sidebar');
+  if (sidebar && window.innerWidth <= 768) {
+    sidebar.classList.remove('open');
+  }
+
+  // Smooth scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Expose switchTab globally for inline HTML onclick attributes
+window.switchTab = switchTab;
+
+/**
+ * Initialize Event Listeners
+ */
+function initNavigation() {
+  const navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tabId = item.getAttribute('data-tab');
+      switchTab(tabId);
+    });
+  });
+
+  // Mobile Toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const sidebar = document.getElementById('sidebar');
+  if (mobileToggle && sidebar) {
+    mobileToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+  }
+
+  // Theme Toggle
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  let isDark = false;
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      isDark = !isDark;
+      if (isDark) {
+        document.body.classList.remove('theme-light');
+        document.body.classList.add('theme-dark');
+      } else {
+        document.body.classList.remove('theme-dark');
+        document.body.classList.add('theme-light');
+      }
+    });
+  }
+
+  // Global Search Filter
+  const globalSearch = document.getElementById('global-search');
+  const clearSearchBtn = document.getElementById('clear-search');
+  if (globalSearch) {
+    globalSearch.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      if (clearSearchBtn) {
+        if (query.length > 0) clearSearchBtn.classList.remove('hidden');
+        else clearSearchBtn.classList.add('hidden');
+      }
+      filterPortalContent(query);
+    });
+  }
+
+  if (clearSearchBtn && globalSearch) {
+    clearSearchBtn.addEventListener('click', () => {
+      globalSearch.value = '';
+      clearSearchBtn.classList.add('hidden');
+      filterPortalContent('');
+    });
+  }
+}
+
+function filterPortalContent(query) {
+  const elementsToFilter = document.querySelectorAll('.doc-card, .portal-card, .tool-card, .km-card, .summary-card, .vflow-branch-card, .eco-item');
+  if (!query) {
+    elementsToFilter.forEach(el => { el.style.display = ''; });
+    return;
+  }
+
+  elementsToFilter.forEach(el => {
+    const text = el.innerText.toLowerCase();
+    if (text.includes(query)) {
+      el.style.display = '';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+}
+
+/**
+ * Raw Document Viewer Logic (Direct File Embeddings)
+ */
+function initRawDocsViewer() {
+  renderRawDocsMenu();
+  const firstKey = Object.keys(rawDocsData)[0];
+  if (firstKey) {
+    selectRawDoc(firstKey);
+  }
+}
+
+function renderRawDocsMenu() {
+  const menuContainer = document.getElementById('raw-doc-menu');
+  if (!menuContainer) return;
+
+  menuContainer.innerHTML = '';
+  
+  Object.keys(rawDocsData).forEach(docId => {
+    const doc = rawDocsData[docId];
+    const item = document.createElement('div');
+    item.className = `raw-doc-item ${docId === currentRawDocId ? 'active' : ''}`;
+    item.id = `doc-menu-item-${docId}`;
+    item.onclick = () => selectRawDoc(docId);
+
+    const typeClass = doc.type.toLowerCase();
+    item.innerHTML = `
+      <div class="doc-icon ${typeClass}">
+        <i class="fa-solid ${getDocIconClass(doc.type)}"></i>
+      </div>
+      <div class="doc-info">
+        <span class="doc-name">${doc.title}</span>
+        <span class="doc-meta"><span class="badge badge-primary">${doc.type}</span> • ${doc.size}</span>
+      </div>
+    `;
+    menuContainer.appendChild(item);
+  });
+}
+
+function getDocIconClass(type) {
+  if (type === 'PDF') return 'fa-file-pdf';
+  if (type === 'XLSX') return 'fa-file-excel';
+  if (type === 'MD') return 'fa-file-code';
+  if (type === 'JPG') return 'fa-file-image';
+  return 'fa-file-lines';
+}
+
+function selectRawDoc(docId) {
+  currentRawDocId = docId;
+  const doc = rawDocsData[docId];
+  if (!doc) return;
+
+  document.querySelectorAll('.raw-doc-item').forEach(el => el.classList.remove('active'));
+  const activeItem = document.getElementById(`doc-menu-item-${docId}`);
+  if (activeItem) activeItem.classList.add('active');
+
+  const badge = document.getElementById('viewer-badge');
+  const title = document.getElementById('viewer-title');
+  const meta = document.getElementById('viewer-meta');
+  const downloadBtn = document.getElementById('btn-download-raw');
+  const frameWrapper = document.getElementById('raw-doc-content');
+
+  const typeLower = doc.type.toLowerCase();
+  if (badge) {
+    badge.textContent = doc.type;
+    badge.className = `viewer-type-badge ${typeLower}`;
+  }
+  if (title) title.textContent = doc.title;
+  if (meta) meta.textContent = `Định dạng: ${doc.type} | Dung lượng: ${doc.size} | Quy mô: ${doc.pages || ''} | File: ${doc.orig_file}`;
+
+  if (downloadBtn) {
+    downloadBtn.href = doc.rel_path;
+    downloadBtn.setAttribute('download', doc.orig_file);
+  }
+
+  // DIRECT EMBEDDING
+  if (frameWrapper) {
+    if (doc.type === 'PDF') {
+      frameWrapper.innerHTML = `
+        <iframe src="${doc.rel_path}" class="raw-pdf-frame" title="${doc.title}">
+          <p>Trình duyệt không hỗ trợ iframe PDF. <a href="${doc.rel_path}" target="_blank">Bấm vào đây để mở trực tiếp file PDF</a>.</p>
+        </iframe>
+      `;
+    } else if (doc.type === 'JPG') {
+      frameWrapper.innerHTML = `
+        <div class="raw-image-container">
+          <img src="${doc.rel_path}" class="raw-image-view" alt="${doc.title}">
+        </div>
+      `;
+    } else if (doc.type === 'MD') {
+      if (doc.raw_text && typeof marked !== 'undefined') {
+        frameWrapper.innerHTML = `
+          <div class="raw-formatted-doc">
+            ${marked.parse(doc.raw_text)}
+          </div>
+        `;
+      } else {
+        frameWrapper.innerHTML = `
+          <div class="raw-formatted-doc">
+            <pre style="white-space: pre-wrap; font-family: monospace;">${doc.raw_text || ''}</pre>
+          </div>
+        `;
+      }
+    } else if (doc.type === 'XLSX') {
+      frameWrapper.innerHTML = `
+        <div class="raw-excel-panel">
+          <i class="fa-solid fa-file-excel raw-excel-icon"></i>
+          <h3 style="margin-bottom: 8px;">${doc.title}</h3>
+          <p style="color: var(--text-muted); max-width: 550px; margin-bottom: 20px;">
+            ${doc.desc}
+          </p>
+          <div style="display: flex; gap: 10px;">
+            <a href="${doc.rel_path}" download="${doc.orig_file}" class="btn btn-primary">
+              <i class="fa-solid fa-download"></i> Tải File Excel Gốc (.xlsx)
+            </a>
+            <button onclick="switchTab('rank-gvtg')" class="btn btn-outline">
+              <i class="fa-solid fa-table"></i> Xem Bảng Tính Trực Quan
+            </button>
+          </div>
+        </div>
+      `;
+    }
+  }
+}
+
+function openOriginalFileInNewTab() {
+  const doc = rawDocsData[currentRawDocId];
+  if (!doc) return;
+  window.open(doc.rel_path, '_blank');
+}
+
+window.selectRawDoc = selectRawDoc;
+window.openOriginalFileInNewTab = openOriginalFileInNewTab;
+
+/**
+ * CALCULATOR 1: R-POINT
+ */
+function calculateRPoint() {
+  const absenceEl = document.getElementById('calc-rp-absence');
+  const hwEl = document.getElementById('calc-rp-homework');
+  const elearnEl = document.getElementById('calc-rp-elearning');
+  const violEl = document.getElementById('calc-rp-violations');
+  const bStudyEl = document.getElementById('calc-rp-bonus-study');
+  const bCadreEl = document.getElementById('calc-rp-bonus-cadre');
+
+  if (!absenceEl || !hwEl) return;
+
+  const absencePercent = parseFloat(absenceEl.value) || 0;
+  const hwIncompletePercent = parseFloat(hwEl.value) || 0;
+  const elearningOption = parseInt(elearnEl ? elearnEl.value : 0) || 0;
+  const violationOption = parseInt(violEl ? violEl.value : 0) || 0;
+  const bonusStudy = Math.min(10, Math.max(0, parseFloat(bStudyEl ? bStudyEl.value : 0) || 0));
+  const bonusCadre = Math.min(10, Math.max(0, parseFloat(bCadreEl ? bCadreEl.value : 0) || 0));
+
+  const scoreAttendance = Math.max(0, 20 - (absencePercent * 2));
+  const scoreHomework = Math.max(0, 20 - (hwIncompletePercent * 2));
+
+  let scoreElearning = 20;
+  if (elearningOption === 1) scoreElearning = 15;
+  else if (elearningOption === 2) scoreElearning = 10;
+  else if (elearningOption >= 3) scoreElearning = 0;
+
+  let scoreViolation = 40;
+  if (violationOption === 1) scoreViolation = 30;
+  else if (violationOption === 2) scoreViolation = 20;
+  else if (violationOption >= 3) scoreViolation = 0;
+
+  const scoreTraining = scoreAttendance + scoreHomework + scoreElearning + scoreViolation;
+  const scoreBonus = bonusStudy + bonusCadre;
+  const totalRPoint = Math.min(120, scoreTraining + scoreBonus);
+
+  const isRPointPass = totalRPoint >= 80;
+  const isAttendancePass = absencePercent <= 20;
+  const isHomeworkPass = hwIncompletePercent <= 20;
+  const isElearningPass = elearningOption < 3;
+  const isAllPass = isRPointPass && isAttendancePass && isHomeworkPass && isElearningPass;
+
+  const meterVal = document.getElementById('meter-rpoint-val');
+  const meterFill = document.getElementById('meter-rpoint-fill');
+  if (meterVal) meterVal.textContent = `${totalRPoint.toFixed(1)} / 120 đ`;
+  if (meterFill) {
+    const percentWidth = Math.min(100, Math.max(0, (totalRPoint / 120) * 100));
+    meterFill.style.width = `${percentWidth}%`;
+    meterFill.style.background = totalRPoint >= 80 ? 'linear-gradient(90deg, #10b981, #059669)' : 'linear-gradient(90deg, #ef4444, #dc2626)';
+  }
+
+  const badge = document.getElementById('rpoint-status-badge');
+  const resTotal = document.getElementById('res-rpoint-total');
+  const resTraining = document.getElementById('res-rpoint-training');
+  const resBonus = document.getElementById('res-rpoint-bonus');
+  const resComment = document.getElementById('res-rpoint-comment');
+
+  if (resTotal) resTotal.textContent = `${totalRPoint.toFixed(1)} / 120 đ`;
+  if (resTraining) resTraining.textContent = `${scoreTraining.toFixed(1)} / 100 đ`;
+  if (resBonus) resBonus.textContent = `${scoreBonus.toFixed(1)} / 20 đ`;
+
+  if (isAllPass) {
+    if (badge) { badge.className = 'result-badge pass'; badge.textContent = '✅ ĐỦ ĐIỀU KIỆN DỰ THI'; }
+    if (resComment) {
+      resComment.textContent = `Thỏa mãn 4 chuẩn: R-Point (${totalRPoint.toFixed(1)} ≥ 80), Chuyên cần (${100 - absencePercent}% ≥ 80%), BTVN (${100 - hwIncompletePercent}% ≥ 80%), E-learning chuẩn.`;
+      resComment.style.color = '#059669';
+    }
+  } else {
+    if (badge) { badge.className = 'result-badge fail'; badge.textContent = '❌ MẤT TƯ CÁCH DỰ THI'; }
+    if (resComment) {
+      resComment.textContent = `Không đạt: Yêu cầu R-Point ≥ 80, Nghỉ ≤ 20%, Thiếu BTVN ≤ 20%, Chậm E-learning < 3 bài.`;
+      resComment.style.color = '#c41230';
+    }
+  }
+}
+
+window.calculateRPoint = calculateRPoint;
+
+/**
+ * CALCULATOR 2: COURSE GRADE
+ */
+function calculateCourseGrade() {
+  const attEl = document.getElementById('calc-g-attendance');
+  if (!attEl) return;
+
+  const att = parseFloat(attEl.value) || 0;
+  const quiz = parseFloat(document.getElementById('calc-g-quiz').value) || 0;
+  const midTn = parseFloat(document.getElementById('calc-g-mid-tn').value) || 0;
+  const midTl = parseFloat(document.getElementById('calc-g-mid-tl').value) || 0;
+  const finTn = parseFloat(document.getElementById('calc-g-fin-tn').value) || 0;
+  const finVd = parseFloat(document.getElementById('calc-g-fin-vd').value) || 0;
+  const finTh = parseFloat(document.getElementById('calc-g-fin-th').value) || 0;
+
+  const processPart = (att * 0.5 + quiz * 0.5) * 0.2;
+  const midPart = (midTn * 0.3 + midTl * 0.7) * 0.2;
+  const finPart = (finTn * 0.1 + finVd * 0.2 + finTh * 0.7) * 0.6;
+  const totalGrade = processPart + midPart + finPart;
+
+  const stackProc = document.getElementById('stack-proc');
+  const stackMid = document.getElementById('stack-mid');
+  const stackFin = document.getElementById('stack-fin');
+
+  if (stackProc) { stackProc.style.width = `${processPart}%`; stackProc.textContent = `QT: ${processPart.toFixed(1)}đ`; }
+  if (stackMid) { stackMid.style.width = `${midPart}%`; stackMid.textContent = `GK: ${midPart.toFixed(1)}đ`; }
+  if (stackFin) { stackFin.style.width = `${finPart}%`; stackFin.textContent = `CK: ${finPart.toFixed(1)}đ`; }
+
+  const badge = document.getElementById('grade-status-badge');
+  const resFinal = document.getElementById('res-grade-final');
+  const resRank = document.getElementById('res-grade-rank');
+  const resProcess = document.getElementById('res-grade-process');
+  const resMid = document.getElementById('res-grade-mid');
+  const resFinPart = document.getElementById('res-grade-final-part');
+
+  if (resFinal) resFinal.textContent = `${totalGrade.toFixed(1)} / 100 đ`;
+  if (resProcess) resProcess.textContent = `${processPart.toFixed(1)} / 20 đ`;
+  if (resMid) resMid.textContent = `${midPart.toFixed(1)} / 20 đ`;
+  if (resFinPart) resFinPart.textContent = `${finPart.toFixed(1)} / 60 đ`;
+
+  if (totalGrade >= 50) {
+    if (badge) { badge.className = 'result-badge pass'; badge.textContent = '✅ ĐẠT HỌC PHẦN (PASS)'; }
+    if (resRank) {
+      if (totalGrade >= 90) resRank.textContent = 'Xuất sắc (A+)';
+      else if (totalGrade >= 85) resRank.textContent = 'Giỏi (A)';
+      else if (totalGrade >= 80) resRank.textContent = 'Khá Giỏi (B+)';
+      else if (totalGrade >= 70) resRank.textContent = 'Khá (B)';
+      else if (totalGrade >= 60) resRank.textContent = 'Trung bình Khá (C)';
+      else resRank.textContent = 'Trung bình (D)';
+    }
+  } else {
+    if (badge) { badge.className = 'result-badge fail'; badge.textContent = '❌ KHÔNG ĐẠT (FAIL - Phải thi lại)'; }
+    if (resRank) resRank.textContent = 'Kém (F) - Lệ phí thi lại: 300.000 VNĐ';
+  }
+}
+
+window.calculateCourseGrade = calculateCourseGrade;
+
+/**
+ * CALCULATOR 3: TEACHER RANK
+ */
+const rankMatrix = [
+  { rank: 8, name: "RANK 8 - GV THƯƠNG HIỆU THỊ TRƯỜNG", minExp: 5, minTotal: 95, minKhac: 9, salary: "35.000.000 VNĐ", allowance: "6.000.000 VNĐ", bonus: "4.000.000 VNĐ", desc: "Chuyên gia hàng đầu, định hướng học thuật, quản lý chất lượng đào tạo & thương hiệu.", reqDegree: "ths" },
+  { rank: 7, name: "RANK 7 - GV THƯƠNG HIỆU NỘI BỘ", minExp: 4, minTotal: 92, minKq: 18, salary: "30.000.000 VNĐ", allowance: "5.000.000 VNĐ", bonus: "3.000.000 VNĐ", desc: "Quản lý đội ngũ GV/TG, thương hiệu uy tín, kết quả lớp học xuất sắc (≥ 18/25).", reqDegree: "ths" },
+  { rank: 6, name: "RANK 6 - PM CHƯƠNG TRÌNH ĐÀO TẠO", minExp: 3, minTotal: 88, minKhac: 7, salary: "25.000.000 VNĐ", allowance: "4.000.000 VNĐ", bonus: "3.000.000 VNĐ", desc: "Quản lý chương trình đào tạo chuyên ngành, mentor GV/TG, phát triển môn học.", reqDegree: "ths" },
+  { rank: 5, name: "RANK 5 - GIẢNG VIÊN PM MÔN HỌC", minExp: 2, minTotal: 82, minTn: 12, salary: "20.000.000 VNĐ", allowance: "4.000.000 VNĐ", bonus: "2.000.000 VNĐ", desc: "Vận hành ≥ 2 lớp, sản xuất tài nguyên bài giảng/mindmap, điểm tài nguyên ≥ 12/20.", reqDegree: "dh" },
+  { rank: 4, name: "RANK 4 - GIẢNG VIÊN CỨNG", minExp: 1, minTotal: 75, minKq: 14, salary: "Thỏa thuận", allowance: "-", bonus: "-", desc: "Giảng dạy chính các môn chuyên ngành, kỹ năng sư phạm vững vàng, kết quả lớp ≥ 14/25.", reqDegree: "any" },
+  { rank: 3, name: "RANK 3 - GIẢNG VIÊN TẬP SỰ", minExp: 0.5, minTotal: 65, minSp: 12, salary: "Thỏa thuận", allowance: "-", bonus: "-", desc: "Đứng lớp các môn nền tảng dưới sự kèm cặp, điểm sư phạm ≥ 12/20.", reqDegree: "any" },
+  { rank: 2, name: "RANK 2 - TRỢ GIẢNG CỨNG", minExp: 0.5, minTotal: 55, minKhac: 7, salary: "Thỏa thuận", allowance: "-", bonus: "-", desc: "Trợ giảng độc lập, chấm bài, hỗ trợ thực hành, điểm thái độ/khác ≥ 7/10.", reqDegree: "any" },
+  { rank: 1, name: "RANK 1 - TTS TRỢ GIẢNG", minExp: 0, minTotal: 40, minKhac: 5, salary: "Thỏa thuận", allowance: "-", bonus: "-", desc: "Học việc, điểm danh, hỗ trợ sinh viên, điểm kỷ luật/khác ≥ 5/10.", reqDegree: "any" }
+];
+
+function evaluateTeacherRank() {
+  const expEl = document.getElementById('calc-rk-exp');
+  if (!expEl) return;
+
+  const exp = parseFloat(expEl.value) || 0;
+  const degree = document.getElementById('calc-rk-degree').value;
+  const sp = parseFloat(document.getElementById('calc-rk-sp').value) || 0;
+  const cm = parseFloat(document.getElementById('calc-rk-cm').value) || 0;
+  const kq = parseFloat(document.getElementById('calc-rk-kq').value) || 0;
+  const tn = parseFloat(document.getElementById('calc-rk-tn') ? document.getElementById('calc-rk-tn').value : 8) || 8;
+  const khac = parseFloat(document.getElementById('calc-rk-khac') ? document.getElementById('calc-rk-khac').value : 4) || 4;
+
+  const totalScore = sp + cm + kq + tn + khac;
+
+  let achievedRank = null;
+  for (const r of rankMatrix) {
+    let pass = true;
+    if (exp < r.minExp) pass = false;
+    if (totalScore < r.minTotal) pass = false;
+    if (r.minKhac && (khac * 2) < r.minKhac) pass = false;
+    if (r.minSp && (sp * (20/30)) < r.minSp) pass = false;
+    if (r.minKq && (kq * (25/20)) < r.minKq) pass = false;
+    if (r.minTn && (tn * 2) < r.minTn) pass = false;
+
+    if (r.reqDegree === 'ths' && degree !== 'ths') pass = false;
+    if (r.reqDegree === 'dh' && degree === 'other') pass = false;
+
+    if (pass) {
+      achievedRank = r;
+      break;
+    }
+  }
+
+  const badge = document.getElementById('rank-badge-name');
+  const resScore = document.getElementById('res-rank-total-score');
+  const resSalary = document.getElementById('res-rank-salary');
+  const resAllowance = document.getElementById('res-rank-allowance');
+  const resBonus = document.getElementById('res-rank-bonus');
+  const resDesc = document.getElementById('res-rank-desc');
+
+  if (resScore) resScore.textContent = `${totalScore.toFixed(1)} / 100 đ`;
+
+  if (achievedRank) {
+    if (badge) { badge.className = 'result-badge gold'; badge.textContent = achievedRank.name; }
+    if (resSalary) resSalary.textContent = achievedRank.salary;
+    if (resAllowance) resAllowance.textContent = achievedRank.allowance;
+    if (resBonus) resBonus.textContent = achievedRank.bonus;
+    if (resDesc) resDesc.textContent = achievedRank.desc;
+  } else {
+    if (badge) { badge.className = 'result-badge fail'; badge.textContent = 'CHƯA ĐẠT CHUẨN RANK (DƯỚI RANK 1)'; }
+    if (resSalary) resSalary.textContent = 'Thỏa thuận';
+    if (resAllowance) resAllowance.textContent = '-';
+    if (resBonus) resBonus.textContent = '-';
+    if (resDesc) resDesc.textContent = `Tổng điểm ${totalScore.toFixed(1)} chưa đạt mức tối thiểu 40đ của Rank 1.`;
+  }
+}
+
+window.evaluateTeacherRank = evaluateTeacherRank;
+
+/**
+ * CALCULATOR 4: LATE FEE
+ */
+function calculateLateFee() {
+  const shiftEl = document.getElementById('calc-late-shift');
+  const timeEl = document.getElementById('calc-late-time');
+  if (!shiftEl || !timeEl || !timeEl.value) return;
+
+  const shift = shiftEl.value;
+  const timeStr = timeEl.value;
+
+  const [hours, minutes] = timeStr.split(':').map(Number);
+  const arrivalMinutes = hours * 60 + minutes;
+
+  let shiftStartMinutes = 8 * 60; // 08h00
+  let graceCutoffMinutes = 8 * 60 + 15; // 08h15
+
+  if (shift === '700') {
+    shiftStartMinutes = 7 * 60;
+    graceCutoffMinutes = 7 * 60 + 15;
+  } else if (shift === '830') {
+    shiftStartMinutes = 8 * 60 + 30;
+    graceCutoffMinutes = 8 * 60 + 45;
+  }
+
+  const badge = document.getElementById('late-status-badge');
+  const resMinutes = document.getElementById('res-late-minutes');
+  const resCompensate = document.getElementById('res-late-compensate');
+  const resFine = document.getElementById('res-late-fine');
+  const resRule = document.getElementById('res-late-rule');
+
+  if (arrivalMinutes <= shiftStartMinutes) {
+    if (badge) { badge.className = 'result-badge pass'; badge.textContent = '✅ ĐÚNG GIỜ / ĐẾN SỚM'; }
+    if (resMinutes) resMinutes.textContent = '0 phút';
+    if (resCompensate) resCompensate.textContent = 'Không cần làm bù';
+    if (resFine) resFine.textContent = '0 VNĐ';
+    if (resRule) resRule.textContent = 'Chấp hành đúng giờ làm việc chuẩn theo văn hóa Rikkei Education.';
+    return;
+  }
+
+  const lateMinutes = arrivalMinutes - shiftStartMinutes;
+  const isBefore15m = arrivalMinutes <= graceCutoffMinutes;
+  const blocks = Math.ceil(lateMinutes / 5);
+  const fineAmount = blocks * 20000;
+  const compensateMinutes = lateMinutes * 2;
+
+  if (resMinutes) resMinutes.textContent = `${lateMinutes} phút (${blocks} block 5 phút)`;
+
+  if (isBefore15m) {
+    if (badge) { badge.className = 'result-badge warn'; badge.textContent = '⚠️ ĐI MUỘN DƯỚI 15 PHÚT'; }
+    if (resCompensate) resCompensate.textContent = `Làm bù ${compensateMinutes} phút (x2) vào cuối ngày`;
+    if (resFine) resFine.textContent = `${fineAmount.toLocaleString('vi-VN')} VNĐ (Phương án thay thế)`;
+    if (resRule) resRule.textContent = `Đi muộn trước 15 phút: Được chọn làm bù x2 HOẶC nộp phạt 20k/mỗi 5 phút.`;
+  } else {
+    if (badge) { badge.className = 'result-badge fail'; badge.textContent = '🛑 ĐI MUỘN TRÊN 15 PHÚT'; }
+    if (resCompensate) resCompensate.textContent = 'KHÔNG ĐƯỢC LÀM BÙ';
+    if (resFine) resFine.textContent = `${fineAmount.toLocaleString('vi-VN')} VNĐ (Bắt buộc)`;
+    if (resRule) resRule.textContent = `Đi muộn quá 15 phút không được áp dụng làm bù, bắt buộc phạt 20k/mỗi 5 phút.`;
+  }
+}
+
+window.calculateLateFee = calculateLateFee;
+
+// Run initialization on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  initNavigation();
+  initRawDocsViewer();
+  calculateRPoint();
+  calculateCourseGrade();
+  evaluateTeacherRank();
+  calculateLateFee();
+});

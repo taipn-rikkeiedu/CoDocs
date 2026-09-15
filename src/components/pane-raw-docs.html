@@ -1,0 +1,41 @@
+<section class="tab-pane" id="pane-raw-docs">
+          <div class="raw-docs-layout">
+            
+            <!-- Left: 7 Files list -->
+            <div class="raw-docs-sidebar">
+              <div class="raw-docs-sidebar-header">
+                <i class="fa-solid fa-folder-open"></i> DANH MỤC 7 TÀI LIỆU GỐC
+              </div>
+              <div class="raw-doc-list" id="raw-doc-menu">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- Right: Direct Interactive Visual Reader -->
+            <div class="raw-doc-viewer-card">
+              <div class="raw-doc-viewer-header">
+                <div class="viewer-title-box">
+                  <span class="viewer-type-badge pdf" id="viewer-badge">PDF</span>
+                  <div class="viewer-header-text">
+                    <h3 id="viewer-title">Chọn tài liệu để xem trực quan</h3>
+                    <span class="meta" id="viewer-meta">Trực quan hóa 100% nội dung gốc</span>
+                  </div>
+                </div>
+                
+                <div class="view-mode-toggle">
+                  <button class="mode-btn active" id="btn-mode-visual" onclick="setDocViewMode('visual')">
+                    <i class="fa-solid fa-eye"></i> Bản Trực Quan
+                  </button>
+                  <button class="mode-btn" id="btn-mode-text" onclick="setDocViewMode('text')">
+                    <i class="fa-solid fa-file-lines"></i> Văn Bản Gốc
+                  </button>
+                </div>
+              </div>
+
+              <!-- Main Visual Content Area -->
+              <div class="raw-doc-body" id="raw-doc-content">
+                <!-- Rendered Dynamically via JS -->
+              </div>
+            </div>
+          </div>
+        </section>

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rikkei Education - Cổng Quy Chế & Tra Cứu Trực Quan</title>
+  <!-- Google Fonts: Be Vietnam Pro (Tối ưu dấu tiếng Việt) + Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-light">
+  <div class="app-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-box">
+          <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="logo-text">
+            <span class="logo-title">RIKKEI<span class="highlight">EDU</span></span>
+            <span class="logo-subtitle">PORTAL QUY CHẾ 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-search">
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="global-search" placeholder="Tìm nhanh quy định, từ khóa..." autocomplete="off">
+          <button id="clear-search" class="clear-btn hidden"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">TRUNG TÂM ĐIỀU HÀNH</div>
+        <a href="#dashboard" class="nav-item active" data-tab="dashboard">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Tổng Quan Dashboard</span>
+        </a>
+        <a href="#tools" class="nav-item" data-tab="tools">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Bộ Công Cụ Tính Toán</span>
+          <span class="badge badge-hot">HOT</span>
+        </a>
+        <a href="#raw-docs" class="nav-item" data-tab="raw-docs">
+          <i class="fa-solid fa-box-archive"></i>
+          <span>Xem Trực Tiếp File Gốc</span>
+          <span class="badge badge-primary">7 File</span>
+        </a>
+
+        <div class="nav-section-title">KHẢO THÍ & ĐÀO TẠO</div>
+        <a href="#rpoint" class="nav-item" data-tab="rpoint">
+          <i class="fa-solid fa-bullseye"></i>
+          <span>Điểm R-Point & ĐK Thi</span>
+          <span class="badge badge-new">Mới 2026</span>
+        </a>
+        <a href="#khao-thi" class="nav-item" data-tab="khao-thi">
+          <i class="fa-solid fa-file-signature"></i>
+          <span>Quy Trình Khảo Thí PTIT</span>
+        </a>
+        <a href="#phong-thi" class="nav-item" data-tab="phong-thi">
+          <i class="fa-solid fa-person-shelter"></i>
+          <span>Nội Quy Phòng Thi</span>
+        </a>
+        <a href="#sinh-vien" class="nav-item" data-tab="sinh-vien">
+          <i class="fa-solid fa-user-graduate"></i>
+          <span>Nội Quy Sinh Viên</span>
+        </a>
+
+        <div class="nav-section-title">NHÂN SỰ & VẬN HÀNH</div>
+        <a href="#rank-gvtg" class="nav-item" data-tab="rank-gvtg">
+          <i class="fa-solid fa-award"></i>
+          <span>Khung Rank GV - TG</span>
+          <span class="badge badge-gold">8 Rank</span>
+        </a>
+        <a href="#onboarding" class="nav-item" data-tab="onboarding">
+          <i class="fa-solid fa-rocket"></i>
+          <span>Onboarding & Cơ Chế</span>
+        </a>
+        <a href="#lark-guide" class="nav-item" data-tab="lark-guide">
+          <i class="fa-solid fa-comments"></i>
+          <span>Cẩm Nang Lark Suite</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-card-mini">
+          <div class="user-avatar-mini"><i class="fa-solid fa-building-columns"></i></div>
+          <div class="user-info-mini">
+            <span class="user-name">Rikkei Education</span>
+            <span class="user-role">Chuẩn hóa 2026</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Topbar Header -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-toggle-btn" id="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
+          <div class="breadcrumb" id="breadcrumb">
+            <span class="crumb-root"><i class="fa-solid fa-house"></i> Portal</span>
+            <i class="fa-solid fa-chevron-right separator"></i>
+            <span class="crumb-current" id="current-page-title">Tổng Quan Dashboard</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="quick-stats-pill">
+            <span class="pill-item"><i class="fa-solid fa-file-pdf text-red"></i> <b>7</b> File gốc</span>
+            <span class="pill-divider"></span>
+            <span class="pill-item"><i class="fa-solid fa-chart-pie text-blue"></i> <b>4</b> Máy tính</span>
+            <span class="pill-divider"></span>
+            <span class="pill-item"><i class="fa-solid fa-circle-check text-green"></i> Chuẩn 100%</span>
+          </div>
+
+          <button class="theme-toggle-btn" id="theme-toggle" title="Đổi giao diện Sáng / Tối">
+            <i class="fa-solid fa-sun sun-icon"></i>
+            <i class="fa-solid fa-moon moon-icon"></i>
+          </button>
+
+          <button class="btn btn-secondary btn-sm" onclick="window.print()" title="In trang">
+            <i class="fa-solid fa-print"></i> <span>In</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content Container -->
+      <div class="content-body" id="content-body">
+        
+        <!-- =================== TAB 1: DASHBOARD =================== -->
+        <section class="tab-pane active" id="pane-dashboard">
+          
+          <!-- Key Metric Numbers -->
+          <div class="hero-banner">
+            <div class="hero-content">
+              <div class="hero-tag"><i class="fa-solid fa-bolt"></i> TRỌNG TÂM QUY CHẾ 2026</div>
+              <h1 class="hero-title">Tra Cứu Quy Chế <span class="text-gradient-red">Rikkei Education</span></h1>
+              <p class="hero-desc">Quy chuẩn đào tạo, khảo thí PTIT, khung Rank Giảng viên & cẩm nang vận hành nhân sự.</p>
+              
+              <div class="hero-actions">
+                <button class="btn btn-primary" onclick="switchTab('tools')">
+                  <i class="fa-solid fa-calculator"></i> 4 Máy Tính Tự Động
+                </button>
+                <button class="btn btn-outline" onclick="switchTab('raw-docs')">
+                  <i class="fa-solid fa-box-archive"></i> Xem Trực Tiếp 7 File Gốc
+                </button>
+              </div>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric-card" onclick="switchTab('rpoint')">
+                <div class="metric-icon-wrap red-bg"><i class="fa-solid fa-user-check"></i></div>
+                <div class="metric-data">
+                  <div class="metric-value">≥ 80/120</div>
+                  <div class="metric-label">Chuẩn R-Point Dự Thi Cuối Môn</div>
+                </div>
+              </div>
+              <div class="metric-card" onclick="switchTab('rank-gvtg')">
+                <div class="metric-icon-wrap blue-bg"><i class="fa-solid fa-stairs"></i></div>
+                <div class="metric-data">
+                  <div class="metric-value">8 Cấp Rank</div>
+                  <div class="metric-label">Lương Định Mức 20M – 35M+</div>
+                </div>
+              </div>
+              <div class="metric-card" onclick="switchTab('onboarding')">
+                <div class="metric-icon-wrap gold-bg"><i class="fa-solid fa-calendar-check"></i></div>
+                <div class="metric-data">
+                  <div class="metric-value">Mùng 5</div>
+                  <div class="metric-label">Kỳ Trả Lương ACB Hàng Tháng</div>
+                </div>
+              </div>
+              <div class="metric-card" onclick="switchTab('onboarding')">
+                <div class="metric-icon-wrap green-bg"><i class="fa-solid fa-clock"></i></div>
+                <div class="metric-data">
+                  <div class="metric-value">20k / 5p</div>
+                  <div class="metric-label">Phạt Đi Muộn (&gt; 15p Cấm Bù)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Navigation Cards Grid -->
+          <div class="portal-grid">
+            
+            <div class="portal-card hover-lift" onclick="switchTab('rpoint')">
+              <div class="card-top">
+                <span class="card-badge badge-new"><i class="fa-solid fa-bolt"></i> TB 01/2026</span>
+                <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+              </div>
+              <div class="card-icon-box red-gradient"><i class="fa-solid fa-bullseye"></i></div>
+              <h3>Điểm R-Point & ĐK Dự Thi</h3>
+              <p>Thang 120 điểm (100đ rèn luyện + 20đ thưởng). Bắt buộc đạt đồng thời 4 chuẩn để được thi.</p>
+              <div class="card-tags">
+                <span class="tag tag-green">Chuyên cần ≥ 80%</span>
+                <span class="tag tag-blue">BTVN ≥ 80%</span>
+                <span class="tag tag-purple">E-learning ≤ 3 bài</span>
+              </div>
+            </div>
+
+            <div class="portal-card hover-lift" onclick="switchTab('khao-thi')">
+              <div class="card-top">
+                <span class="card-badge badge-primary"><i class="fa-solid fa-building-columns"></i> PTIT - RE</span>
+                <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+              </div>
+              <div class="card-icon-box blue-gradient"><i class="fa-solid fa-file-signature"></i></div>
+              <h3>Quy Trình Khảo Thí PTIT</h3>
+              <p>Cơ cấu 20-20-60 (Pass ≥ 50đ). Ra đề 4 mốc (15d - 7d - 3d - 1h). Phúc khảo 5 ngày. Thi lại 300k.</p>
+              <div class="card-tags">
+                <span class="tag tag-blue">Ra đề 4 mốc</span>
+                <span class="tag tag-gold">Lệ phí 300k</span>
+                <span class="tag tag-green">Phúc khảo 5 ngày</span>
+              </div>
+            </div>
+
+            <div class="portal-card hover-lift" onclick="switchTab('rank-gvtg')">
+              <div class="card-top">
+                <span class="card-badge badge-gold"><i class="fa-solid fa-crown"></i> 8 Cấp Rank</span>
+                <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+              </div>
+              <div class="card-icon-box gold-gradient"><i class="fa-solid fa-award"></i></div>
+              <h3>Khung Rank GV - Trợ Giảng</h3>
+              <p>8 cấp bậc Rank (Rank 1 - 8). Đánh giá theo 5 nhóm năng lực. Mức thu nhập 20M - 35M+.</p>
+              <div class="card-tags">
+                <span class="tag tag-gold">Rank 1 - Rank 8</span>
+                <span class="tag tag-green">5 Nhóm năng lực</span>
+                <span class="tag tag-blue">Lương & Phụ cấp</span>
+              </div>
+            </div>
+
+            <div class="portal-card hover-lift" onclick="switchTab('onboarding')">
+              <div class="card-top">
+                <span class="card-badge badge-purple"><i class="fa-solid fa-rocket"></i> Onboarding</span>
+                <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+              </div>
+              <div class="card-icon-box purple-gradient"><i class="fa-solid fa-rocket"></i></div>
+              <h3>Onboarding & Cơ Chế Nhân Sự</h3>
+              <p>Giờ làm việc ĐT (07h-16h) / BO (08h-17h30). Phép 12 ngày. Lương mùng 5 ACB. Văn hóa 5T, 7C & 5S.</p>
+              <div class="card-tags">
+                <span class="tag tag-red">Đi muộn 20k/5p</span>
+                <span class="tag tag-green">Lương mùng 5 ACB</span>
+                <span class="tag tag-purple">Bù công 3 ngày</span>
+              </div>
+            </div>
+
+            <div class="portal-card hover-lift" onclick="switchTab('lark-guide')">
+              <div class="card-top">
+                <span class="card-badge badge-green"><i class="fa-solid fa-cloud"></i> Lark Suite</span>
+                <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+              </div>
+              <div class="card-icon-box green-gradient"><i class="fa-solid fa-comments"></i></div>
+              <h3>Cẩm Nang Lark Suite</h3>
+              <p>6 module số hóa: Quét QR, Calendar, Chấm công Xanh/Đỏ, Bổ sung công tách ca, Nghỉ phép & Meeting.</p>
+              <div class="card-tags">
+                <span class="tag tag-green">Chấm công Xanh/Đỏ</span>
+                <span class="tag tag-blue">Tách đơn ca Sáng/Chiều</span>
+              </div>
+            </div>
+
+            <div class="portal-card hover-lift" onclick="switchTab('phong-thi')">
+              <div class="card-top">
+                <span class="card-badge badge-red"><i class="fa-solid fa-shield-halved"></i> Nghiêm ngặt</span>
+                <i class="fa-solid fa-arrow-up-right-from-square card-link-icon"></i>
+              </div>
+              <div class="card-icon-box red-gradient"><i class="fa-solid fa-person-shelter"></i></div>
+              <h3>Nội Quy Phòng Thi</h3>
+              <p>Cấm tuyệt đối điện thoại, thiết bị thu phát & AI/ChatGPT. Gian lận = Hủy kết quả điểm 0, CẤM THI LẠI.</p>
+              <div class="card-tags">
+                <span class="tag tag-red">Cấm AI / ChatGPT</span>
+                <span class="tag tag-blue">Rời phòng sau 2/3</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Highlight Visual Section: Ecosystem -->
+          <div class="visual-card-panel">
+            <div class="panel-header">
+              <div class="panel-title-box">
+                <div class="panel-icon-wrap red-bg"><i class="fa-solid fa-network-wired"></i></div>
+                <div>
+                  <h3>Hệ Sinh Thái Rikkeisoft & Rikkei Education</h3>
+                  <span class="panel-subtitle">9 công ty thành viên & 7 chi nhánh toàn cầu</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ecosystem-visual-grid">
+              <div class="eco-item"><span class="eco-badge">Đào tạo</span><b>Rikkei Education</b><p>Nhân lực công nghệ quốc tế</p></div>
+              <div class="eco-item"><span class="eco-badge">Học viện</span><b>Rikkei Academy</b><p>Đào tạo CNTT & Du học</p></div>
+              <div class="eco-item"><span class="eco-badge">Nhật ngữ</span><b>Mankai Academy</b><p>Tiếng Nhật thực chiến</p></div>
+              <div class="eco-item"><span class="eco-badge">AI Academy</span><b>RAIA</b><p>Ứng dụng AI thực tế</p></div>
+              <div class="eco-item"><span class="eco-badge">Mỹ</span><b>RKTech</b><p>Plano, Texas - Hoa Kỳ</p></div>
+              <div class="eco-item"><span class="eco-badge">Nhật Bản</span><b>Rikkei Japan</b><p>Tokyo, Osaka, Fukuoka, Nagoya</p></div>
+              <div class="eco-item"><span class="eco-badge">Chuyển đổi số</span><b>Rikkei Digital</b><p>Tư vấn giải pháp DX</p></div>
+              <div class="eco-item"><span class="eco-badge">AI</span><b>Rikkei AI</b><p>Sản phẩm & Giải pháp AI</p></div>
+              <div class="eco-item"><span class="eco-badge">Đầu tư</span><b>Rikkei Venture Builder</b><p>Ươm tạo Startup công nghệ</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================== TAB 2: INTERACTIVE CALCULATORS =================== -->
+        <section class="tab-pane" id="pane-tools">
+          <div class="tools-grid">
+            
+            <!-- Tool 1: R-Point Calculator with Visual Meter -->
+            <div class="tool-card" id="tool-rpoint-card">
+              <div class="tool-card-header">
+                <div class="tool-icon red"><i class="fa-solid fa-bullseye"></i></div>
+                <div>
+                  <h3>1. Tính Điểm R-Point & Xét ĐK Dự Thi</h3>
+                  <span class="tool-sub">Yêu cầu: R-Point ≥ 80đ, Nghỉ ≤ 20%, Thiếu BTVN ≤ 20%, Chậm E-learning &lt; 3</span>
+                </div>
+              </div>
+              
+              <div class="tool-card-body">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Tỷ lệ nghỉ học (%): <span class="input-hint">Nghỉ 1% trừ 2đ</span></label>
+                    <input type="number" id="calc-rp-absence" min="0" max="100" value="5" oninput="calculateRPoint()">
+                  </div>
+                  <div class="form-group">
+                    <label>Tỷ lệ thiếu BTVN (%): <span class="input-hint">Thiếu 1% trừ 2đ</span></label>
+                    <input type="number" id="calc-rp-homework" min="0" max="100" value="5" oninput="calculateRPoint()">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Số bài E-learning chậm:</label>
+                    <select id="calc-rp-elearning" onchange="calculateRPoint()">
+                      <option value="0">0 bài (Trọn 20đ)</option>
+                      <option value="1">1 bài (-5đ, còn 15đ)</option>
+                      <option value="2">2 bài (-10đ, còn 10đ)</option>
+                      <option value="3">≥ 3 bài (0đ - Mất quyền thi)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Vi phạm nội quy lớp:</label>
+                    <select id="calc-rp-violations" onchange="calculateRPoint()">
+                      <option value="0">0 lần (Trọn 40đ)</option>
+                      <option value="1">1 lần (-10đ, còn 30đ)</option>
+                      <option value="2">2 lần (-20đ, còn 20đ)</option>
+                      <option value="3">≥ 3 lần (0đ)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Thưởng học tập (0-10đ):</label>
+                    <input type="number" id="calc-rp-bonus-study" min="0" max="10" value="5" oninput="calculateRPoint()">
+                  </div>
+                  <div class="form-group">
+                    <label>Thưởng cán bộ lớp (0-10đ):</label>
+                    <input type="number" id="calc-rp-bonus-cadre" min="0" max="10" value="0" oninput="calculateRPoint()">
+                  </div>
+                </div>
+
+                <!-- Visual Progress Bar for R-Point -->
+                <div class="visual-meter-wrapper">
+                  <div class="meter-header">
+                    <span>Thang Điểm R-Point:</span>
+                    <span class="meter-score" id="meter-rpoint-val">100.0 / 120 đ</span>
+                  </div>
+                  <div class="meter-bar-track">
+                    <div class="meter-bar-fill" id="meter-rpoint-fill" style="width: 83.3%;"></div>
+                    <div class="meter-threshold" style="left: 66.6%;" title="Mốc đạt: 80đ">
+                      <span class="threshold-label">Mốc 80đ</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Result Box -->
+                <div class="calc-result-box">
+                  <div class="result-header">
+                    <span>KẾT QUẢ ĐÁNH GIÁ:</span>
+                    <span class="result-badge pass" id="rpoint-status-badge">✅ ĐỦ ĐIỀU KIỆN DỰ THI</span>
+                  </div>
+                  <div class="result-details">
+                    <div class="res-item">
+                      <span class="lbl">Tổng điểm:</span>
+                      <span class="val highlight" id="res-rpoint-total">100.0 / 120 đ</span>
+                    </div>
+                    <div class="res-item">
+                      <span class="lbl">Rèn luyện + Thưởng:</span>
+                      <span class="val" id="res-rpoint-training">95đ + 5đ</span>
+                    </div>
+                    <div class="res-item full">
+                      <span class="lbl">Đánh giá 4 chuẩn:</span>
+                      <span class="val" id="res-rpoint-comment">Thỏa mãn 4 chuẩn: R-Point (≥ 80), Chuyên cần (≥ 80%), BTVN (≥ 80%), E-learning chuẩn.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tool 2: Grade Calculator with Visual Breakdown -->
+            <div class="tool-card" id="tool-grade-card">
+              <div class="tool-card-header">
+                <div class="tool-icon blue"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div>
+                  <h3>2. Tính Điểm Học Phần (20% QT + 20% GK + 60% CK)</h3>
+                  <span class="tool-sub">Tổng kết ≥ 50/100 là PASS môn</span>
+                </div>
+              </div>
+              
+              <div class="tool-card-body">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Chuyên cần (10%):</label>
+                    <input type="number" id="calc-g-attendance" min="0" max="100" value="90" oninput="calculateCourseGrade()">
+                  </div>
+                  <div class="form-group">
+                    <label>Kiểm tra đầu giờ (10%):</label>
+                    <input type="number" id="calc-g-quiz" min="0" max="100" value="85" oninput="calculateCourseGrade()">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Giữa môn TN (30% GK):</label>
+                    <input type="number" id="calc-g-mid-tn" min="0" max="100" value="80" oninput="calculateCourseGrade()">
+                  </div>
+                  <div class="form-group">
+                    <label>Giữa môn TL (70% GK):</label>
+                    <input type="number" id="calc-g-mid-tl" min="0" max="100" value="75" oninput="calculateCourseGrade()">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Cuối môn TN (10% CK):</label>
+                    <input type="number" id="calc-g-fin-tn" min="0" max="100" value="80" oninput="calculateCourseGrade()">
+                  </div>
+                  <div class="form-group">
+                    <label>Cuối môn Vấn đáp (20% CK):</label>
+                    <input type="number" id="calc-g-fin-vd" min="0" max="100" value="85" oninput="calculateCourseGrade()">
+                  </div>
+                  <div class="form-group">
+                    <label>Cuối môn Thực hành (70% CK):</label>
+                    <input type="number" id="calc-g-fin-th" min="0" max="100" value="85" oninput="calculateCourseGrade()">
+                  </div>
+                </div>
+
+                <!-- Visual Stacked Bar -->
+                <div class="visual-stacked-bar">
+                  <div class="stacked-bar-label">Phân rã Điểm Học Phần:</div>
+                  <div class="stacked-bar-container">
+                    <div class="stack-segment seg-process" id="stack-proc" style="width: 17.5%;">QT: 17.5đ</div>
+                    <div class="stack-segment seg-mid" id="stack-mid" style="width: 15.3%;">GK: 15.3đ</div>
+                    <div class="stack-segment seg-final" id="stack-fin" style="width: 50.7%;">CK: 50.7đ</div>
+                  </div>
+                </div>
+
+                <!-- Result Box -->
+                <div class="calc-result-box">
+                  <div class="result-header">
+                    <span>ĐIỂM TỔNG KẾT:</span>
+                    <span class="result-badge pass" id="grade-status-badge">✅ ĐẠT HỌC PHẦN (PASS)</span>
+                  </div>
+                  <div class="result-details">
+                    <div class="res-item">
+                      <span class="lbl">Điểm Tổng Kết:</span>
+                      <span class="val highlight text-blue" id="res-grade-final">83.5 đ</span>
+                    </div>
+                    <div class="res-item">
+                      <span class="lbl">Xếp loại:</span>
+                      <span class="val" id="res-grade-rank">Khá Giỏi (B+)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tool 3: Teacher Rank Simulator -->
+            <div class="tool-card" id="tool-rank-card">
+              <div class="tool-card-header">
+                <div class="tool-icon gold"><i class="fa-solid fa-award"></i></div>
+                <div>
+                  <h3>3. Tra Cứu Rank & Lương Giảng Viên / Trợ Giảng</h3>
+                  <span class="tool-sub">Xếp hạng Rank 1 đến Rank 8 & định mức lương</span>
+                </div>
+              </div>
+              
+              <div class="tool-card-body">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Kinh nghiệm:</label>
+                    <select id="calc-rk-exp" onchange="evaluateTeacherRank()">
+                      <option value="0">&lt; 6 tháng</option>
+                      <option value="0.5">6 tháng - 1 năm</option>
+                      <option value="1">1 - 2 năm</option>
+                      <option value="2" selected>2 - 3 năm</option>
+                      <option value="3">3 - 4 năm</option>
+                      <option value="4">4 - 5 năm</option>
+                      <option value="5">≥ 5 năm</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Bằng cấp:</label>
+                    <select id="calc-rk-degree" onchange="evaluateTeacherRank()">
+                      <option value="dh" selected>Đại học đúng chuyên ngành</option>
+                      <option value="ths">Thạc sĩ / Tiến sĩ</option>
+                      <option value="other">Khác</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Sư phạm (max 30):</label>
+                    <input type="number" id="calc-rk-sp" min="0" max="30" value="25" oninput="evaluateTeacherRank()">
+                  </div>
+                  <div class="form-group">
+                    <label>Chuyên môn (max 35):</label>
+                    <input type="number" id="calc-rk-cm" min="0" max="35" value="30" oninput="evaluateTeacherRank()">
+                  </div>
+                  <div class="form-group">
+                    <label>KQ lớp (max 20):</label>
+                    <input type="number" id="calc-rk-kq" min="0" max="20" value="16" oninput="evaluateTeacherRank()">
+                  </div>
+                </div>
+
+                <!-- Result Box -->
+                <div class="calc-result-box">
+                  <div class="result-header">
+                    <span>XẾP HẠNG RANK:</span>
+                    <span class="result-badge gold" id="rank-badge-name">RANK 5 - GIẢNG VIÊN PM MÔN</span>
+                  </div>
+                  <div class="result-details">
+                    <div class="res-item">
+                      <span class="lbl">Lương cứng:</span>
+                      <span class="val highlight text-gold" id="res-rank-salary">20.000.000 VNĐ</span>
+                    </div>
+                    <div class="res-item">
+                      <span class="lbl">Phụ cấp + Thưởng:</span>
+                      <span class="val text-gold" id="res-rank-allowance">4.000.000đ + 2.000.000đ</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tool 4: Late Fee Calculator -->
+            <div class="tool-card" id="tool-late-card">
+              <div class="tool-card-header">
+                <div class="tool-icon purple"><i class="fa-solid fa-clock"></i></div>
+                <div>
+                  <h3>4. Tính Phạt Đi Muộn & Giờ Làm Bù</h3>
+                  <span class="tool-sub">Khối Đào tạo (07h00) | Khối BO (08h00)</span>
+                </div>
+              </div>
+              
+              <div class="tool-card-body">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Ca làm việc:</label>
+                    <select id="calc-late-shift" onchange="calculateLateFee()">
+                      <option value="800">08h00 – 17h30 (Khối BO)</option>
+                      <option value="700">07h00 – 16h00 (Khối Đào tạo)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Giờ bạn đến công ty:</label>
+                    <input type="time" id="calc-late-time" value="08:12" oninput="calculateLateFee()">
+                  </div>
+                </div>
+
+                <!-- Result Box -->
+                <div class="calc-result-box">
+                  <div class="result-header">
+                    <span>TRẠNG THÁI:</span>
+                    <span class="result-badge warn" id="late-status-badge">⚠️ ĐI MUỘN DƯỚI 15 PHÚT</span>
+                  </div>
+                  <div class="result-details">
+                    <div class="res-item">
+                      <span class="lbl">Làm bù x2:</span>
+                      <span class="val" id="res-late-compensate">Làm bù 24 phút cuối ngày</span>
+                    </div>
+                    <div class="res-item">
+                      <span class="lbl">Hoặc nộp phạt:</span>
+                      <span class="val text-red" id="res-late-fine">60.000 VNĐ (3 block x 20k)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- =================== TAB: RAW OFFICIAL DOCUMENTS =================== -->
+        <section class="tab-pane" id="pane-raw-docs">
+          <div class="raw-docs-layout">
+            <!-- Left: 7 Files list -->
+            <div class="raw-docs-sidebar">
+              <div class="raw-docs-sidebar-header">
+                <i class="fa-solid fa-folder-open"></i> DANH MỤC 7 FILE GỐC
+              </div>
+              <div class="raw-doc-list" id="raw-doc-menu">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- Right: Direct File Viewer -->
+            <div class="raw-doc-viewer-card">
+              <div class="raw-doc-viewer-header">
+                <div class="viewer-header-left">
+                  <span class="viewer-type-badge" id="viewer-badge">PDF</span>
+                  <div>
+                    <h3 id="viewer-title">Chọn file để xem trực tiếp</h3>
+                    <span class="viewer-meta" id="viewer-meta">Định dạng: - | Dung lượng: -</span>
+                  </div>
+                </div>
+                <div class="viewer-header-actions">
+                  <a class="btn btn-secondary btn-sm" id="btn-download-raw" href="#" download>
+                    <i class="fa-solid fa-download"></i> Tải về máy
+                  </a>
+                  <button class="btn btn-primary btn-sm" onclick="openOriginalFileInNewTab()">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở tab mới
+                  </button>
+                </div>
+              </div>
+
+              <!-- Direct file render container -->
+              <div class="raw-doc-frame-wrapper" id="raw-doc-content">
+                <!-- Injected via JS (iframe / img / excel panel) -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================== TAB 3: R-POINT DETAIL =================== -->
+        <section class="tab-pane" id="pane-rpoint">
+          
+          <!-- 4 Gate Cards Visual -->
+          <div class="gate-grid" style="margin-bottom: 20px;">
+            <div class="gate-card">
+              <div class="gate-num">01</div>
+              <div class="gate-icon red"><i class="fa-solid fa-bullseye"></i></div>
+              <h4>Điểm R-Point ≥ 80/120</h4>
+              <p>100đ rèn luyện + 20đ thưởng</p>
+            </div>
+            <div class="gate-card">
+              <div class="gate-num">02</div>
+              <div class="gate-icon blue"><i class="fa-solid fa-user-clock"></i></div>
+              <h4>Chuyên Cần ≥ 80%</h4>
+              <p>Nghỉ 1% bị trừ 2 điểm</p>
+            </div>
+            <div class="gate-card">
+              <div class="gate-num">03</div>
+              <div class="gate-icon green"><i class="fa-solid fa-list-check"></i></div>
+              <h4>Bài Tập Về Nhà ≥ 80%</h4>
+              <p>Thiếu 1% bị trừ 2 điểm</p>
+            </div>
+            <div class="gate-card">
+              <div class="gate-num">04</div>
+              <div class="gate-icon gold"><i class="fa-solid fa-laptop-code"></i></div>
+              <h4>E-Learning ≤ 3 Bài</h4>
+              <p>Chậm ≥ 3 bài bị cấm thi</p>
+            </div>
+          </div>
+
+          <!-- Flowchart -->
+          <div class="doc-card">
+            <h3><i class="fa-solid fa-diagram-project text-red"></i> Sơ Đồ Xét Duyệt Điều Kiện Dự Thi</h3>
+            
+            <div class="visual-flow-container">
+              <div class="vflow-step start-node">
+                <div class="vflow-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                <div class="vflow-text"><b>Sinh viên tham gia học phần</b><span>Đánh giá trong suốt quá trình</span></div>
+              </div>
+              <div class="vflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+              <div class="vflow-decision-box">
+                <div class="vflow-gate-item">
+                  <div class="gate-condition">1. R-Point ≥ 80/120</div>
+                  <span class="status-chip pass">Chuẩn</span>
+                </div>
+                <div class="vflow-gate-item">
+                  <div class="gate-condition">2. Chuyên cần ≥ 80%</div>
+                  <span class="status-chip pass">Chuẩn</span>
+                </div>
+                <div class="vflow-gate-item">
+                  <div class="gate-condition">3. Hoàn thành BTVN ≥ 80%</div>
+                  <span class="status-chip pass">Chuẩn</span>
+                </div>
+                <div class="vflow-gate-item">
+                  <div class="gate-condition">4. Chậm E-learning ≤ 3 bài</div>
+                  <span class="status-chip pass">Chuẩn</span>
+                </div>
+              </div>
+
+              <div class="vflow-branches-grid">
+                <div class="vflow-branch-card pass-card">
+                  <div class="branch-badge green-badge"><i class="fa-solid fa-circle-check"></i> ĐẠT ĐỦ 4 CHUẨN</div>
+                  <h4>ĐỦ ĐIỀU KIỆN DỰ THI</h4>
+                  <p>Được tham gia thi kết thúc môn / bảo vệ Đồ án.</p>
+                </div>
+                <div class="vflow-branch-card fail-card">
+                  <div class="branch-badge red-badge"><i class="fa-solid fa-circle-xmark"></i> VI PHẠM ≥ 1 CHUẨN</div>
+                  <h4>MẤT TƯ CÁCH DỰ THI</h4>
+                  <p>Nhận điểm 0 bài thi cuối môn. Phải học lại.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <h3><i class="fa-solid fa-table-list text-blue"></i> Bảng Trừ Điểm & Cộng Thưởng (120 Điểm)</h3>
+            <table class="data-table">
+              <thead><tr><th>Tiêu chí</th><th>Tối đa</th><th>Quy định trừ / cộng</th><th>Đơn vị phụ trách</th></tr></thead>
+              <tbody>
+                <tr class="table-group-header"><td colspan="4"><b>I. ĐIỂM RÈN LUYỆN (100 ĐIỂM)</b></td></tr>
+                <tr><td><b>Chuyên cần</b></td><td>20đ</td><td>Nghỉ 1% số buổi → trừ <b>2đ</b></td><td>Hệ thống LMS</td></tr>
+                <tr><td><b>Bài tập về nhà</b></td><td>20đ</td><td>Thiếu 1% bài tập → trừ <b>2đ</b></td><td>Hệ thống LMS</td></tr>
+                <tr><td><b>E-learning</b></td><td>20đ</td><td>Chậm 1 bài: -5đ | Chậm 2 bài: -10đ | Chậm ≥ 3 bài: <b>0đ (Cấm thi)</b></td><td>Hệ thống LMS</td></tr>
+                <tr><td><b>Tuân thủ nội quy</b></td><td>40đ</td><td>Vi phạm L1: -10đ | L2: -20đ | L3: <b>0đ</b></td><td>Giảng viên</td></tr>
+                <tr class="table-group-header"><td colspan="4"><b>II. ĐIỂM THƯỞNG (20 ĐIỂM)</b></td></tr>
+                <tr><td><b>Thưởng học tập</b></td><td>10đ</td><td>Học tập tích cực, hăng hái phát biểu xây dựng bài</td><td>Giảng viên</td></tr>
+                <tr><td><b>Thưởng cán bộ lớp</b></td><td>10đ</td><td>Hoàn thành nhiệm vụ Ban cán sự & đóng góp cho lớp</td><td>Giảng viên</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- =================== TAB 4: KHAO THI PTIT =================== -->
+        <section class="tab-pane" id="pane-khao-thi">
+          
+          <!-- 4 Stages Grid -->
+          <div class="doc-card">
+            <h3><i class="fa-solid fa-arrows-split-up-and-left text-blue"></i> 4 Giai Đoạn Khảo Thí Chuẩn</h3>
+            <div class="lifecycle-steps-grid">
+              <div class="lc-step">
+                <div class="lc-header"><span class="lc-num">GĐ 1</span><b>Ra Đề & Bàn Giao</b></div>
+                <ul>
+                  <li><b>T - 15 ngày:</b> Phân công CB ra đề</li>
+                  <li><b>T - 7 ngày:</b> Soạn & Rà soát đề</li>
+                  <li><b>T - 3 ngày:</b> Bàn giao đề chính thức</li>
+                  <li><b>T - 1 giờ:</b> Tải đề lên RAIA</li>
+                </ul>
+              </div>
+
+              <div class="lc-step">
+                <div class="lc-header"><span class="lc-num">GĐ 2</span><b>Tổ Chức Coi Thi</b></div>
+                <ul>
+                  <li>CBCT có mặt trước 15 phút</li>
+                  <li>Đối chiếu CCCD & phổ biến nội quy</li>
+                  <li>Thu bài, kiểm đếm & ký biên bản</li>
+                </ul>
+              </div>
+
+              <div class="lc-step">
+                <div class="lc-header"><span class="lc-num">GĐ 3</span><b>Chấm & Phê Duyệt</b></div>
+                <ul>
+                  <li><b>Thi Dự án:</b> Chấm trong ≤ 1 ngày</li>
+                  <li><b>Thi Tự luận:</b> Chấm trong ≤ 5 ngày</li>
+                  <li>GĐ Đào tạo phê duyệt điểm cuối</li>
+                </ul>
+              </div>
+
+              <div class="lc-step">
+                <div class="lc-header"><span class="lc-num">GĐ 4</span><b>Hậu Khảo Thí</b></div>
+                <ul>
+                  <li><b>Phúc khảo:</b> Giải quyết trong ≤ 5 ngày</li>
+                  <li><b>Thi lại:</b> Thứ 7 hàng tuần</li>
+                  <li><b>Lệ phí thi lại:</b> 300.000đ/học phần</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <h3><i class="fa-solid fa-chart-pie text-red"></i> Cơ Cấu Điểm Học Phần (Pass ≥ 50/100đ)</h3>
+            <table class="data-table">
+              <thead><tr><th>Thành phần</th><th>Hình thức</th><th>Tỷ lệ phần</th><th>Tỷ lệ tổng</th><th>Ghi chú</th></tr></thead>
+              <tbody>
+                <tr><td rowspan="2"><b>1. Quá Trình (20%)</b></td><td>Chuyên cần</td><td>50%</td><td><b>10%</b></td><td>Nghỉ 1% trừ 1đ</td></tr>
+                <tr><td>Kiểm tra đầu giờ</td><td>50%</td><td><b>10%</b></td><td>Trung bình cộng</td></tr>
+                <tr><td rowspan="2"><b>2. Giữa Môn (20%)</b></td><td>Trắc nghiệm</td><td>30%</td><td rowspan="2"><b>20%</b></td><td rowspan="2">Thời gian tối đa 120p</td></tr>
+                <tr><td>Tự luận</td><td>70%</td></tr>
+                <tr><td rowspan="3"><b>3. Cuối Môn (60%)</b></td><td>Trắc nghiệm</td><td>10%</td><td rowspan="3"><b>60%</b></td><td rowspan="3"><b>Chuẩn đạt môn:</b><br>Tổng điểm ≥ 50/100đ</td></tr>
+                <tr><td>Vấn đáp</td><td>20%</td></tr>
+                <tr><td>Thực hành / Dự án</td><td>70%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- =================== TAB 5: RANK GV - TG =================== -->
+        <section class="tab-pane" id="pane-rank-gvtg">
+          
+          <!-- Career Ladder Stepper -->
+          <div class="doc-card">
+            <h3><i class="fa-solid fa-stairs text-gold"></i> Lộ Trình 8 Cấp Bậc Rank GV - TG</h3>
+            <div class="career-ladder-grid">
+              <div class="ladder-card rank-ta"><span class="ladder-badge">Rank 1</span><b>TTS Trợ Giảng</b><p>&lt; 6m | ≥ 40đ</p></div>
+              <div class="ladder-card rank-ta"><span class="ladder-badge">Rank 2</span><b>Trợ Giảng Cứng</b><p>≥ 6m | ≥ 55đ</p></div>
+              <div class="ladder-card rank-gv"><span class="ladder-badge">Rank 3</span><b>GV Tập Sự</b><p>≥ 6m TA | ≥ 65đ</p></div>
+              <div class="ladder-card rank-gv"><span class="ladder-badge">Rank 4</span><b>Giảng Viên Cứng</b><p>≥ 1 năm | ≥ 75đ</p></div>
+              <div class="ladder-card rank-mgr"><span class="ladder-badge">Rank 5</span><b>GV PM Môn</b><p>20M + 4M + 2M</p></div>
+              <div class="ladder-card rank-mgr"><span class="ladder-badge">Rank 6</span><b>PM Chương Trình</b><p>25M + 4M + 3M</p></div>
+              <div class="ladder-card rank-brand"><span class="ladder-badge">Rank 7</span><b>GV Brand Nội Bộ</b><p>30M + 5M + 3M</p></div>
+              <div class="ladder-card rank-brand"><span class="ladder-badge">Rank 8</span><b>GV Brand Thị Trường</b><p>35M + 6M + 4M</p></div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <h3><i class="fa-solid fa-table text-blue"></i> Bảng Ma Trận Tiêu Chuẩn & Đãi Ngộ 8 Rank</h3>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Rank</th><th>Chức danh</th><th>Kinh nghiệm</th><th>Tổng điểm</th><th>Điểm bắt buộc</th><th>Lương cứng</th><th>Phụ cấp</th><th>Thưởng</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><span class="badge badge-rank r1">Rank 1</span></td><td>TTS Trợ Giảng</td><td>&lt; 6 tháng</td><td>≥ 40đ</td><td>Khác ≥ 5/10</td><td>Thỏa thuận</td><td>-</td><td>-</td></tr>
+                  <tr><td><span class="badge badge-rank r2">Rank 2</span></td><td>Trợ Giảng Cứng</td><td>≥ 6 tháng</td><td>≥ 55đ</td><td>Khác ≥ 7/10</td><td>Thỏa thuận</td><td>-</td><td>-</td></tr>
+                  <tr><td><span class="badge badge-rank r3">Rank 3</span></td><td>GV Tập Sự</td><td>≥ 6m TA</td><td>≥ 65đ</td><td>Sư phạm ≥ 12/20</td><td>Thỏa thuận</td><td>-</td><td>-</td></tr>
+                  <tr><td><span class="badge badge-rank r4">Rank 4</span></td><td>Giảng Viên Cứng</td><td>≥ 1 năm</td><td>≥ 75đ</td><td>KQ lớp ≥ 14/25</td><td>Thỏa thuận</td><td>-</td><td>-</td></tr>
+                  <tr><td><span class="badge badge-rank r5">Rank 5</span></td><td>GV PM Môn Học</td><td>≥ 2 năm</td><td>≥ 82đ</td><td>Tài nguyên ≥ 12/20</td><td><b>20.000.000đ</b></td><td>4.000.000đ</td><td>2.000.000đ</td></tr>
+                  <tr><td><span class="badge badge-rank r6">Rank 6</span></td><td>PM Chương Trình</td><td>≥ 3 năm</td><td>≥ 88đ</td><td>Khác ≥ 7/10</td><td><b>25.000.000đ</b></td><td>4.000.000đ</td><td>3.000.000đ</td></tr>
+                  <tr><td><span class="badge badge-rank r7">Rank 7</span></td><td>GV Brand Nội Bộ</td><td>≥ 4 năm</td><td>≥ 92đ</td><td>KQ lớp ≥ 18/25</td><td><b>30.000.000đ</b></td><td>5.000.000đ</td><td>3.000.000đ</td></tr>
+                  <tr><td><span class="badge badge-rank r8">Rank 8</span></td><td>GV Brand Thị Trường</td><td>≥ 5 năm</td><td>≥ 95đ</td><td>Khác ≥ 9/10</td><td><b>35.000.000đ</b></td><td>6.000.000đ</td><td>4.000.000đ</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================== TAB 6: ONBOARDING =================== -->
+        <section class="tab-pane" id="pane-onboarding">
+          
+          <!-- 5T Cards -->
+          <div class="values-5t-grid">
+            <div class="value-5t-card"><div class="val-num">T1</div><h4>TIN CẬY</h4><p>Cam kết chuẩn mực đào tạo cao nhất</p></div>
+            <div class="value-5t-card"><div class="val-num">T2</div><h4>TẬN TÂM</h4><p>Lấy thành công của học viên làm trọng tâm</p></div>
+            <div class="value-5t-card"><div class="val-num">T3</div><h4>THỰC TIỄN</h4><p>Gắn liền lăng kính doanh nghiệp & dự án</p></div>
+            <div class="value-5t-card"><div class="val-num">T4</div><h4>THÍCH ỨNG</h4><p>Đổi mới công nghệ & phương pháp liên tục</p></div>
+            <div class="value-5t-card"><div class="val-num">T5</div><h4>TINH GỌN</h4><p>Tối ưu lộ trình, tập trung giá trị thực chất</p></div>
+          </div>
+
+          <div class="grid-2col">
+            <div class="doc-card">
+              <h3><i class="fa-solid fa-clock text-blue"></i> Giờ Làm Việc & Đi Muộn</h3>
+              <ul class="summary-list">
+                <li><b>Khối Đào tạo:</b> 07h00 – 16h00 (Nghỉ trưa: 11h30 – 13h00)</li>
+                <li><b>Khối BO:</b> 08h00 – 17h30 (Nghỉ trưa: 12h00 – 13h30)</li>
+                <li><b>Muộn &lt; 15 phút:</b> Làm bù x2 thời gian HOẶC phạt 20.000đ/mỗi 5 phút.</li>
+                <li><b>Muộn &gt; 15 phút:</b> Phạt 20.000đ/mỗi 5 phút (Bắt buộc, không được làm bù).</li>
+              </ul>
+            </div>
+
+            <div class="doc-card">
+              <h3><i class="fa-solid fa-umbrella-beach text-green"></i> Nghỉ Phép & Lương Thưởng</h3>
+              <ul class="summary-list">
+                <li><b>Phép năm:</b> 12 ngày/năm (Được dồn sang năm sau, hạn dùng hết 30/06 năm sau).</li>
+                <li><b>Bổ sung công:</b> Nộp đơn trong ≤ 3 ngày, bắt buộc tách riêng ca Sáng/Chiều.</li>
+                <li><b>Kỳ trả lương:</b> <b>Mùng 5 hàng tháng</b> qua tài khoản ngân hàng ACB.</li>
+                <li><b>Văn hóa 5S:</b> Sàng lọc - Sắp xếp - Sạch sẽ - Săn sóc - Sẵn sàng.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================== TAB 7: LARK GUIDE =================== -->
+        <section class="tab-pane" id="pane-lark-guide">
+          <div class="lark-steps-grid">
+            <div class="lark-step-card">
+              <div class="lark-step-icon"><i class="fa-solid fa-qrcode"></i></div>
+              <h4>01. Nhắn Tin & Kết Bạn</h4>
+              <p>Quét mã QR vào nhóm Rikkei Education, thêm danh bạ đồng nghiệp.</p>
+            </div>
+            <div class="lark-step-card">
+              <div class="lark-step-icon"><i class="fa-solid fa-calendar-days"></i></div>
+              <h4>02. Calendar Lịch Họp</h4>
+              <p>Check lịch trống trên PC, New Event, thêm liên hệ & chèn link Zoom/Meet.</p>
+            </div>
+            <div class="lark-step-card">
+              <div class="lark-step-icon"><i class="fa-solid fa-fingerprint"></i></div>
+              <h4>03. Chấm Công Hàng Ngày</h4>
+              <p>Workplace → Attendance → Clock in/out. Cuối tháng check mã 🟢 Hợp lệ / 🔴 Lỗi.</p>
+            </div>
+            <div class="lark-step-card">
+              <div class="lark-step-icon"><i class="fa-solid fa-file-circle-plus"></i></div>
+              <h4>04. Bổ Sung Công (Correction)</h4>
+              <p>Nộp đơn trong ≤ 3 ngày. Bắt buộc tách riêng đơn ca Sáng và đơn ca Chiều.</p>
+            </div>
+            <div class="lark-step-card">
+              <div class="lark-step-icon"><i class="fa-solid fa-plane-departure"></i></div>
+              <h4>05. Đơn Nghỉ Phép (Leave)</h4>
+              <p>Attendance → Leave → Chọn ngày phép năm cần nghỉ và gửi Leader duyệt.</p>
+            </div>
+            <div class="lark-step-card">
+              <div class="lark-step-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+              <h4>06. Email & Meeting Nhanh</h4>
+              <p>Dùng Gmail công ty trao đổi văn bản và Lark Meeting gọi video nội bộ tức thì.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================== TAB 8: PHONG THI =================== -->
+        <section class="tab-pane" id="pane-phong-thi">
+          <div class="dodont-grid">
+            <div class="dodont-card do-card">
+              <div class="dodont-header"><i class="fa-solid fa-circle-check"></i> ĐƯỢC PHÉP</div>
+              <ul>
+                <li>Xuất trình CCCD khi vào phòng thi.</li>
+                <li>Chỉ mang bút viết, CCCD, Laptop (khi thi thực hành).</li>
+                <li>Rời phòng thi sau khi hết 2/3 thời gian làm bài.</li>
+                <li>Ký tên vào biên bản nộp bài trước khi rời phòng.</li>
+              </ul>
+            </div>
+            <div class="dodont-card dont-card">
+              <div class="dodont-header"><i class="fa-solid fa-circle-xmark"></i> NGHIÊM CẤM HOÀN TOÀN</div>
+              <ul>
+                <li>Cấm mang điện thoại, thiết bị thu phát, tai nghe vào phòng thi.</li>
+                <li>Tuyệt đối cấm sử dụng AI, ChatGPT, Copilot gian lận bài thi.</li>
+                <li>Cấm thi hộ, nộp bài hộ, sửa bài hoặc phát tán đề thi.</li>
+                <li>Vi phạm = <b>Hủy kết quả, điểm 0 và CẤM THI LẠI</b>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Penalty Tree Visual -->
+          <div class="doc-card">
+            <h3><i class="fa-solid fa-tree text-red"></i> 3 Mức Xử Lý Kỷ Luật Phòng Thi</h3>
+            <div class="penalty-tree-grid">
+              <div class="penalty-node-card orange-node">
+                <div class="penalty-badge">MỨC 1: ĐÌNH CHỈ THI</div>
+                <b>Hành vi:</b> Quay cóp, trao đổi, dùng AI/ChatGPT, gây rối.
+                <div class="penalty-action"><b>Chế tài:</b> Thu bài ra khỏi phòng ngay, nhận điểm 0, CẤM THI LẠI.</div>
+              </div>
+              <div class="penalty-node-card red-node">
+                <div class="penalty-badge">MỨC 2: HỦY KẾT QUẢ</div>
+                <b>Hành vi:</b> Thi hộ, sửa bài sau nộp, phát tán đề thi.
+                <div class="penalty-action"><b>Chế tài:</b> Trình GĐ Đào tạo hủy kết quả, điểm 0, CẤM THI LẠI.</div>
+              </div>
+              <div class="penalty-node-card gold-node">
+                <div class="penalty-badge">ĐẾN MUỘN SAU TÍNH GIỜ</div>
+                <b>Xử lý:</b> Không được vào phòng. Làm đơn xin thi bổ sung gửi CTSV.
+                <div class="penalty-action"><b>Kết quả:</b> Nếu duyệt → Thi bổ sung đợt sau; Không duyệt → Điểm 0.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================== TAB 9: SINH VIEN =================== -->
+        <section class="tab-pane" id="pane-sinh-vien">
+          <div class="student-rules-grid">
+            <div class="st-rule-card">
+              <div class="st-rule-icon"><i class="fa-solid fa-shirt"></i></div>
+              <h4>1. Trang Phục & Tác Phong</h4>
+              <ul>
+                <li>Đến lớp sớm hơn 15 phút.</li>
+                <li>Trang phục lịch sự, đi giày hoặc dép quai hậu.</li>
+                <li>Đeo thẻ sinh viên, mặc đồng phục thứ 2 hàng tuần.</li>
+              </ul>
+            </div>
+
+            <div class="st-rule-card">
+              <div class="st-rule-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <h4>2. Thái Độ & Ý Thức</h4>
+              <ul>
+                <li>Giữ gìn vệ sinh, xếp ghế ngay ngắn sau giờ học.</li>
+                <li>Tiết kiệm điện nước, tắt thiết bị khi ra về.</li>
+                <li>Trật tự, cấm chơi game/việc riêng, cấm nói tục.</li>
+              </ul>
+            </div>
+
+            <div class="st-rule-card">
+              <div class="st-rule-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4>3. Quy Định An Toàn</h4>
+              <ul>
+                <li>Cấm quay phim, chụp ảnh, ghi âm khi chưa phép.</li>
+                <li>Cấm thuốc lá, vape, chất kích thích, vũ khí.</li>
+                <li>Tuân thủ quy định PCCC và an toàn tòa nhà.</li>
+              </ul>
+            </div>
+
+            <div class="st-rule-card">
+              <div class="st-rule-icon"><i class="fa-solid fa-gavel"></i></div>
+              <h4>4. Chế Tài Kỷ Luật</h4>
+              <ul>
+                <li><b>Nhắc nhở:</b> Trừ 10 điểm R-Point tuân thủ.</li>
+                <li><b>Lập biên bản:</b> Trừ 20 điểm R-Point tuân thủ.</li>
+                <li><b>Đình chỉ học:</b> Trừ trọn 40đ R-Point tuân thủ.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
