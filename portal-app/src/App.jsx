@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './contexts/AppContext';
 import MainLayout from './components/MainLayout';
@@ -12,8 +13,23 @@ import RankGvTg from './pages/RankGvTg';
 import Onboarding from './pages/Onboarding';
 import LarkGuide from './pages/LarkGuide';
 import KPIMaster from './pages/KPIMaster';
+import Gate from './pages/Gate';
+import QuyTrinhLMS from './pages/QuyTrinhLMS';
 
 function App() {
+  const [isUnlocked, setIsUnlocked] = useState(false);
+
+  useEffect(() => {
+    const unlocked = localStorage.getItem('rikkei_portal_unlocked');
+    if (unlocked === 'true') {
+      setIsUnlocked(true);
+    }
+  }, []);
+
+  if (!isUnlocked) {
+    return <Gate onUnlock={() => setIsUnlocked(true)} />;
+  }
+
   return (
     <AppProvider>
       <MainLayout>
@@ -30,6 +46,7 @@ function App() {
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/lark-guide" element={<LarkGuide />} />
           <Route path="/kpi-master" element={<KPIMaster />} />
+          <Route path="/quy-trinh-lms" element={<QuyTrinhLMS />} />
         </Routes>
       </MainLayout>
     </AppProvider>

@@ -48,7 +48,20 @@ export default function RawDocs() {
   const filteredDocs = useMemo(() => {
     return docEntries.filter(([id, doc]) => {
       if (typeFilter && doc.type !== typeFilter) return false;
-      if (search && !doc.title.toLowerCase().includes(search.toLowerCase())) return false;
+      if (search) {
+        const query = search.toLowerCase();
+        const docText = [
+          doc.title,
+          doc.desc,
+          doc.code,
+          doc.orig_file,
+          doc.type,
+          doc.raw_content,
+          ...(doc.chapters ? doc.chapters.map(c => c.title + " " + c.content) : [])
+        ].join(' ').toLowerCase();
+        
+        if (!docText.includes(query)) return false;
+      }
       return true;
     });
   }, [search, typeFilter, docEntries]);

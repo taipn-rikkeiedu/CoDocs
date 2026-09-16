@@ -41,6 +41,7 @@ export default function Topbar() {
               <Link to="/rank-gvtg" className="topbar-dropdown-item"><i className="fa-solid fa-ranking-star"></i> Rank Giảng viên</Link>
               <Link to="/onboarding" className="topbar-dropdown-item"><i className="fa-solid fa-handshake"></i> Onboarding 2026</Link>
               <Link to="/lark-guide" className="topbar-dropdown-item"><i className="fa-solid fa-laptop-file"></i> Cẩm nang Lark Suite</Link>
+              <Link to="/quy-trinh-lms" className="topbar-dropdown-item"><i className="fa-solid fa-code-compare"></i> Quy trình LMS & CM</Link>
             </div>
           </div>
 
