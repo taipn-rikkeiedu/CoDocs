@@ -4,20 +4,34 @@ import { useNavigate } from 'react-router-dom';
 function Gate({ onUnlock }) {
   const [passcode, setPasscode] = useState('');
   const [error, setError] = useState(false);
+  const [checking, setChecking] = useState(false);
   const navigate = useNavigate();
 
-  const handleUnlock = (e) => {
+  const handleUnlock = async (e) => {
     e.preventDefault();
-    const correctPasscode = import.meta.env.VITE_APP_PASSCODE || 'Rikkei@2026';
-    
-    if (passcode === correctPasscode) {
-      setError(false);
-      localStorage.setItem('rikkei_portal_unlocked', 'true');
-      if (onUnlock) onUnlock();
-      navigate('/dashboard');
-    } else {
+    setChecking(true);
+    try {
+      const res = await fetch('/api/verify-passcode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ passcode }),
+      });
+      const data = await res.json();
+
+      if (data.ok) {
+        setError(false);
+        localStorage.setItem('rikkei_portal_unlocked', 'true');
+        if (onUnlock) onUnlock();
+        navigate('/dashboard');
+      } else {
+        setError(true);
+        setTimeout(() => setError(false), 500);
+      }
+    } catch {
       setError(true);
       setTimeout(() => setError(false), 500);
+    } finally {
+      setChecking(false);
     }
   };
 
@@ -43,8 +57,8 @@ function Gate({ onUnlock }) {
               autoFocus
             />
           </div>
-          <button type="submit" className="gate-submit-btn">
-            Unlock <i className="fa-solid fa-arrow-right-to-bracket"></i>
+          <button type="submit" className="gate-submit-btn" disabled={checking}>
+            {checking ? 'Checking...' : 'Unlock'} <i className="fa-solid fa-arrow-right-to-bracket"></i>
           </button>
         </form>
         {error && <div className="gate-error-text">Passcode is incorrect.</div>}
