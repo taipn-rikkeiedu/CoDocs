@@ -1,8 +1,25 @@
 import React, { useState, useMemo } from 'react';
 import { kpiMasterData } from '../data/kpiMasterData';
 
-const RANK_BADGE_CLASS = { 'Trợ giảng': 'badge-rank-tg', 'Giảng viên': 'badge-rank-gv' };
 const ROLE_CLASS = { 'Trợ giảng': 'role-tro-giang', 'Giảng viên': 'role-giang-vien' };
+
+export const getRankColorClass = (rank) => {
+  const r = Number(rank);
+  if (r === 1 || r === 2) return 'tag-blue';
+  if (r === 3 || r === 4) return 'tag-green';
+  if (r === 5 || r === 6) return 'tag-gold';
+  if (r === 7 || r === 8) return 'tag-purple';
+  return 'tag-gray';
+};
+
+export const getRankTextColor = (rank) => {
+  const r = Number(rank);
+  if (r === 1 || r === 2) return 'var(--accent-blue)';
+  if (r === 3 || r === 4) return 'var(--accent-green)';
+  if (r === 5 || r === 6) return 'var(--accent-gold)';
+  if (r === 7 || r === 8) return 'var(--accent-purple)';
+  return 'var(--text-muted)';
+};
 
 function TongQuan() {
   return (
@@ -47,18 +64,18 @@ function TongQuan() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Trợ giảng</td><td><span className="badge-rank-tg">0</span></td><td>1</td><td>0 / 1</td><td>0</td><td>0</td></tr>
-                <tr><td>Trợ giảng</td><td><span className="badge-rank-tg">1</span></td><td>30</td><td>18 / 12</td><td>3140</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>52.33</td></tr>
-                <tr><td>Trợ giảng</td><td><span className="badge-rank-tg">2</span></td><td>30</td><td>18 / 12</td><td>2795</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>46.58</td></tr>
-                <tr><td>Trợ giảng</td><td><span className="badge-rank-tg">3</span></td><td>32</td><td>18 / 14</td><td>2645</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>44.08</td></tr>
+                <tr><td>Trợ giảng</td><td><span className={`kpi-badge ${getRankColorClass(0)}`}>0</span></td><td>1</td><td>0 / 1</td><td>0</td><td>0</td></tr>
+                <tr><td>Trợ giảng</td><td><span className={`kpi-badge ${getRankColorClass(1)}`}>1</span></td><td>30</td><td>18 / 12</td><td>3140</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>52.33</td></tr>
+                <tr><td>Trợ giảng</td><td><span className={`kpi-badge ${getRankColorClass(2)}`}>2</span></td><td>30</td><td>18 / 12</td><td>2795</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>46.58</td></tr>
+                <tr><td>Trợ giảng</td><td><span className={`kpi-badge ${getRankColorClass(3)}`}>3</span></td><td>32</td><td>18 / 14</td><td>2645</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>44.08</td></tr>
                 
-                <tr><td>Giảng viên</td><td><span className="badge-rank-gv">0</span></td><td>1</td><td>0 / 1</td><td>0</td><td>0</td></tr>
-                <tr><td>Giảng viên</td><td><span className="badge-rank-gv">3</span></td><td>32</td><td>18 / 14</td><td>2645</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>44.08</td></tr>
-                <tr><td>Giảng viên</td><td><span className="badge-rank-gv">4</span></td><td>30</td><td>18 / 12</td><td>2405</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>40.08</td></tr>
-                <tr><td>Giảng viên</td><td><span className="badge-rank-gv">5</span></td><td>30</td><td>18 / 12</td><td>2195</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>36.58</td></tr>
-                <tr><td>Giảng viên</td><td><span className="badge-rank-gv">6</span></td><td>21</td><td>18 / 3</td><td>1285</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>21.41</td></tr>
-                <tr><td>Giảng viên</td><td><span className="badge-rank-gv">7</span></td><td>21</td><td>18 / 3</td><td>1285</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>21.41</td></tr>
-                <tr><td>Giảng viên</td><td><span className="badge-rank-gv">8</span></td><td>21</td><td>18 / 3</td><td>1285</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>21.41</td></tr>
+                <tr><td>Giảng viên</td><td><span className={`kpi-badge ${getRankColorClass(0)}`}>0</span></td><td>1</td><td>0 / 1</td><td>0</td><td>0</td></tr>
+                <tr><td>Giảng viên</td><td><span className={`kpi-badge ${getRankColorClass(3)}`}>3</span></td><td>32</td><td>18 / 14</td><td>2645</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>44.08</td></tr>
+                <tr><td>Giảng viên</td><td><span className={`kpi-badge ${getRankColorClass(4)}`}>4</span></td><td>30</td><td>18 / 12</td><td>2405</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>40.08</td></tr>
+                <tr><td>Giảng viên</td><td><span className={`kpi-badge ${getRankColorClass(5)}`}>5</span></td><td>30</td><td>18 / 12</td><td>2195</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>36.58</td></tr>
+                <tr><td>Giảng viên</td><td><span className={`kpi-badge ${getRankColorClass(6)}`}>6</span></td><td>21</td><td>18 / 3</td><td>1285</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>21.41</td></tr>
+                <tr><td>Giảng viên</td><td><span className={`kpi-badge ${getRankColorClass(7)}`}>7</span></td><td>21</td><td>18 / 3</td><td>1285</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>21.41</td></tr>
+                <tr><td>Giảng viên</td><td><span className={`kpi-badge ${getRankColorClass(8)}`}>8</span></td><td>21</td><td>18 / 3</td><td>1285</td><td style={{color: 'var(--accent-blue)', fontWeight: 700}}>21.41</td></tr>
               </tbody>
             </table>
           </div>
@@ -235,18 +252,18 @@ function KpiList() {
       {grouped.map(group => (
         <div className="doc-card" key={`${group.role}-${group.rank}`}>
           <div className="doc-header">
-            <h3 className="doc-title" style={{ color: 'var(--accent-blue)' }}>
+            <h3 className="doc-title" style={{ color: getRankTextColor(group.rank) }}>
               <i className="fa-solid fa-users-gear"></i> KPI: {group.role} - Rank {group.rank}
             </h3>
           </div>
           <div className="doc-body">
             <div className="kpi-grid">
               {group.items.map(kpi => (
-                <div className={`kpi-card ${ROLE_CLASS[kpi.role]}`} key={kpi.id}>
+                <div className="kpi-card" style={{ '--card-accent': getRankTextColor(kpi.rank) }} key={kpi.id}>
                   <div className="kpi-card-header">
                     <div className="kpi-badges">
                       <span className="kpi-badge badge-task">{kpi.taskType}</span>
-                      <span className={`kpi-badge ${RANK_BADGE_CLASS[kpi.role]}`}>Rank {kpi.rank}</span>
+                      <span className={`kpi-badge ${getRankColorClass(kpi.rank)}`}>Rank {kpi.rank}</span>
                     </div>
                   </div>
                   <h4 className="kpi-title">{kpi.title}</h4>

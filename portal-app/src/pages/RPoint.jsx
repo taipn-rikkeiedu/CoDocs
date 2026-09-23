@@ -35,20 +35,24 @@ export default function RPoint() {
       </div>
 
       <div className="doc-card">
-        <h3><i className="fa-solid fa-table-list text-blue"></i> Bảng Trừ Điểm & Cộng Thưởng (Thang 120 Điểm)</h3>
-        <table className="data-table">
-          <thead><tr><th>Tiêu chí đánh giá</th><th>Điểm tối đa</th><th>Quy định trừ / cộng</th><th>Đơn vị phụ trách</th></tr></thead>
-          <tbody>
-            <tr className="table-group-header"><td colSpan="4"><b>I. ĐIỂM RÈN LUYỆN (TỐI ĐA 100 ĐIỂM)</b></td></tr>
-            <tr><td><b>Chuyên cần học tập</b></td><td>20đ</td><td>Nghỉ 1% số buổi học → Trừ <b>02 điểm</b></td><td>Hệ thống LMS</td></tr>
-            <tr><td><b>Hoàn thành bài tập về nhà</b></td><td>20đ</td><td>Thiếu 1% bài tập → Trừ <b>02 điểm</b></td><td>Hệ thống LMS</td></tr>
-            <tr><td><b>Chuẩn bị bài E-learning</b></td><td>20đ</td><td>Chậm 1 bài: -5đ | Chậm 2 bài: -10đ | Chậm ≥ 3 bài: <b>0đ (CẤM THI)</b></td><td>Hệ thống LMS</td></tr>
-            <tr><td><b>Tuân thủ nội quy học đường</b></td><td>40đ</td><td>Vi phạm Lần 1: -10đ | Lần 2: -20đ | Lần 3: <b>0đ</b></td><td>Giảng viên / Quản lý lớp</td></tr>
-            <tr className="table-group-header"><td colSpan="4"><b>II. ĐIỂM THƯỞNG RÈN LUYỆN (TỐI ĐA 20 ĐIỂM)</b></td></tr>
-            <tr><td><b>Thưởng tinh thần học tập</b></td><td>10đ</td><td>Tích cực phát biểu xây dựng bài, hỗ trợ bạn học</td><td>Giảng viên bộ môn</td></tr>
-            <tr><td><b>Thưởng cán bộ lớp</b></td><td>10đ</td><td>Hoàn thành tốt nhiệm vụ Lớp trưởng, Lớp phó, Nhóm trưởng</td><td>Giảng viên bộ môn</td></tr>
-          </tbody>
-        </table>
+        <div className="doc-header">
+          <h3 className="doc-title"><i className="fa-solid fa-table-list text-blue"></i> Bảng Trừ Điểm & Cộng Thưởng (Thang 120 Điểm)</h3>
+        </div>
+        <div className="doc-body">
+          <table className="data-table">
+            <thead><tr><th>Tiêu chí đánh giá</th><th>Điểm tối đa</th><th>Quy định trừ / cộng</th><th>Đơn vị phụ trách</th></tr></thead>
+            <tbody>
+              <tr className="table-group-header"><td colSpan="4"><b>I. ĐIỂM RÈN LUYỆN (TỐI ĐA 100 ĐIỂM)</b></td></tr>
+              <tr><td><b>Chuyên cần học tập</b></td><td>20đ</td><td>Nghỉ 1% số buổi học = Trừ <b>02 điểm</b></td><td>Hệ thống LMS</td></tr>
+              <tr><td><b>Hoàn thành bài tập về nhà</b></td><td>20đ</td><td>Thiếu 1% bài tập = Trừ <b>02 điểm</b></td><td>Hệ thống LMS</td></tr>
+              <tr><td><b>Chuẩn bị bài E-learning</b></td><td>20đ</td><td>Chậm 1 bài: -5đ | Chậm 2 bài: -10đ | Chậm &ge; 3 bài: <b>0đ (CẤM THI)</b></td><td>Hệ thống LMS</td></tr>
+              <tr><td><b>Tuân thủ nội quy học đường</b></td><td>40đ</td><td>Vi phạm Lần 1: -10đ | Lần 2: -20đ | Lần 3: <b>0đ</b></td><td>Giảng viên / Quản lý lớp</td></tr>
+              <tr className="table-group-header"><td colSpan="4"><b>II. ĐIỂM THƯỞNG RÈN LUYỆN (TỐI ĐA 20 ĐIỂM)</b></td></tr>
+              <tr><td><b>Thưởng tinh thần học tập</b></td><td>10đ</td><td>Tích cực phát biểu xây dựng bài, hỗ trợ bạn học</td><td>Giảng viên bộ môn</td></tr>
+              <tr><td><b>Thưởng cán bộ lớp</b></td><td>10đ</td><td>Hoàn thành tốt nhiệm vụ Lớp trưởng, Lớp phó, Nhóm trưởng</td><td>Giảng viên bộ môn</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );

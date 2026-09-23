@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 export default function QuyTrinhLMS() {
   const [activeTab, setActiveTab] = useState('quy-dinh');
+  const [roleTab, setRoleTab] = useState('tg');
   const [copied, setCopied] = useState(false);
   const feedbackCode = "[K26][Session_XX][Lesson_XX][Type]";
 
@@ -11,7 +12,264 @@ export default function QuyTrinhLMS() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+
+  const ruleData = {
+    tg: [
+      {
+        title: "4.1. Vi phạm quy trình thông thường",
+        icon: "fa-triangle-exclamation",
+        color: "var(--accent-orange)",
+        rules: [
+          {
+            code: "FB-TG-01", action: "Chậm xác nhận tiếp nhận nhiệm vụ",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở" },
+              { label: "Lần 2", text: "Trừ 50.000đ" },
+              { label: "Lần 3", text: "Trừ 100.000đ và 0,1 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 200.000đ, xem xét dừng phân công kiểm duyệt" }
+            ]
+          },
+          {
+            code: "FB-TG-02", action: "Feedback sai TOPIC, sai mã hoặc thiếu thông tin sau khi đã được yêu cầu bổ sung",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở, yêu cầu bổ sung" },
+              { label: "Lần 2", text: "Trừ 50.000đ" },
+              { label: "Lần 3", text: "Trừ 100.000đ và 0,1 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 200.000đ, đánh giá lại năng lực phối hợp" }
+            ]
+          },
+          {
+            code: "FB-TG-03", action: "Chậm kiểm tra lại hoặc không xác nhận kết quả hiệu chỉnh",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở" },
+              { label: "Lần 2", text: "Trừ 50.000đ" },
+              { label: "Lần 3", text: "Trừ 100.000đ và 0,1 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 200.000đ, dừng phân công nhiệm vụ tương tự" }
+            ]
+          }
+        ]
+      },
+      {
+        title: "4.2. Vi phạm ảnh hưởng đến chất lượng hoặc tiến độ",
+        icon: "fa-bolt",
+        color: "var(--accent-red)",
+        rules: [
+          {
+            code: "FB-TG-04", action: "Chậm kiểm duyệt học liệu theo KPI Master",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở hệ thống" },
+              { label: "Lần 2", text: "Trừ 100.000đ" },
+              { label: "Lần 3", text: "Trừ 300.000đ và 0,2 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,5 HSNX, đình chỉ công tác kiểm duyệt/sản xuất học liệu" }
+            ]
+          },
+          {
+            code: "FB-TG-05", action: "Kiểm duyệt qua loa, bỏ sót lỗi rõ ràng hoặc feedback không thể thực hiện",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở và kiểm duyệt lại" },
+              { label: "Lần 2", text: "Trừ 100.000đ" },
+              { label: "Lần 3", text: "Trừ 300.000đ và 0,2 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,5 HSNX, đánh giá lại năng lực chuyên môn" }
+            ]
+          },
+          {
+            code: "FB-TG-06", action: "Tự ý chỉnh sửa học liệu đã duyệt hoặc xác nhận \"Đạt\" sai thực tế",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở hệ thống" },
+              { label: "Lần 2", text: "Trừ 100.000đ" },
+              { label: "Lần 3", text: "Trừ 300.000đ và 0,2 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,5 HSNX, đình chỉ công tác sản xuất/kiểm duyệt" }
+            ]
+          }
+        ]
+      }
+    ],
+    gv: [
+      {
+        title: "5.1. Vi phạm quy trình thông thường",
+        icon: "fa-triangle-exclamation",
+        color: "var(--accent-orange)",
+        rules: [
+          {
+            code: "FB-GV-01", action: "Chậm xác nhận tiếp nhận nhiệm vụ",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở" },
+              { label: "Lần 2", text: "Trừ 100.000đ" },
+              { label: "Lần 3", text: "Trừ 200.000đ và 0,1 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 300.000đ, xem xét lại phân công kiểm duyệt" }
+            ]
+          },
+          {
+            code: "FB-GV-02", action: "Feedback sai TOPIC, sai mã hoặc thiếu thông tin sau khi đã được yêu cầu bổ sung",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở, yêu cầu bổ sung" },
+              { label: "Lần 2", text: "Trừ 100.000đ" },
+              { label: "Lần 3", text: "Trừ 200.000đ và 0,1 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 300.000đ, đánh giá lại năng lực phối hợp" }
+            ]
+          },
+          {
+            code: "FB-GV-03", action: "Chậm kiểm tra lại hoặc không xác nhận kết quả hiệu chỉnh",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở" },
+              { label: "Lần 2", text: "Trừ 100.000đ" },
+              { label: "Lần 3", text: "Trừ 200.000đ và 0,1 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 300.000đ, xem xét lại việc phân công môn học" }
+            ]
+          }
+        ]
+      },
+      {
+        title: "5.2. Vi phạm ảnh hưởng đến chất lượng hoặc tiến độ",
+        icon: "fa-bolt",
+        color: "var(--accent-red)",
+        rules: [
+          {
+            code: "FB-GV-04", action: "Chậm kiểm duyệt học liệu theo KPI Master",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở hệ thống" },
+              { label: "Lần 2", text: "Trừ 200.000đ" },
+              { label: "Lần 3", text: "Trừ 500.000đ và 0,2 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,5 HSNX và hạ 01 Rank đào tạo" }
+            ]
+          },
+          {
+            code: "FB-GV-05", action: "Kiểm duyệt qua loa, bỏ sót lỗi chuyên môn hoặc feedback không thể thực hiện",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở và kiểm duyệt lại" },
+              { label: "Lần 2", text: "Trừ 200.000đ" },
+              { label: "Lần 3", text: "Trừ 500.000đ và 0,2 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,5 HSNX, đánh giá lại năng lực chuyên môn" }
+            ]
+          },
+          {
+            code: "FB-GV-06", action: "Tự ý chỉnh sửa học liệu đã duyệt hoặc xác nhận \"Đạt\" sai thực tế",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở hệ thống" },
+              { label: "Lần 2", text: "Trừ 200.000đ" },
+              { label: "Lần 3", text: "Trừ 500.000đ và 0,2 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,5 HSNX, hạ 01 Rank đào tạo" }
+            ]
+          }
+        ]
+      }
+    ],
+    lms: [
+      {
+        title: "6. Khung Kiểm Soát Dành Cho Leader Chuyên Môn & Đội Ngũ LMS",
+        icon: "fa-user-shield",
+        color: "var(--accent-green)",
+        rules: [
+          {
+            code: "FB-LD-01", action: "Leader chậm tiếp nhận hoặc phân công kiểm duyệt",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở" },
+              { label: "Lần 2", text: "Ghi nhận 01 lỗi quy trình" },
+              { label: "Lần 3", text: "Trừ 0,1 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,2 HSNX, báo cáo quản lý trực tiếp" }
+            ]
+          },
+          {
+            code: "FB-LD-02", action: "Không theo dõi, đôn đốc hoặc xử lý khi nhiệm vụ có nguy cơ trễ",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở" },
+              { label: "Lần 2", text: "Ghi nhận 01 lỗi quy trình" },
+              { label: "Lần 3", text: "Trừ 0,1 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,2 HSNX, đánh giá lại vai trò điều phối" }
+            ]
+          },
+          {
+            code: "FB-LMS-01", action: "Chậm xác nhận tiếp nhận feedback hợp lệ",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở" },
+              { label: "Lần 2", text: "Ghi nhận 01 lỗi quy trình" },
+              { label: "Lần 3", text: "Trừ 0,1 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,2 HSNX, báo cáo quản lý trực tiếp" }
+            ]
+          },
+          {
+            code: "FB-LMS-02", action: "Hiệu chỉnh quá 01 ngày làm việc mà không thông báo lý do",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở" },
+              { label: "Lần 2", text: "Ghi nhận 01 lỗi tiến độ" },
+              { label: "Lần 3", text: "Trừ 0,2 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,5 HSNX, xem xét lại phân công" }
+            ]
+          },
+          {
+            code: "FB-LMS-03", action: "Hiệu chỉnh sai yêu cầu, thiếu nội dung hoặc phát sinh lỗi mới",
+            penalties: [
+              { label: "Lần 1", text: "Yêu cầu sửa lại" },
+              { label: "Lần 2", text: "Ghi nhận 01 lỗi chất lượng" },
+              { label: "Lần 3", text: "Trừ 0,2 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,5 HSNX, đánh giá lại năng lực thực hiện" }
+            ]
+          },
+          {
+            code: "FB-LMS-04", action: "Tự ý đóng phản hồi khi chưa có xác nhận của GV/TG",
+            penalties: [
+              { label: "Lần 1", text: "Nhắc nhở" },
+              { label: "Lần 2", text: "Ghi nhận 01 lỗi quy trình" },
+              { label: "Lần 3", text: "Trừ 0,2 HSNX" },
+              { label: "Lần 4/tái phạm", text: "Trừ 0,5 HSNX, xem xét lại quyền xử lý" }
+            ]
+          }
+        ]
+      }
+    ],
+    critical: [
+      {
+        title: "7. Vi Phạm Nghiêm Trọng",
+        icon: "fa-skull-crossbones",
+        color: "var(--accent-red)",
+        rules: [
+          {
+            code: "CRIT-FB", action: "Cố tình che giấu lỗi, xác nhận sai thực tế, xóa hoặc làm sai lệch lịch sử phản hồi, tiến độ hoặc chỉ số chất lượng",
+            penalties: [
+              { label: "Lần 1", text: "Phạt 1.000.000đ và hạ 01 Rank đào tạo hoặc xử lý tương đương theo vị trí" },
+              { label: "Tái phạm", text: "Chuyển Hội đồng kỷ luật, xem xét đình chỉ nhiệm vụ hoặc chấm dứt hợp đồng theo quy định" }
+            ]
+          }
+        ]
+      }
+    ]
+  };
+
+  const getSeverityColor = (index, total) => {
+    if (total === 2) return index === 0 ? 'var(--accent-orange)' : 'var(--accent-red)';
+    if (index === 0) return 'var(--accent-green)';
+    if (index === 1) return 'var(--accent-orange)';
+    if (index === 2) return 'var(--accent-red)';
+    return '#991b1b'; // dark red
+  };
+
+  const PenaltyCard = ({ rule }) => (
+    <div className="penalty-card-wrapper" style={{ background: 'var(--bg-body)', border: '1px solid var(--border-color)', borderRadius: '12px', overflow: 'hidden', marginBottom: '16px', boxShadow: '0 2px 4px rgba(0,0,0,0.02)', transition: 'all 0.3s ease' }}>
+      <div style={{ background: 'var(--bg-subtle)', padding: '16px', borderBottom: '1px solid var(--border-color)', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+        <span style={{ background: 'var(--bg-card)', color: 'var(--accent-blue)', padding: '6px 10px', borderRadius: '6px', fontSize: '0.9rem', fontWeight: 'bold', border: '1px solid var(--border-color)', whiteSpace: 'nowrap', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
+          {rule.code}
+        </span>
+        <h4 style={{ margin: 0, color: 'var(--text-color)', fontSize: '1.05rem', lineHeight: 1.5 }}>
+          {rule.action}
+        </h4>
+      </div>
+      <div style={{ padding: '16px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+        {rule.penalties.map((p, i) => (
+          <div key={i} className="penalty-level-card" style={{ display: 'flex', flexDirection: 'column', gap: '8px', background: 'var(--bg-card)', padding: '16px', borderRadius: '8px', borderTop: `4px solid ${getSeverityColor(i, rule.penalties.length)}`, boxShadow: '0 1px 3px rgba(0,0,0,0.04)', transition: 'all 0.2s ease' }}>
+            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              {p.label}
+            </div>
+            <div style={{ fontSize: '0.95rem', color: 'var(--text-color)', lineHeight: 1.4 }}>
+              {p.text}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
+
     <div className="page-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
       
       {/* Header */}
@@ -101,7 +359,7 @@ export default function QuyTrinhLMS() {
                   { icon: 'fa-scale-balanced', text: 'Trách nhiệm <strong>minh bạch</strong>', color: 'var(--text-muted)' },
                   { icon: 'fa-gift', text: 'Có <strong>Khen thưởng & Chế tài</strong> rõ ràng', color: 'var(--accent-green)' }
                 ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', background: 'var(--bg-body)', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
+                  <div key={i} className="step-card" style={{ display: 'flex', alignItems: 'center', gap: '12px', background: 'var(--bg-body)', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
                     <i className={`fa-solid ${item.icon}`} style={{ color: item.color, fontSize: '18px', width: '24px', textAlign: 'center' }}></i>
                     <span dangerouslySetInnerHTML={{ __html: item.text }} style={{ color: 'var(--text-color)' }}></span>
                   </div>
@@ -110,26 +368,32 @@ export default function QuyTrinhLMS() {
             </div>
 
             {/* Trách nhiệm */}
-            <div className="stat-card" style={{ padding: '24px', alignItems: 'flex-start', background: 'var(--bg-card)' }}>
-              <h3 style={{ margin: '0 0 20px 0', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{ width: '32px', height: '32px', background: 'rgba(239, 68, 68, 0.1)', color: 'var(--accent-red)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <i className="fa-solid fa-clock-rotate-left"></i>
+            <div className="doc-card" style={{ padding: '0', overflow: 'hidden', border: '1px solid rgba(239, 68, 68, 0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.02) 100%)', padding: '20px 24px', borderBottom: '1px solid rgba(239, 68, 68, 0.1)', display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div style={{ width: '48px', height: '48px', background: 'var(--accent-red)', color: 'white', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', boxShadow: '0 4px 12px rgba(239, 68, 68, 0.3)', flexShrink: 0 }}>
+                  <i className="fa-solid fa-bolt"></i>
                 </div>
-                Ưu tiên xử lý khẩn cấp
-              </h3>
-              
-              <div style={{ borderLeft: '4px solid var(--accent-red)', paddingLeft: '16px' }}>
-                <p style={{ margin: '0 0 12px 0', fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--text-color)' }}>
-                  Lỗi nghiêm trọng sát giờ học!
-                </p>
-                <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                  Nếu phát hiện lỗi có nguy cơ <strong>ảnh hưởng trực tiếp đến buổi học sắp diễn ra</strong>, Leader chuyên môn sẽ trực tiếp xác nhận độ khẩn. LMS sẽ ưu tiên xử lý ngay lập tức!
-                </p>
+                <div>
+                  <h3 style={{ margin: '0 0 4px 0', color: 'var(--accent-red)', fontSize: '1.25rem', fontWeight: 'bold' }}>
+                    Ưu tiên xử lý khẩn cấp!
+                  </h3>
+                  <div style={{ display: 'inline-block', background: 'rgba(239, 68, 68, 0.1)', color: 'var(--accent-red)', padding: '4px 10px', borderRadius: '4px', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Lỗi sát giờ học
+                  </div>
+                </div>
               </div>
               
-              <div style={{ marginTop: '32px', padding: '16px', background: 'var(--bg-body)', borderRadius: '8px', border: '1px dashed var(--border-color)', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <i className="fa-solid fa-circle-check text-green" style={{ fontSize: '24px' }}></i>
-                <span style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>Quy trình được sinh ra để hỗ trợ tối đa cho bài giảng của các thầy/cô.</span>
+              <div style={{ padding: '24px', background: 'var(--bg-card)', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <p style={{ margin: '0 0 24px 0', color: 'var(--text-muted)', lineHeight: 1.7, fontSize: '1.05rem' }}>
+                  Nếu phát hiện lỗi có nguy cơ <strong style={{ color: 'var(--text-color)' }}>ảnh hưởng trực tiếp đến buổi học sắp diễn ra</strong>, Leader chuyên môn sẽ trực tiếp xác nhận độ khẩn. LMS sẽ ưu tiên xử lý ngay lập tức!
+                </p>
+                
+                <div style={{ marginTop: 'auto', background: 'var(--bg-subtle)', padding: '16px', borderRadius: '8px', borderLeft: '4px solid var(--accent-green)', display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <i className="fa-solid fa-handshake-angle" style={{ fontSize: '28px', color: 'var(--accent-green)' }}></i>
+                  <span style={{ fontSize: '0.95rem', color: 'var(--text-color)', lineHeight: 1.5, fontStyle: 'italic' }}>
+                    "Quy trình được sinh ra để hỗ trợ tối đa cho bài giảng của các thầy/cô."
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -175,7 +439,7 @@ export default function QuyTrinhLMS() {
                 <div style={{ position: 'absolute', left: '-30px', top: '4px', width: '24px', height: '24px', borderRadius: '50%', background: 'var(--accent-blue)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold', zIndex: 1, border: '4px solid var(--bg-body)' }}>
                   {index + 1}
                 </div>
-                <div style={{ background: 'var(--bg-card)', padding: '16px 20px', borderRadius: '8px', border: '1px solid var(--border-color)', marginLeft: '16px' }}>
+                <div className="step-card" style={{ background: 'var(--bg-card)', padding: '16px 20px', borderRadius: '8px', border: '1px solid var(--border-color)', marginLeft: '16px' }}>
                   <h4 style={{ margin: '0 0 8px 0', color: 'var(--accent-blue)' }}>{step.title}</h4>
                   <p style={{ margin: 0, color: 'var(--text-muted)' }}>{step.desc}</p>
                 </div>
@@ -189,7 +453,7 @@ export default function QuyTrinhLMS() {
         </div>
       )}
 
-      {/* Tab 3: Khung Chế tài */}
+            {/* Tab 3: Khung Chế tài */}
       {activeTab === 'che-tai' && (
         <div className="tab-content fade-in">
           <div className="alert-info" style={{ background: 'rgba(59, 130, 246, 0.1)', color: 'var(--accent-blue)', padding: '16px 20px', borderRadius: '8px', marginBottom: '32px', display: 'flex', alignItems: 'center', gap: '12px', borderLeft: '4px solid var(--accent-blue)' }}>
@@ -197,169 +461,51 @@ export default function QuyTrinhLMS() {
             <span style={{ fontSize: '1.05rem' }}>Dưới đây là chi tiết các khung chế tài áp dụng cho Giảng viên, Trợ giảng, Leader và LMS. Mức phạt lũy tiến theo số lần vi phạm.</span>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            
-            {/* Mục 4: Trợ giảng */}
-            <div className="doc-card">
-              <div className="doc-header" style={{ background: 'var(--bg-subtle)' }}>
-                <h3 className="doc-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'var(--bg-body)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-blue)' }}>
-                    <i className="fa-solid fa-user-graduate"></i>
-                  </div>
-                  4. Khung Chế Tài Dành Cho Trợ Giảng
-                </h3>
-              </div>
-              <div className="doc-body" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <div>
-                  <h4 style={{ margin: '0 0 12px 0', color: 'var(--text-color)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <i className="fa-solid fa-triangle-exclamation text-orange"></i> 4.1. Vi phạm quy trình thông thường
-                  </h4>
-                  <div style={{ overflowX: 'auto', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
-                      <thead>
-                        <tr style={{ background: 'var(--bg-subtle)', borderBottom: '2px solid var(--border-color)' }}>
-                          <th style={{ padding: '12px 16px' }}>Mã</th><th style={{ padding: '12px 16px' }}>Hành vi</th><th style={{ padding: '12px 16px' }}>Lần 1</th><th style={{ padding: '12px 16px' }}>Lần 2</th><th style={{ padding: '12px 16px' }}>Lần 3</th><th style={{ padding: '12px 16px' }}>Lần 4/tái phạm</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-TG-01</td><td style={{ padding: '12px 16px' }}>Chậm xác nhận tiếp nhận nhiệm vụ</td><td style={{ padding: '12px 16px' }}>Nhắc nhở</td><td style={{ padding: '12px 16px' }}>Trừ 50.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 100.000đ và 0,1 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 200.000đ, xem xét dừng phân công kiểm duyệt</td></tr>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-TG-02</td><td style={{ padding: '12px 16px' }}>Feedback sai TOPIC, sai mã hoặc thiếu thông tin sau khi đã được yêu cầu bổ sung</td><td style={{ padding: '12px 16px' }}>Nhắc nhở, yêu cầu bổ sung</td><td style={{ padding: '12px 16px' }}>Trừ 50.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 100.000đ và 0,1 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 200.000đ, đánh giá lại năng lực phối hợp</td></tr>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-TG-03</td><td style={{ padding: '12px 16px' }}>Chậm kiểm tra lại hoặc không xác nhận kết quả hiệu chỉnh</td><td style={{ padding: '12px 16px' }}>Nhắc nhở</td><td style={{ padding: '12px 16px' }}>Trừ 50.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 100.000đ và 0,1 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 200.000đ, dừng phân công nhiệm vụ tương tự</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div>
-                  <h4 style={{ margin: '0 0 12px 0', color: 'var(--text-color)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <i className="fa-solid fa-bolt text-red"></i> 4.2. Vi phạm ảnh hưởng đến chất lượng hoặc tiến độ
-                  </h4>
-                  <div style={{ overflowX: 'auto', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
-                      <thead>
-                        <tr style={{ background: 'var(--bg-subtle)', borderBottom: '2px solid var(--border-color)' }}>
-                          <th style={{ padding: '12px 16px' }}>Mã</th><th style={{ padding: '12px 16px' }}>Hành vi</th><th style={{ padding: '12px 16px' }}>Lần 1</th><th style={{ padding: '12px 16px' }}>Lần 2</th><th style={{ padding: '12px 16px' }}>Lần 3</th><th style={{ padding: '12px 16px' }}>Lần 4/tái phạm</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-TG-04</td><td style={{ padding: '12px 16px' }}>Chậm kiểm duyệt học liệu theo KPI Master</td><td style={{ padding: '12px 16px' }}>Nhắc nhở hệ thống</td><td style={{ padding: '12px 16px' }}>Trừ 100.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 300.000đ và 0,2 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,5 HSNX, đình chỉ công tác kiểm duyệt/sản xuất học liệu</td></tr>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-TG-05</td><td style={{ padding: '12px 16px' }}>Kiểm duyệt qua loa, bỏ sót lỗi rõ ràng hoặc feedback không thể thực hiện</td><td style={{ padding: '12px 16px' }}>Nhắc nhở và kiểm duyệt lại</td><td style={{ padding: '12px 16px' }}>Trừ 100.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 300.000đ và 0,2 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,5 HSNX, đánh giá lại năng lực chuyên môn</td></tr>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-TG-06</td><td style={{ padding: '12px 16px' }}>Tự ý chỉnh sửa học liệu đã duyệt hoặc xác nhận "Đạt" sai thực tế</td><td style={{ padding: '12px 16px' }}>Nhắc nhở hệ thống</td><td style={{ padding: '12px 16px' }}>Trừ 100.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 300.000đ và 0,2 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,5 HSNX, đình chỉ công tác sản xuất/kiểm duyệt</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div style={{ display: 'flex', gap: '12px', marginBottom: '32px', flexWrap: 'wrap' }}>
+            <button 
+              onClick={() => setRoleTab('tg')} 
+              style={{ padding: '10px 20px', borderRadius: '8px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold', background: roleTab === 'tg' ? 'var(--accent-blue)' : 'var(--bg-subtle)', color: roleTab === 'tg' ? 'white' : 'var(--text-color)', transition: 'all 0.2s' }}
+            >
+              <i className="fa-solid fa-user-graduate"></i> Trợ Giảng
+            </button>
+            <button 
+              onClick={() => setRoleTab('gv')} 
+              style={{ padding: '10px 20px', borderRadius: '8px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold', background: roleTab === 'gv' ? 'var(--accent-purple)' : 'var(--bg-subtle)', color: roleTab === 'gv' ? 'white' : 'var(--text-color)', transition: 'all 0.2s' }}
+            >
+              <i className="fa-solid fa-person-chalkboard"></i> Giảng Viên
+            </button>
+            <button 
+              onClick={() => setRoleTab('lms')} 
+              style={{ padding: '10px 20px', borderRadius: '8px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold', background: roleTab === 'lms' ? 'var(--accent-green)' : 'var(--bg-subtle)', color: roleTab === 'lms' ? 'white' : 'var(--text-color)', transition: 'all 0.2s' }}
+            >
+              <i className="fa-solid fa-user-shield"></i> Leader & LMS
+            </button>
+            <button 
+              onClick={() => setRoleTab('critical')} 
+              style={{ padding: '10px 20px', borderRadius: '8px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold', background: roleTab === 'critical' ? 'var(--accent-red)' : 'var(--bg-subtle)', color: roleTab === 'critical' ? 'white' : 'var(--accent-red)', transition: 'all 0.2s' }}
+            >
+              <i className="fa-solid fa-skull-crossbones"></i> Vi Phạm Nghiêm Trọng
+            </button>
+          </div>
 
-            {/* Mục 5: Giảng viên */}
-            <div className="doc-card">
-              <div className="doc-header" style={{ background: 'var(--bg-subtle)' }}>
-                <h3 className="doc-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'var(--bg-body)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-purple)' }}>
-                    <i className="fa-solid fa-person-chalkboard"></i>
-                  </div>
-                  5. Khung Chế Tài Dành Cho Giảng Viên
-                </h3>
-              </div>
-              <div className="doc-body" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <div>
-                  <h4 style={{ margin: '0 0 12px 0', color: 'var(--text-color)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <i className="fa-solid fa-triangle-exclamation text-orange"></i> 5.1. Vi phạm quy trình thông thường
-                  </h4>
-                  <div style={{ overflowX: 'auto', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
-                      <thead>
-                        <tr style={{ background: 'var(--bg-subtle)', borderBottom: '2px solid var(--border-color)' }}>
-                          <th style={{ padding: '12px 16px' }}>Mã</th><th style={{ padding: '12px 16px' }}>Hành vi</th><th style={{ padding: '12px 16px' }}>Lần 1</th><th style={{ padding: '12px 16px' }}>Lần 2</th><th style={{ padding: '12px 16px' }}>Lần 3</th><th style={{ padding: '12px 16px' }}>Lần 4/tái phạm</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-GV-01</td><td style={{ padding: '12px 16px' }}>Chậm xác nhận tiếp nhận nhiệm vụ</td><td style={{ padding: '12px 16px' }}>Nhắc nhở</td><td style={{ padding: '12px 16px' }}>Trừ 100.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 200.000đ và 0,1 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 300.000đ, xem xét lại phân công kiểm duyệt</td></tr>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-GV-02</td><td style={{ padding: '12px 16px' }}>Feedback sai TOPIC, sai mã hoặc thiếu thông tin sau khi đã được yêu cầu bổ sung</td><td style={{ padding: '12px 16px' }}>Nhắc nhở, yêu cầu bổ sung</td><td style={{ padding: '12px 16px' }}>Trừ 100.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 200.000đ và 0,1 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 300.000đ, đánh giá lại năng lực phối hợp</td></tr>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-GV-03</td><td style={{ padding: '12px 16px' }}>Chậm kiểm tra lại hoặc không xác nhận kết quả hiệu chỉnh</td><td style={{ padding: '12px 16px' }}>Nhắc nhở</td><td style={{ padding: '12px 16px' }}>Trừ 100.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 200.000đ và 0,1 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 300.000đ, xem xét lại việc phân công môn học</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', animation: 'fadeIn 0.3s ease-in-out' }}>
+            {ruleData[roleTab].map((section, idx) => (
+              <div key={idx} className="doc-card" style={roleTab === 'critical' ? { border: '1px solid rgba(239, 68, 68, 0.3)' } : {}}>
+                <div className="doc-header" style={{ background: roleTab === 'critical' ? 'rgba(239, 68, 68, 0.05)' : 'var(--bg-subtle)' }}>
+                  <h3 className="doc-title" style={{ display: 'flex', alignItems: 'center', gap: '12px', color: roleTab === 'critical' ? 'var(--accent-red)' : 'inherit' }}>
+                    <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'var(--bg-body)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: section.color }}>
+                      <i className={`fa-solid ${section.icon}`}></i>
+                    </div>
+                    {section.title}
+                  </h3>
                 </div>
-                <div>
-                  <h4 style={{ margin: '0 0 12px 0', color: 'var(--text-color)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <i className="fa-solid fa-bolt text-red"></i> 5.2. Vi phạm ảnh hưởng đến chất lượng hoặc tiến độ
-                  </h4>
-                  <div style={{ overflowX: 'auto', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
-                      <thead>
-                        <tr style={{ background: 'var(--bg-subtle)', borderBottom: '2px solid var(--border-color)' }}>
-                          <th style={{ padding: '12px 16px' }}>Mã</th><th style={{ padding: '12px 16px' }}>Hành vi</th><th style={{ padding: '12px 16px' }}>Lần 1</th><th style={{ padding: '12px 16px' }}>Lần 2</th><th style={{ padding: '12px 16px' }}>Lần 3</th><th style={{ padding: '12px 16px' }}>Lần 4/tái phạm</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-GV-04</td><td style={{ padding: '12px 16px' }}>Chậm kiểm duyệt học liệu theo KPI Master</td><td style={{ padding: '12px 16px' }}>Nhắc nhở hệ thống</td><td style={{ padding: '12px 16px' }}>Trừ 200.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 500.000đ và 0,2 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,5 HSNX và hạ 01 Rank đào tạo</td></tr>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-GV-05</td><td style={{ padding: '12px 16px' }}>Kiểm duyệt qua loa, bỏ sót lỗi chuyên môn hoặc feedback không thể thực hiện</td><td style={{ padding: '12px 16px' }}>Nhắc nhở và kiểm duyệt lại</td><td style={{ padding: '12px 16px' }}>Trừ 200.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 500.000đ và 0,2 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,5 HSNX, đánh giá lại năng lực chuyên môn</td></tr>
-                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-GV-06</td><td style={{ padding: '12px 16px' }}>Tự ý chỉnh sửa học liệu đã duyệt hoặc xác nhận "Đạt" sai thực tế</td><td style={{ padding: '12px 16px' }}>Nhắc nhở hệ thống</td><td style={{ padding: '12px 16px' }}>Trừ 200.000đ</td><td style={{ padding: '12px 16px' }}>Trừ 500.000đ và 0,2 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,5 HSNX, hạ 01 Rank đào tạo</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div className="doc-body" style={{ padding: '24px' }}>
+                  {section.rules.map((rule, ruleIdx) => (
+                    <PenaltyCard key={ruleIdx} rule={rule} />
+                  ))}
                 </div>
               </div>
-            </div>
-
-            {/* Mục 6: Leader / LMS */}
-            <div className="doc-card">
-              <div className="doc-header" style={{ background: 'var(--bg-subtle)' }}>
-                <h3 className="doc-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'var(--bg-body)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-green)' }}>
-                    <i className="fa-solid fa-user-shield"></i>
-                  </div>
-                  6. Khung Kiểm Soát Dành Cho Leader Chuyên Môn & Đội Ngũ LMS
-                </h3>
-              </div>
-              <div className="doc-body" style={{ padding: '24px' }}>
-                <div style={{ overflowX: 'auto', borderRadius: '8px', border: '1px solid var(--border-color)' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
-                    <thead>
-                      <tr style={{ background: 'var(--bg-subtle)', borderBottom: '2px solid var(--border-color)' }}>
-                        <th style={{ padding: '12px 16px' }}>Mã</th><th style={{ padding: '12px 16px' }}>Hành vi</th><th style={{ padding: '12px 16px' }}>Lần 1</th><th style={{ padding: '12px 16px' }}>Lần 2</th><th style={{ padding: '12px 16px' }}>Lần 3</th><th style={{ padding: '12px 16px' }}>Lần 4/tái phạm</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-LD-01</td><td style={{ padding: '12px 16px' }}>Leader chậm tiếp nhận hoặc phân công kiểm duyệt</td><td style={{ padding: '12px 16px' }}>Nhắc nhở</td><td style={{ padding: '12px 16px' }}>Ghi nhận 01 lỗi quy trình</td><td style={{ padding: '12px 16px' }}>Trừ 0,1 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,2 HSNX, báo cáo quản lý trực tiếp</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-LD-02</td><td style={{ padding: '12px 16px' }}>Không theo dõi, đôn đốc hoặc xử lý khi nhiệm vụ có nguy cơ trễ</td><td style={{ padding: '12px 16px' }}>Nhắc nhở</td><td style={{ padding: '12px 16px' }}>Ghi nhận 01 lỗi quy trình</td><td style={{ padding: '12px 16px' }}>Trừ 0,1 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,2 HSNX, đánh giá lại vai trò điều phối</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-LMS-01</td><td style={{ padding: '12px 16px' }}>Chậm xác nhận tiếp nhận feedback hợp lệ</td><td style={{ padding: '12px 16px' }}>Nhắc nhở</td><td style={{ padding: '12px 16px' }}>Ghi nhận 01 lỗi quy trình</td><td style={{ padding: '12px 16px' }}>Trừ 0,1 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,2 HSNX, báo cáo quản lý trực tiếp</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-LMS-02</td><td style={{ padding: '12px 16px' }}>Hiệu chỉnh quá 01 ngày làm việc mà không thông báo lý do</td><td style={{ padding: '12px 16px' }}>Nhắc nhở</td><td style={{ padding: '12px 16px' }}>Ghi nhận 01 lỗi tiến độ</td><td style={{ padding: '12px 16px' }}>Trừ 0,2 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,5 HSNX, xem xét lại phân công</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-LMS-03</td><td style={{ padding: '12px 16px' }}>Hiệu chỉnh sai yêu cầu, thiếu nội dung hoặc phát sinh lỗi mới</td><td style={{ padding: '12px 16px' }}>Yêu cầu sửa lại</td><td style={{ padding: '12px 16px' }}>Ghi nhận 01 lỗi chất lượng</td><td style={{ padding: '12px 16px' }}>Trừ 0,2 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,5 HSNX, đánh giá lại năng lực thực hiện</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border-color)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-blue)', fontWeight: 'bold' }}>FB-LMS-04</td><td style={{ padding: '12px 16px' }}>Tự ý đóng phản hồi khi chưa có xác nhận của GV/TG</td><td style={{ padding: '12px 16px' }}>Nhắc nhở</td><td style={{ padding: '12px 16px' }}>Ghi nhận 01 lỗi quy trình</td><td style={{ padding: '12px 16px' }}>Trừ 0,2 HSNX</td><td style={{ padding: '12px 16px' }}>Trừ 0,5 HSNX, xem xét lại quyền xử lý</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            {/* Mục 7: Vi phạm nghiêm trọng */}
-            <div className="doc-card" style={{ border: '1px solid rgba(239, 68, 68, 0.3)' }}>
-              <div className="doc-header" style={{ background: 'rgba(239, 68, 68, 0.05)' }}>
-                <h3 className="doc-title" style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--accent-red)' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'var(--bg-body)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-red)' }}>
-                    <i className="fa-solid fa-skull-crossbones"></i>
-                  </div>
-                  7. Vi Phạm Nghiêm Trọng
-                </h3>
-              </div>
-              <div className="doc-body" style={{ padding: '24px' }}>
-                <div style={{ overflowX: 'auto', borderRadius: '8px', border: '1px solid rgba(239, 68, 68, 0.3)' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95rem' }}>
-                    <thead>
-                      <tr style={{ background: 'rgba(239, 68, 68, 0.05)', borderBottom: '2px solid rgba(239, 68, 68, 0.3)', color: 'var(--accent-red)' }}>
-                        <th style={{ padding: '12px 16px' }}>Mã</th><th style={{ padding: '12px 16px' }}>Hành vi</th><th style={{ padding: '12px 16px' }}>Lần 1</th><th style={{ padding: '12px 16px' }}>Tái phạm</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr style={{ borderBottom: '1px solid rgba(239, 68, 68, 0.3)' }}><td style={{ padding: '12px 16px', color: 'var(--accent-red)', fontWeight: 'bold' }}>CRIT-FB</td><td style={{ padding: '12px 16px', color: 'var(--accent-red)' }}>Cố tình che giấu lỗi, xác nhận sai thực tế, xóa hoặc làm sai lệch lịch sử phản hồi, tiến độ hoặc chỉ số chất lượng</td><td style={{ padding: '12px 16px' }}>Phạt 1.000.000đ và hạ 01 Rank đào tạo hoặc xử lý tương đương theo vị trí</td><td style={{ padding: '12px 16px', fontWeight: 'bold' }}>Chuyển Hội đồng kỷ luật, xem xét đình chỉ nhiệm vụ hoặc chấm dứt hợp đồng theo quy định</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
       )}
@@ -372,6 +518,19 @@ export default function QuyTrinhLMS() {
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(5px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        .penalty-card-wrapper:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;
+          border-color: var(--accent-blue) !important;
+        }
+        .penalty-level-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.06) !important;
+          filter: brightness(0.96);
+        }
+        body.theme-dark .penalty-level-card:hover {
+          filter: brightness(1.15);
         }
       `}</style>
     </div>

@@ -1,27 +1,27 @@
 import React from 'react';
 
 const LADDER = [
-  { rank: 'Rank 1', title: 'TTS Trợ Giảng', desc: '< 6m | ≥ 40đ' },
-  { rank: 'Rank 2', title: 'Trợ Giảng Cứng', desc: '≥ 6m | ≥ 55đ' },
-  { rank: 'Rank 3', title: 'GV Tập Sự', desc: '≥ 6m TA | ≥ 65đ' },
-  { rank: 'Rank 4', title: 'Giảng Viên Cứng', desc: '≥ 1 năm | ≥ 75đ' },
-  { rank: 'Rank 5', title: 'GV PM Môn', desc: '20M + 4M + 2M' },
-  { rank: 'Rank 6', title: 'PM Chương Trình', desc: '25M + 4M + 3M' },
-  { rank: 'Rank 7', title: 'GV Brand Nội Bộ', desc: '30M + 5M + 3M' },
-  { rank: 'Rank 8', title: 'GV Brand Thị Trường', desc: '35M + 6M + 4M' },
+  { rank: 'Rank 1', title: 'TTS Trợ Giảng', desc: '< 6m | ≥ 40đ', color: 'tag-blue' },
+  { rank: 'Rank 2', title: 'Trợ Giảng Cứng', desc: '≥ 6m | ≥ 55đ', color: 'tag-blue' },
+  { rank: 'Rank 3', title: 'GV Tập Sự', desc: '≥ 6m TA | ≥ 65đ', color: 'tag-green' },
+  { rank: 'Rank 4', title: 'Giảng Viên Cứng', desc: '≥ 1 năm | ≥ 75đ', color: 'tag-green' },
+  { rank: 'Rank 5', title: 'GV PM Môn', desc: '20M + 4M + 2M', color: 'tag-gold' },
+  { rank: 'Rank 6', title: 'PM Chương Trình', desc: '25M + 4M + 3M', color: 'tag-gold' },
+  { rank: 'Rank 7', title: 'GV Brand Nội Bộ', desc: '30M + 5M + 3M', color: 'tag-purple' },
+  { rank: 'Rank 8', title: 'GV Brand Thị Trường', desc: '35M + 6M + 4M', color: 'tag-purple' },
 ];
 
 export default function RankGvTg() {
   return (
     <section className="page-container">
       <div className="section-title-wrap" style={{ marginTop: 0 }}>
-        <div className="section-title"><i className="fa-solid fa-award"></i> KHUNG TIÊU CHÍ XẾP HẠNG 8 RANK GIẢNG VIÊN & TRỢ GIẢNG</div>
+        <div className="section-title"><i className="fa-solid fa-award"></i> KHUNG TIÊU CHUẨN XẾP HẠNG 8 RANK GIẢNG VIÊN & TRỢ GIẢNG</div>
       </div>
 
       <div className="career-ladder-grid">
         {LADDER.map(item => (
           <div className="ladder-card" key={item.rank}>
-            <span className="ladder-badge">{item.rank}</span>
+            <span className={`ladder-badge ${item.color}`}>{item.rank}</span>
             <b>{item.title}</b>
             <p>{item.desc}</p>
           </div>
