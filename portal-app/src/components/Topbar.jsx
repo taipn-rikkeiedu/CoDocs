@@ -83,9 +83,28 @@ export default function Topbar() {
             type="text" 
             placeholder="Tìm kiếm..." 
             onFocus={() => setSearchFocused(true)}
-            onBlur={() => setSearchFocused(false)}
+            onBlur={() => {
+              // Delay blur slightly to allow clicking on dropdown items
+              setTimeout(() => setSearchFocused(false), 200);
+            }}
           />
           <div className="search-shortcut">⌘ K</div>
+
+          {/* Search Results Dropdown */}
+          <div className="search-dropdown">
+            <div className="search-dropdown-header">Gợi ý tìm kiếm</div>
+            <div className="search-dropdown-list">
+              <Link to="/rank-gvtg" className="search-dropdown-item">
+                <i className="fa-solid fa-ranking-star"></i> Tiêu chuẩn Rank Giảng viên
+              </Link>
+              <Link to="/khao-thi" className="search-dropdown-item">
+                <i className="fa-solid fa-file-signature"></i> Quy trình Khảo thí
+              </Link>
+              <Link to="/quy-trinh-lms" className="search-dropdown-item">
+                <i className="fa-solid fa-code-compare"></i> Hướng dẫn dùng LMS
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Mobile Hamburger Button */}
