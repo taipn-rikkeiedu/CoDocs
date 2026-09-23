@@ -68,29 +68,130 @@ export default function KhaoThi() {
         ))}
       </div>
 
-      <div className="doc-card" style={{ marginTop: '40px' }}>
-        <h3 style={{ marginBottom: '20px', color: 'var(--text-heading)' }}>
-          <i className="fa-solid fa-chart-pie" style={{ color: 'var(--primary-red)' }}></i> Cơ Cấu Điểm Học Phần (Chuẩn Đạt Môn ≥ 50/100đ)
-        </h3>
-        <div className="table-responsive">
-          <table className="modern-table">
+      <div className="doc-card" style={{ marginTop: '40px', padding: '0', overflow: 'hidden' }}>
+        <div className="doc-header" style={{ padding: '24px 24px 16px', borderBottom: '1px solid var(--border-color)' }}>
+          <h3 className="doc-title" style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <i className="fa-solid fa-chart-pie" style={{ color: 'var(--primary-red)' }}></i> Cơ Cấu Điểm Học Phần (Chuẩn Đạt Môn ≥ 50/100đ)
+          </h3>
+        </div>
+        <div className="rank-matrix-wrapper" style={{ margin: 0, border: 'none', borderRadius: 0, boxShadow: 'none' }}>
+          <table className="rank-matrix-table" style={{ tableLayout: 'fixed' }}>
+            <colgroup>
+              <col style={{ width: '35%' }} />
+              <col style={{ width: '20%' }} />
+              <col style={{ width: '20%' }} />
+              <col style={{ width: '25%' }} />
+            </colgroup>
             <thead>
               <tr>
-                <th>Thành phần điểm</th>
-                <th>Hình thức đánh giá</th>
-                <th>Tỷ lệ thành phần</th>
-                <th>Tỷ trọng tổng</th>
-                <th>Ghi chú</th>
+                <th style={{ paddingLeft: '40px' }}>Hình thức đánh giá</th>
+                <th style={{ textAlign: 'center' }}>Tỷ lệ thành phần</th>
+                <th style={{ textAlign: 'center' }}>Tỷ trọng tổng</th>
+                <th style={{ textAlign: 'center' }}>Ghi chú</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td rowSpan="2"><b>1. Quá Trình (20%)</b></td><td>Điểm chuyên cần</td><td>50%</td><td><b>10%</b></td><td>Nghỉ 1% trừ 1 điểm</td></tr>
-              <tr><td>Kiểm tra đầu giờ</td><td>50%</td><td><b>10%</b></td><td>Trung bình cộng các lần</td></tr>
-              <tr><td rowSpan="2"><b>2. Giữa Môn (20%)</b></td><td>Trắc nghiệm</td><td>30%</td><td rowSpan="2"><b>20%</b></td><td rowSpan="2">Thời gian tối đa 120 phút</td></tr>
-              <tr><td>Tự luận / Thực hành</td><td>70%</td></tr>
-              <tr><td rowSpan="3"><b>3. Cuối Môn (60%)</b></td><td>Trắc nghiệm</td><td>10%</td><td rowSpan="3"><b>60%</b></td><td rowSpan="3" style={{ background: 'var(--primary-red-light)', color: 'var(--primary-red)' }}><b>Chuẩn qua môn:</b><br />Tổng điểm ≥ 50/100đ</td></tr>
-              <tr><td>Vấn đáp phỏng vấn</td><td>20%</td></tr>
-              <tr><td>Sản phẩm / Đồ án thực hành</td><td>70%</td></tr>
+              <tr className="table-group-header"><td colSpan="4"><b style={{ color: 'var(--accent-blue)' }}>1. Quá Trình (20%)</b></td></tr>
+              <tr>
+                <td className="col-title" style={{ paddingLeft: '40px' }}><i className="fa-solid fa-user-check" style={{ color: 'var(--accent-blue)', width: '24px' }}></i> Điểm chuyên cần</td>
+                <td className="col-money" style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <span style={{ minWidth: '35px', textAlign: 'right' }}>50%</span>
+                    <div style={{ flexGrow: 1, maxWidth: '50px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '50%', height: '100%', background: 'var(--accent-blue)' }}></div></div>
+                  </div>
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <b style={{ minWidth: '35px', textAlign: 'right' }}>10%</b>
+                    <div style={{ flexGrow: 1, maxWidth: '50px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '10%', height: '100%', background: 'var(--accent-blue)' }}></div></div>
+                  </div>
+                </td>
+                <td style={{ textAlign: 'center' }}><span style={{ background: 'var(--primary-red-light)', color: 'var(--primary-red)', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '600' }}>Nghỉ 1% trừ 1 điểm</span></td>
+              </tr>
+              <tr>
+                <td className="col-title" style={{ paddingLeft: '40px' }}><i className="fa-solid fa-stopwatch" style={{ color: 'var(--accent-blue)', width: '24px' }}></i> Kiểm tra đầu giờ</td>
+                <td className="col-money" style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <span style={{ minWidth: '35px', textAlign: 'right' }}>50%</span>
+                    <div style={{ flexGrow: 1, maxWidth: '50px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '50%', height: '100%', background: 'var(--accent-blue)' }}></div></div>
+                  </div>
+                </td>
+                <td style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <b style={{ minWidth: '35px', textAlign: 'right' }}>10%</b>
+                    <div style={{ flexGrow: 1, maxWidth: '50px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '10%', height: '100%', background: 'var(--accent-blue)' }}></div></div>
+                  </div>
+                </td>
+                <td style={{ textAlign: 'center' }}><span style={{ background: 'var(--bg-subtle)', color: 'var(--text-muted)', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: '500' }}>Trung bình cộng các lần</span></td>
+              </tr>
+              
+              <tr className="table-group-header"><td colSpan="4"><b style={{ color: 'var(--accent-orange)' }}>2. Giữa Môn (20%)</b></td></tr>
+              <tr>
+                <td className="col-title" style={{ paddingLeft: '40px' }}><i className="fa-solid fa-list-ul" style={{ color: 'var(--accent-orange)', width: '24px' }}></i> Trắc nghiệm</td>
+                <td className="col-money" style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <span style={{ minWidth: '35px', textAlign: 'right' }}>30%</span>
+                    <div style={{ flexGrow: 1, maxWidth: '50px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '30%', height: '100%', background: 'var(--accent-orange)' }}></div></div>
+                  </div>
+                </td>
+                <td rowSpan="2" style={{ verticalAlign: 'middle', textAlign: 'center' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+                    <b>20%</b>
+                    <div style={{ width: '100%', maxWidth: '60px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '20%', height: '100%', background: 'var(--accent-orange)' }}></div></div>
+                  </div>
+                </td>
+                <td rowSpan="2" style={{ verticalAlign: 'middle', textAlign: 'center' }}><span style={{ background: 'var(--bg-subtle)', color: 'var(--text-muted)', padding: '6px 12px', borderRadius: '12px', fontSize: '12px', fontWeight: '500' }}><i className="fa-regular fa-clock"></i> Tối đa 120 phút</span></td>
+              </tr>
+              <tr>
+                <td className="col-title" style={{ paddingLeft: '40px' }}><i className="fa-solid fa-pen-ruler" style={{ color: 'var(--accent-orange)', width: '24px' }}></i> Tự luận / Thực hành</td>
+                <td className="col-money" style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <span style={{ minWidth: '35px', textAlign: 'right' }}>70%</span>
+                    <div style={{ flexGrow: 1, maxWidth: '50px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '70%', height: '100%', background: 'var(--accent-orange)' }}></div></div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr className="table-group-header"><td colSpan="4"><b style={{ color: 'var(--primary-red)' }}>3. Cuối Môn (60%)</b></td></tr>
+              <tr>
+                <td className="col-title" style={{ paddingLeft: '40px' }}><i className="fa-solid fa-list-ul" style={{ color: 'var(--primary-red)', width: '24px' }}></i> Trắc nghiệm</td>
+                <td className="col-money" style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <span style={{ minWidth: '35px', textAlign: 'right' }}>10%</span>
+                    <div style={{ flexGrow: 1, maxWidth: '50px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '10%', height: '100%', background: 'var(--primary-red)' }}></div></div>
+                  </div>
+                </td>
+                <td rowSpan="3" style={{ verticalAlign: 'middle', textAlign: 'center' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+                    <b>60%</b>
+                    <div style={{ width: '100%', maxWidth: '60px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '60%', height: '100%', background: 'var(--primary-red)' }}></div></div>
+                  </div>
+                </td>
+                <td rowSpan="3" style={{ background: 'var(--primary-red-light)', verticalAlign: 'middle', textAlign: 'center' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+                    <span style={{ fontWeight: '600', color: 'var(--primary-red)', fontSize: '13px', textTransform: 'uppercase' }}>Chuẩn Qua Môn</span>
+                    <span style={{ fontWeight: '800', color: 'var(--primary-red)', fontSize: '20px' }}>≥ 50<span style={{ fontSize: '14px', fontWeight: '600' }}>/100đ</span></span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td className="col-title" style={{ paddingLeft: '40px' }}><i className="fa-solid fa-comments" style={{ color: 'var(--primary-red)', width: '24px' }}></i> Vấn đáp phỏng vấn</td>
+                <td className="col-money" style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <span style={{ minWidth: '35px', textAlign: 'right' }}>20%</span>
+                    <div style={{ flexGrow: 1, maxWidth: '50px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '20%', height: '100%', background: 'var(--primary-red)' }}></div></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td className="col-title" style={{ paddingLeft: '40px' }}><i className="fa-solid fa-laptop-code" style={{ color: 'var(--primary-red)', width: '24px' }}></i> Sản phẩm / Đồ án</td>
+                <td className="col-money" style={{ textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                    <span style={{ minWidth: '35px', textAlign: 'right' }}>70%</span>
+                    <div style={{ flexGrow: 1, maxWidth: '50px', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}><div style={{ width: '70%', height: '100%', background: 'var(--primary-red)' }}></div></div>
+                  </div>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
