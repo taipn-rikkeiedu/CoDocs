@@ -1,21 +1,21 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SEARCH_DATABASE = [
-  { id: '1', title: 'Quy trÃ¬nh Kháº£o thÃ­ PTIT', path: '/khao-thi', icon: 'fa-file-signature', type: 'Quy cháº¿' },
-  { id: '2', title: 'Quy Ä‘á»‹nh R-Point', path: '/rpoint', icon: 'fa-star', type: 'Quy cháº¿' },
-  { id: '3', title: 'Ná»™i quy PhÃ²ng thi', path: '/phong-thi', icon: 'fa-person-chalkboard', type: 'Quy cháº¿' },
-  { id: '4', title: 'Ná»™i quy Sinh viÃªn', path: '/sinh-vien', icon: 'fa-users', type: 'Quy cháº¿' },
-  { id: '5', title: 'TiÃªu chÃ­ Xáº¿p háº¡ng Rank GV/TG', path: '/rank-gvtg', icon: 'fa-ranking-star', type: 'Quy cháº¿' },
-  { id: '6', title: 'Sá»• tay Onboarding 2026', path: '/onboarding', icon: 'fa-handshake', type: 'Sá»• tay' },
-  { id: '7', title: 'Cáº©m nang sá»­ dá»¥ng Lark Suite', path: '/lark-guide', icon: 'fa-laptop-file', type: 'Sá»• tay' },
-  { id: '8', title: 'Tra cá»©u danh sÃ¡ch KPI Master', path: '/kpi-master', icon: 'fa-chart-pie', type: 'CÃ´ng cá»¥' },
-  { id: '9', title: 'MÃ¡y tÃ­nh Thu nháº­p (LÆ°Æ¡ng)', path: '/tools', icon: 'fa-calculator', type: 'CÃ´ng cá»¥' },
-  { id: '10', title: 'MÃ¡y tÃ­nh R-Point', path: '/tools', icon: 'fa-calculator', type: 'CÃ´ng cá»¥' },
-  { id: '11', title: 'Äá»c 7 TÃ i Liá»‡u Gá»‘c (.pdf, .md, .xlsx)', path: '/raw-docs', icon: 'fa-book-open-reader', type: 'Kho lÆ°u trá»¯' },
+  { id: '1', title: 'Quy trình Khảo thí PTIT', path: '/khao-thi', icon: 'fa-file-signature', type: 'Quy chế' },
+  { id: '2', title: 'Quy định R-Point', path: '/rpoint', icon: 'fa-star', type: 'Quy chế' },
+  { id: '3', title: 'Nội quy Phòng thi', path: '/phong-thi', icon: 'fa-person-chalkboard', type: 'Quy chế' },
+  { id: '4', title: 'Nội quy Sinh viên', path: '/sinh-vien', icon: 'fa-users', type: 'Quy chế' },
+  { id: '5', title: 'Tiêu chí Xếp hạng Rank GV/TG', path: '/rank-gvtg', icon: 'fa-ranking-star', type: 'Quy chế' },
+  { id: '6', title: 'Sổ tay Onboarding 2026', path: '/onboarding', icon: 'fa-handshake', type: 'Sổ tay' },
+  { id: '7', title: 'Cẩm nang sử dụng Lark Suite', path: '/lark-guide', icon: 'fa-laptop-file', type: 'Sổ tay' },
+  { id: '8', title: 'Tra cứu danh sách KPI Master', path: '/kpi-master', icon: 'fa-chart-pie', type: 'Công cụ' },
+  { id: '9', title: 'Máy tính Thu nhập (Lương)', path: '/tools', icon: 'fa-calculator', type: 'Công cụ' },
+  { id: '10', title: 'Máy tính R-Point', path: '/tools', icon: 'fa-calculator', type: 'Công cụ' },
+  { id: '11', title: 'Đọc 7 Tài Liệu Gốc (.pdf, .md, .xlsx)', path: '/raw-docs', icon: 'fa-book-open-reader', type: 'Kho lưu trữ' },
 ];
 
-const TRENDING_TAGS = ['#KPI_Giáº£ng_ViÃªn', '#TÃ­nh_LÆ°Æ¡ng', '#Ná»™i_Quy_Sinh_ViÃªn', '#Kháº£o_ThÃ­'];
+const TRENDING_TAGS = ['#KPI_Giảng_Viên', '#Tính_Lương', '#Nội_Quy_Sinh_Viên', '#Khảo_Thí'];
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -57,7 +57,7 @@ export default function Dashboard() {
     } else {
       // fallback
       const q = query.toLowerCase();
-      if (q.includes('kpi') || q.includes('cháº¥m bÃ i') || q.includes('rank')) {
+      if (q.includes('kpi') || q.includes('chấm bài') || q.includes('rank')) {
         navigate('/kpi-master');
       } else if (q.includes('r-point') || q.includes('point')) {
         navigate('/tools');
@@ -85,10 +85,10 @@ export default function Dashboard() {
         
         {/* Title */}
         <h1 style={{ fontSize: '48px', fontWeight: 900, marginBottom: '16px', fontFamily: 'var(--font-heading)', background: 'linear-gradient(135deg, var(--text-heading) 0%, var(--text-muted) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-          Báº¡n cáº§n tra cá»©u gÃ¬ hÃ´m nay?
+          Bạn cần tra cứu gì hôm nay?
         </h1>
         <p style={{ color: 'var(--text-muted)', fontSize: '18px', marginBottom: '48px', fontWeight: 500 }}>
-          Há»‡ thá»‘ng tra cá»©u thÃ´ng minh Rikkei Education Portal
+          Hệ thống tra cứu thông minh Rikkei Education Portal
         </p>
 
         {/* Global Search Bar */}
@@ -99,7 +99,7 @@ export default function Dashboard() {
               <input 
                 type="text" 
                 className="global-search-input" 
-                placeholder="Nháº­p tÃªn tÃ i liá»‡u, KPI, hoáº·c quy cháº¿ cáº§n tÃ¬m..." 
+                placeholder="Nhập tên tài liệu, KPI, hoặc quy chế cần tìm..." 
                 value={query}
                 onChange={(e) => {
                   setQuery(e.target.value);
@@ -127,7 +127,7 @@ export default function Dashboard() {
                 ))
               ) : (
                 <div className="autocomplete-item" style={{ color: 'var(--text-dim)', justifyContent: 'center' }}>
-                  KhÃ´ng tÃ¬m tháº¥y káº¿t quáº£ phÃ¹ há»£p
+                  Không tìm thấy kết quả phù hợp
                 </div>
               )}
             </div>
@@ -136,7 +136,7 @@ export default function Dashboard() {
 
         {/* Trending Tags */}
         <div className="trending-tags-container">
-          <span style={{ fontSize: '13px', color: 'var(--text-dim)', marginRight: '12px' }}>TÃ¬m kiáº¿m phá»• biáº¿n:</span>
+          <span style={{ fontSize: '13px', color: 'var(--text-dim)', marginRight: '12px' }}>Tìm kiếm phổ biến:</span>
           {TRENDING_TAGS.map(tag => (
             <span key={tag} className="trending-tag" onClick={() => handleTagClick(tag)}>
               {tag}
@@ -147,13 +147,13 @@ export default function Dashboard() {
         {/* Quick Shortcuts */}
         <div className="quick-shortcuts" style={{ marginTop: '32px' }}>
           <button className="shortcut-pill" onClick={() => navigate('/raw-docs')}>
-            <i className="fa-solid fa-book-open-reader"></i> Äá»c 7 TÃ i Liá»‡u Gá»‘c
+            <i className="fa-solid fa-book-open-reader"></i> Đọc 7 Tài Liệu Gốc
           </button>
           <button className="shortcut-pill" onClick={() => navigate('/kpi-master')}>
             <i className="fa-solid fa-chart-pie"></i> KPI Master GV/TG
           </button>
           <button className="shortcut-pill" onClick={() => navigate('/tools')}>
-            <i className="fa-solid fa-calculator"></i> 4 MÃ¡y TÃ­nh Tá»± Äá»™ng
+            <i className="fa-solid fa-calculator"></i> 4 Máy Tính Tự Động
           </button>
         </div>
       </div>
@@ -161,5 +161,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-
